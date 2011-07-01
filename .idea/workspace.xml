@@ -23,19 +23,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DI.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="DI.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DI.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="0" selection-start="1272" selection-end="1272" vertical-scroll-proportion="0.7997812">
+            <state line="37" column="0" selection-start="1242" selection-end="1242" vertical-scroll-proportion="-7.72">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="diTest.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="diTest.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/diTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="71" selection-start="703" selection-end="703" vertical-scroll-proportion="0.0">
+            <state line="24" column="39" selection-start="598" selection-end="598" vertical-scroll-proportion="0.353719">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="binder.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DI/binder.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="38" column="36" selection-start="885" selection-end="901" vertical-scroll-proportion="-10.56">
               <folding />
             </state>
           </provider>
@@ -93,10 +102,11 @@
       <list>
         <option value="$PROJECT_DIR$/test/diTest/istd.php" />
         <option value="$PROJECT_DIR$/test/diTest/std1.php" />
-        <option value="$PROJECT_DIR$/DI.php" />
         <option value="$PROJECT_DIR$/test/diTest/iostd.php" />
         <option value="$PROJECT_DIR$/test/diTest/std2.php" />
         <option value="$PROJECT_DIR$/test/diTest/ostd1.php" />
+        <option value="$PROJECT_DIR$/DI/binder.php" />
+        <option value="$PROJECT_DIR$/DI.php" />
         <option value="$PROJECT_DIR$/test/diTest.php" />
       </list>
     </option>
@@ -157,6 +167,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DI" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -229,15 +253,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="58" y="-8" width="1870" height="1096" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.6705632" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.6716259" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32917964" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32837406" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -286,26 +310,9 @@
         <state line="1" column="14" selection-start="16" selection-end="20" vertical-scroll-proportion="0.028145695" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/diTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="71" selection-start="703" selection-end="703" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/diTest/std1.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="13" selection-start="61" selection-end="61" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/diTest/std2.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="29" selection-start="218" selection-end="218" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/diTest/iostd.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="12" selection-start="18" selection-end="18" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/diTest/ostd1.php">
@@ -313,9 +320,33 @@
         <state line="1" column="28" selection-start="34" selection-end="34" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test/diTest/iostd.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="12" selection-start="18" selection-end="18" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/diTest/std2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="29" selection-start="218" selection-end="218" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DI/binder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="36" selection-start="885" selection-end="901" vertical-scroll-proportion="-10.56">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/DI.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="0" selection-start="1272" selection-end="1272" vertical-scroll-proportion="0.7997812">
+        <state line="37" column="0" selection-start="1242" selection-end="1242" vertical-scroll-proportion="-7.72">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/diTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="39" selection-start="598" selection-end="598" vertical-scroll-proportion="0.353719">
           <folding />
         </state>
       </provider>

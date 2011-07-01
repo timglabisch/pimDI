@@ -1,30 +1,24 @@
 <?php
 
+require_once __DIR__.'/DI/binder.php';
+
 class di {
 
-    var $services;
     static $annotationCache;
+    var $bindings = array();
 
     private function _diVerifInterfaceExists($interface) {
         if(!interface_exists('\\'.$interface))
             throw new Exception('interface '.$interface.' does not exists.');
     }
 
-    private function _diInject($class) {
-
-        $reflection = new ReflectionClass($class);
-
-
-        return $class;
-    }
-
     public function __get($interface) {
         $this->_diVerifInterfaceExists($interface);
 
-        if(!isset($this->services[$interface]))
-            throw new Exception('Interfaces is not mapped to a class');
+        if(!isset($this->bindings[$interface.'|']))
+            throw new Exception('Interfaces "'.$interface.'" is not mapped to a class');
 
-        $className = $this->services[$interface];
+        $className = $this->bindings[$interface.'|']->getInterfaceImpl();
 
         $reflection = new ReflectionClass($className);
         $instance = new $className;
@@ -45,12 +39,6 @@ class di {
         }
 
         return $instance;
-    }
-
-    public function __set($interface, $class) {
-        $this->_diVerifInterfaceExists($interface);
-
-        $this->services[$interface] = $class;
     }
 
     public static function parseTestMethodAnnotations($className, $methodName = '')
@@ -84,6 +72,12 @@ class di {
         }
 
         return $annotations;
+    }
+
+    public function bind($interfaceName) {
+        $binder =  new binder($interfaceName);
+        $this->bindings[$binder->getHashKey()] = $binder;
+        return $binder;
     }
 
 }

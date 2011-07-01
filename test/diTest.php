@@ -8,7 +8,7 @@ class DITest extends PHPUnit_Framework_TestCase {
 
     public function testDi() {
         $di = new di();
-        $di->istd = 'std1';
+        $di->bind('istd')->to('std1');
 
         $this->assertInstanceOf('std1', $di->istd);
 
@@ -17,16 +17,24 @@ class DITest extends PHPUnit_Framework_TestCase {
 
     public function testDiSet() {
         $di = new di();
-        $di->__set('istd','std1');
+        $di->bind('istd')->to('std1');
 
         $this->assertInstanceOf('std1', $di->__get('istd'));
 
-        $di->__set('istd','std2');
-        $di->iostd = 'ostd1';
+        $di->bind('istd')->to('std2');
+        $di->bind('iostd')->to('ostd1');
         $this->assertInstanceOf('std2', $di->__get('istd'));
 
         $this->assertInstanceOf('ostd1', $di->__get('istd')->getIoStd());
 
+    }
+
+    public function testBind() {
+        $di = new di();
+        $di->bind('istd')->to('class');
+        $di->bind('istd')->to('class2');
+
+        var_dump($di->bindings);
     }
 
 }
