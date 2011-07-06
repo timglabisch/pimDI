@@ -4,16 +4,11 @@ class binder {
 
     private $interfaceName;
     private $interfaceImpl;
-    private $named;
-
-    private function verifInterfaceExists($interface) {
-        if(!interface_exists('\\'.$interface))
-            throw new Exception('interface '.$interface.' does not exists.');
-    }
+    private $concern;
+    private $shared = false;
+    private $argements = array();
 
     function __construct($interfaceName) {
-        $this->verifInterfaceExists($interfaceName);
-        
         $this->interfaceName = $interfaceName;
     }
 
@@ -22,13 +17,13 @@ class binder {
         return $this;
     }
 
-    function named($named) {
-        $this->named = $named;
+    function concern($named) {
+        $this->setConcern($named);
         return $this;
     }
 
     public function getHashKey() {
-        return $this->getInterfaceName().'|'.$this->getNamed();
+        return $this->getInterfaceName().'|'.$this->getConcern();
     }
 
     public function setInterfaceImpl($interfaceImpl)
@@ -48,11 +43,37 @@ class binder {
         return $this->interfaceName;
     }
 
-    public function setNamed($named) {
-        $this->named = $named;
+    public function setConcern($named) {
+        $this->concern = $named;
+        return $this;
     }
 
-    public function getNamed() {
-        return $this->named;
+    public function getConcern() {
+        return $this->concern;
+    }
+
+    public function setArgements($argements)
+    {
+        $this->argements = $argements;
+    }
+
+    public function getArgements()
+    {
+        return $this->argements;
+    }
+
+    public function setShared($shared)
+    {
+        $this->shared = (bool)$shared;
+        return $this;
+    }
+
+    public function shared($shared) {
+        return $this->setShared($shared);
+    }
+
+    public function getShared()
+    {
+        return $this->shared;
     }
 }

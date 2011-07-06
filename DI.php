@@ -6,23 +6,48 @@ class di {
 
     static $annotationCache;
     var $bindings = array();
+    var $unknownBindings = array();
+    var $instances = array();
 
     private function _diVerifInterfaceExists($interface) {
         if(!interface_exists('\\'.$interface))
             throw new Exception('interface '.$interface.' does not exists.');
     }
 
-    public function __get($interface) {
+    public function get($interface, $concern='') {
+
+        if(!interface_exists($interface)) {
+            throw new Exception('Interface '. $interface .' must Exists.');
+        }
+
+        $this->knowBindings();
+
         $this->_diVerifInterfaceExists($interface);
 
-        if(!isset($this->bindings[$interface.'|']))
-            throw new Exception('Interfaces "'.$interface.'" is not mapped to a class');
+        if(!isset($this->bindings[$interface.'|'.$concern]))
+            throw new Exception('Interfaces "'.$interface.'" with concern "'.$concern.'" is not mapped to a class');
 
-        $className = $this->bindings[$interface.'|']->getInterfaceImpl();
-
+        $binding = $this->bindings[$interface.'|'.$concern];
+        
+        $className = $binding->getInterfaceImpl();
         $reflection = new ReflectionClass($className);
-        $instance = new $className;
 
+        if(!$binding->getShared())
+            if(method_exists($className, '__construct'))
+                $instance = call_user_func_array(array($className, '__construct'), array());
+            else
+                $instance = new $className();
+        else
+        {
+            if(isset($this->instances[$interface.'|'.$concern]))
+                $instance = $this->instances[$interface.'|'.$concern];
+            else {
+                 if(method_exists($className, '__construct'))
+                    $instance = $this->instances[$interface.'|'.$concern] = call_user_func_array(array($className, '__construct'), array());
+                else
+                    $instance = new $className();
+            }
+        }
 
         foreach($reflection->getMethods() as $method) {
             $annotationStrings = self::parseTestMethodAnnotations($method->class, $method->name);
@@ -35,7 +60,7 @@ class di {
             if(count($annotations) != 1)
                 throw new Exception('not supportet atm.');
 
-            $instance->{$method->name}($this->__get($annotations[0]));
+            $instance->{$method->name}($this->get($annotations[0]));
         }
 
         return $instance;
@@ -74,9 +99,20 @@ class di {
         return $annotations;
     }
 
+    public function knowBindings() {
+
+        if(!count($this->unknownBindings))
+            return;
+
+        foreach($this->unknownBindings as $key => $unknownBinding) {
+            $this->bindings[$unknownBinding->getHashKey()] = $unknownBinding;
+            unset($this->unknownBindings[$key]);
+        }
+    }
+
     public function bind($interfaceName) {
         $binder =  new binder($interfaceName);
-        $this->bindings[$binder->getHashKey()] = $binder;
+        $this->unknownBindings[] = $binder;
         return $binder;
     }
 

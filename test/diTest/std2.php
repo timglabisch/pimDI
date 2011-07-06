@@ -8,7 +8,7 @@ class std2 {
     }
 
     /**
-     * @inject iostd
+     * @nject iostd
      */
     public function setIoStd(iostd $var) {
         $this->o = $var;

@@ -6,35 +6,36 @@ array_map(function($v) { include_once  $v; }, glob(__DIR__.'/'.basename(__FILE__
 
 class DITest extends PHPUnit_Framework_TestCase {
 
-    public function testDi() {
+    public function testDiSet() {
+        $di = new di();
+
+        $di->bind('istd')->to('std1');
+        $this->assertInstanceOf('std1', $di->get('istd'));
+
+        $di->bind('istd')->to('std2');
+        $this->assertInstanceOf('std2', $di->get('istd'));
+    }
+
+
+    public function testDIConcern() {
+
         $di = new di();
         $di->bind('istd')->to('std1');
+        $di->bind('istd')->to('std2')->concern('abc');
 
-        $this->assertInstanceOf('std1', $di->istd);
-
+        $this->assertInstanceOf('std2', $di->get('istd', 'abc'));#
+        $this->assertInstanceOf('std1', $di->get('istd'));
         
     }
 
-    public function testDiSet() {
+    /**
+     * @expectedException Exception
+     */
+    public function testInterfaceDoesNotExists() {
         $di = new di();
-        $di->bind('istd')->to('std1');
+        $di->bind('UNKNOWN')->to('std1');
 
-        $this->assertInstanceOf('std1', $di->__get('istd'));
-
-        $di->bind('istd')->to('std2');
-        $di->bind('iostd')->to('ostd1');
-        $this->assertInstanceOf('std2', $di->__get('istd'));
-
-        $this->assertInstanceOf('ostd1', $di->__get('istd')->getIoStd());
-
-    }
-
-    public function testBind() {
-        $di = new di();
-        $di->bind('istd')->to('class');
-        $di->bind('istd')->to('class2');
-
-        var_dump($di->bindings);
+        $this->assertInstanceOf('std1', $di->get('UNKNOWN'));
     }
 
 }
