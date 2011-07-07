@@ -76,5 +76,19 @@ class DITest extends PHPUnit_Framework_TestCase {
        $this->assertInstanceOf('nested_nestedservice2', $di->get('nested_iobject')->getNestedService1_2());
     }
 
+    public function testSharedDefault() {
+       $di = new di();
+
+       $di->bind('istd')->to('std1');
+       $this->assertTrue($di->get('istd') !== $di->get('istd'));
+    }
+
+    public function testIsShared() {
+       $di = new di();
+
+       $di->bind('istd')->to('std1')->shared(true);
+       $this->assertTrue($di->get('istd') === $di->get('istd'));
+    }
+
 }
  

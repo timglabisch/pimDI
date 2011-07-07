@@ -32,11 +32,25 @@ class di {
         $className = $binding->getInterfaceImpl();
         $reflection = new ReflectionClass($className);
 
-        if(!$binding->getShared())
+        if(!$binding->getShared()) {
             if(method_exists($className, '__construct'))
                 $instance = call_user_func_array(array($className, '__construct'), array());
             else
                 $instance = new $className();
+        }
+        else
+        {
+            if(isset($this->instances[$interface.'|'.$concern]))
+                return $this->instances[$interface.'|'.$concern];
+
+            if(method_exists($className, '__construct'))
+                $instance = call_user_func_array(array($className, '__construct'), array());
+            else
+                $instance = new $className();
+
+            $this->instances[$interface.'|'.$concern] = $instance;
+            
+        }
 
         foreach($reflection->getMethods() as $method) {
             $reflectionMethod = new ReflectionMethod($method->class, $method->name);
