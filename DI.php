@@ -37,30 +37,30 @@ class di {
                 $instance = call_user_func_array(array($className, '__construct'), array());
             else
                 $instance = new $className();
-        else
-        {
-            if(isset($this->instances[$interface.'|'.$concern]))
-                $instance = $this->instances[$interface.'|'.$concern];
-            else {
-                 if(method_exists($className, '__construct'))
-                    $instance = $this->instances[$interface.'|'.$concern] = call_user_func_array(array($className, '__construct'), array());
-                else
-                    $instance = new $className();
-            }
-        }
 
         foreach($reflection->getMethods() as $method) {
+            $reflectionMethod = new ReflectionMethod($method->class, $method->name);
+            $params = $reflectionMethod->getParameters();
+
             $annotationStrings = self::parseTestMethodAnnotations($method->class, $method->name);
+            
             if(!isset($annotationStrings['method'], $annotationStrings['method']['inject']))
                 continue;
 
-            $annotations = explode(',', implode(',',$annotationStrings['method']['inject']));
+            $annotations = $annotationStrings['method']['inject'];
             $annotations = array_map('trim', $annotations);
 
-            if(count($annotations) != 1)
-                throw new Exception('not supportet atm.');
+            $instanceParams = array();
 
-            $instance->{$method->name}($this->get($annotations[0]));
+            $i = 0;
+            foreach($params as $v) {
+                $concern = (isset($annotations[$i])?$annotations[$i]:'');
+                $instanceParams[] = $this->get($v->getClass()->getName(), $concern);
+                $i++;
+            }
+
+
+            call_user_func_array(array($instance, $method->name), $instanceParams);
         }
 
         return $instance;
