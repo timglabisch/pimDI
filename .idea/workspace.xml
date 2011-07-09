@@ -18,25 +18,6 @@
   <component name="DaemonCodeAnalyzer">
     <disable_hints />
   </component>
-  <component name="DockManager">
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file leaf-file-name="binder.php" pinned="false" current="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/DI/binder.php">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state line="71" column="41" selection-start="1513" selection-end="1513" vertical-scroll-proportion="0.73960614">
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="FavoritesManager">
     <favorites_list name="DI" />
   </component>
@@ -45,88 +26,25 @@
       <file leaf-file-name="DI.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/DI.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="65" selection-start="1412" selection-end="1412" vertical-scroll-proportion="0.70016474">
+            <state line="67" column="12" selection-start="2358" selection-end="2358" vertical-scroll-proportion="0.6990132">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="object.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/diNestedTest/object.php">
+      <file leaf-file-name="reflectionMethod.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DI/reflectionMethod.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="5" selection-start="255" selection-end="255" vertical-scroll-proportion="0.0">
+            <state line="2" column="50" selection-start="57" selection-end="57" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="diTest.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/diTest.php">
+      <file leaf-file-name="reflection.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DI/reflection.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="88" column="49" selection-start="3054" selection-end="3054" vertical-scroll-proportion="-19.88">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="nestedservice2.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/diNestedTest/nestedservice2.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="27" selection-start="33" selection-end="33" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="object_concern.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/diNestedTest/object_concern.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="26" selection-start="12" selection-end="32" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="object_double2.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/diNestedTest/object_double2.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="26" selection-start="12" selection-end="32" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="object_double.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/diNestedTest/object_double.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="25" selection-start="12" selection-end="31" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="iobject.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/diNestedTest/iobject.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="24" selection-start="30" selection-end="30" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="nestedservice1.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/diNestedTest/nestedservice1.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="41" selection-start="47" selection-end="47" vertical-scroll-proportion="-0.68">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="inestedservice1.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/diNestedTest/inestedservice1.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="12" selection-start="18" selection-end="18" vertical-scroll-proportion="0.0">
+            <state line="35" column="5" selection-start="1320" selection-end="1320" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -146,8 +64,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/conxerns.xml" />
-        <option value="$PROJECT_DIR$/DI/binder.php" />
         <option value="$PROJECT_DIR$/test/DI/binderTest.php" />
         <option value="$PROJECT_DIR$/test/diTest/std2.php" />
         <option value="$PROJECT_DIR$/test/diNestedTest/iobject.php" />
@@ -161,6 +77,8 @@
         <option value="$PROJECT_DIR$/test/diNestedTest/object_concern.php" />
         <option value="$PROJECT_DIR$/test/diNestedTest/nestedservice2.php" />
         <option value="$PROJECT_DIR$/test/diTest.php" />
+        <option value="$PROJECT_DIR$/DI/reflection.php" />
+        <option value="$PROJECT_DIR$/DI/reflectionMethod.php" />
         <option value="$PROJECT_DIR$/DI.php" />
       </list>
     </option>
@@ -191,8 +109,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Favorites" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -221,56 +137,27 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="diNestedTest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="DI" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Favorites" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="web-ide.project.structure" />
     <property name="recentsLimit" value="5" />
-    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.lastSelected" value="web-ide.project.structure" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\ZendCe\Apache2\htdocs\DI\DI" />
       <recent name="C:\ZendCe\Apache2\htdocs\DI\test\diNestedTest" />
       <recent name="C:\ZendCe\Apache2\htdocs\DI\test\diTest" />
       <recent name="C:\ZendCe\Apache2\htdocs\DI" />
@@ -335,9 +222,9 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.67375135" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.67481405" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3995749" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32624868" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32518598" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -381,108 +268,94 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test/diTest/iostd.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="12" selection-start="18" selection-end="18" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../ZendServer/bin/PEAR/PHPUnit/Framework/TestResult.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="665" column="0" selection-start="16767" selection-end="16767" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/DI/binderTest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="45" column="55" selection-start="1395" selection-end="1395" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DI/binder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="41" selection-start="1513" selection-end="1513" vertical-scroll-proportion="0.73960614">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/Reflection.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1212" column="20" selection-start="32626" selection-end="32626" vertical-scroll-proportion="0.50082374">
-          <folding />
-        </state>
+        <state line="1212" column="20" selection-start="32626" selection-end="32626" vertical-scroll-proportion="0.50082374" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/diTest/std2.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="24" selection-start="203" selection-end="203" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="14" column="24" selection-start="203" selection-end="203" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/diNestedTest/object.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="5" selection-start="255" selection-end="255" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="11" column="5" selection-start="255" selection-end="255" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/diNestedTest/inestedservice1.php">
+    <entry file="file://$PROJECT_DIR$/test/diTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="12" selection-start="18" selection-end="18" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/diNestedTest/nestedservice1.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="41" selection-start="47" selection-end="47" vertical-scroll-proportion="-0.68">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/diNestedTest/iobject.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="24" selection-start="30" selection-end="30" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/diNestedTest/object_double.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="25" selection-start="12" selection-end="31" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/diNestedTest/object_double2.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="26" selection-start="12" selection-end="32" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/diNestedTest/object_concern.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="26" selection-start="12" selection-end="32" vertical-scroll-proportion="0.0">
+        <state line="88" column="49" selection-start="3054" selection-end="3054" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/diNestedTest/nestedservice2.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="27" selection-start="33" selection-end="33" vertical-scroll-proportion="0.0">
+        <state line="1" column="27" selection-start="33" selection-end="33" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/diNestedTest/object_concern.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="26" selection-start="12" selection-end="32" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/diNestedTest/object_double2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="26" selection-start="12" selection-end="32" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/diNestedTest/object_double.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="25" selection-start="12" selection-end="31" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/diNestedTest/iobject.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="24" selection-start="30" selection-end="30" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/diNestedTest/nestedservice1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="41" selection-start="47" selection-end="47" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/diTest.php">
+    <entry file="file://$PROJECT_DIR$/test/diNestedTest/inestedservice1.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="88" column="49" selection-start="3054" selection-end="3054" vertical-scroll-proportion="-19.88">
+        <state line="1" column="12" selection-start="18" selection-end="18" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DI/binder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="71" column="41" selection-start="1513" selection-end="1513" vertical-scroll-proportion="1.3205689">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DI/reflection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="5" selection-start="1320" selection-end="1320" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DI/reflectionMethod.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="50" selection-start="57" selection-end="57" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DI.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="65" selection-start="1412" selection-end="1412" vertical-scroll-proportion="0.70016474">
+        <state line="67" column="12" selection-start="2358" selection-end="2358" vertical-scroll-proportion="0.6990132">
           <folding />
         </state>
       </provider>

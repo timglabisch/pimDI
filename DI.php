@@ -1,6 +1,8 @@
 <?php
 
 require_once __DIR__.'/DI/binder.php';
+require_once __DIR__.'/DI/reflection.php';
+require_once __DIR__.'/DI/reflectionMethod.php';
 
 class di {
 
@@ -9,61 +11,52 @@ class di {
     var $unknownBindings = array();
     var $instances = array();
 
-    private function _diVerifInterfaceExists($interface) {
+    private function verifInterfaceExists($interface) {
         if(!interface_exists('\\'.$interface))
             throw new Exception('interface '.$interface.' does not exists.');
     }
 
+    private function getHasFromString($interface, $concern='') {
+        return $interface.'|'.$concern;
+    }
+
     public function get($interface, $concern='') {
 
-        if(!interface_exists($interface)) {
-            throw new Exception('Interface '. $interface .' must Exists.');
-        }
-
+        $this->verifInterfaceExists($interface);
         $this->knowBindings();
 
-        $this->_diVerifInterfaceExists($interface);
+        $bindingHash = $this->getHasFromString($interface, $concern);
 
-        if(!isset($this->bindings[$interface.'|'.$concern]))
+        if(!isset($this->bindings[$bindingHash]))
             throw new Exception('Interfaces "'.$interface.'" with concern "'.$concern.'" is not mapped to a class');
 
-        $binding = $this->bindings[$interface.'|'.$concern];
+        $binding = $this->bindings[$bindingHash];
         
         $className = $binding->getInterfaceImpl();
-        $reflection = new ReflectionClass($className);
+        $reflection = new DI_reflection($className);
 
-        if(!$binding->getShared()) {
-            if(method_exists($className, '__construct'))
-                $instance = call_user_func_array(array($className, '__construct'), array());
-            else
-                $instance = new $className();
-        }
+        if($binding->getShared() && isset($this->instances[$bindingHash]))
+            return $this->instances[$bindingHash];
+
+        if(method_exists($className, '__construct'))
+            $instance = call_user_func_array(array($className, '__construct'), array());
         else
-        {
-            if(isset($this->instances[$interface.'|'.$concern]))
-                return $this->instances[$interface.'|'.$concern];
+            $instance = new $className();
 
-            if(method_exists($className, '__construct'))
-                $instance = call_user_func_array(array($className, '__construct'), array());
-            else
-                $instance = new $className();
-
-            $this->instances[$interface.'|'.$concern] = $instance;
-            
-        }
+         if($binding->getShared())
+            $this->instances[$bindingHash] = $instance;
 
         foreach($reflection->getMethods() as $method) {
-            $reflectionMethod = new ReflectionMethod($method->class, $method->name);
+            $reflectionMethod = new DI_reflectionMethod($method->class, $method->name);
             $params = $reflectionMethod->getParameters();
 
-            $annotationStrings = self::parseTestMethodAnnotations($method->class, $method->name);
+            $annotationStrings = $reflectionMethod->parseTestMethodAnnotations($method->class, $method->name);
             
             if(!isset($annotationStrings['method'], $annotationStrings['method']['inject']))
                 continue;
 
             $annotations = $annotationStrings['method']['inject'];
-            $annotations = array_map('trim', $annotations);
-
+          
             $instanceParams = array();
 
             $i = 0;
@@ -72,45 +65,11 @@ class di {
                 $instanceParams[] = $this->get($v->getClass()->getName(), $concern);
                 $i++;
             }
-
-
+            
             call_user_func_array(array($instance, $method->name), $instanceParams);
         }
 
         return $instance;
-    }
-
-    public static function parseTestMethodAnnotations($className, $methodName = '')
-    {
-        if (!isset(self::$annotationCache[$className])) {
-            $class = new ReflectionClass($className);
-            self::$annotationCache[$className] = self::parseAnnotations($class->getDocComment());
-        }
-
-        if (!empty($methodName) && !isset(self::$annotationCache[$className . '::' . $methodName])) {
-            $method = new ReflectionMethod($className, $methodName);
-            self::$annotationCache[$className . '::' . $methodName] = self::parseAnnotations($method->getDocComment());
-        }
-
-        return array(
-          'class'  => self::$annotationCache[$className],
-          'method' => !empty($methodName) ? self::$annotationCache[$className . '::' . $methodName] : array()
-        );
-    }
-
-    private static function parseAnnotations($docblock)
-    {
-        $annotations = array();
-
-        if (preg_match_all('/@(?P<name>[A-Za-z_-]+)(?:[ \t]+(?P<value>.*?))?[ \t]*\r?$/m', $docblock, $matches)) {
-            $numMatches = count($matches[0]);
-
-            for ($i = 0; $i < $numMatches; ++$i) {
-                $annotations[$matches['name'][$i]][] = $matches['value'][$i];
-            }
-        }
-
-        return $annotations;
     }
 
     public function knowBindings() {
