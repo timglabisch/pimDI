@@ -27,11 +27,9 @@ class di {
 
             $instanceParams = array();
 
-            $i = 0;
-            foreach($params as $v) {
+            for($i=0;count($params) > $i; $i++) {
                 $concern = (isset($annotations[$i])?$annotations[$i]:'');
-                $instanceParams[] = $this->get($v->getClass()->getName(), $concern);
-                $i++;
+                $instanceParams[] = $this->get($params[$i]->getClass()->getName(), $concern);
             }
 
             return $reflection->newInstanceArgs($instanceParams);
@@ -81,12 +79,10 @@ class di {
           
             $instanceParams = array();
 
-            $i = 0;
-            foreach($params as $v) {
+             for($i=0;count($params) > $i; $i++) {
                 $concern = (isset($annotations[$i])?$annotations[$i]:'');
-                $instanceParams[] = $this->get($v->getClass()->getName(), $concern);
-                $i++;
-            }
+                $instanceParams[] = $this->get($params[$i]->getClass()->getName(), $concern);
+             }
             
             call_user_func_array(array($instance, $reflectionMethod->name), $instanceParams);
         }
