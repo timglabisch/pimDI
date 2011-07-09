@@ -79,13 +79,24 @@ class di {
           
             $instanceParams = array();
 
-             for($i=0;count($params) > $i; $i++) {
+            for($i=0;count($params) > $i; $i++) {
                 $concern = (isset($annotations[$i])?$annotations[$i]:'');
                 $instanceParams[] = $this->get($params[$i]->getClass()->getName(), $concern);
-             }
-            
-            call_user_func_array(array($instance, $reflectionMethod->name), $instanceParams);
+            }
+
+            switch(count($instanceParams)) {
+            case 0:
+                    throw new Exception('wtf?');
+                break;
+            case 1:
+                   $instance->{$reflectionMethod->name}($instanceParams[0]);
+                break;
+            default:
+                    call_user_func_array(array($instance, $reflectionMethod->name), $instanceParams);
+                break;
+            }
         }
+
 
         return $instance;
     }
