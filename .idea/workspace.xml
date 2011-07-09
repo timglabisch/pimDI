@@ -53,7 +53,16 @@
       <file leaf-file-name="DI.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/DI.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="77" column="64" selection-start="2760" selection-end="2760" vertical-scroll-proportion="0.02138158">
+            <state line="2" column="38" selection-start="45" selection-end="45" vertical-scroll-proportion="0.05592105">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="reflectionMethod.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DI/reflectionMethod.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="0" selection-start="712" selection-end="712" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -393,13 +402,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DI/reflection.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="5" selection-start="1320" selection-end="1320" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/diNestedTest/object_double.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="113" selection-start="102" selection-end="243" vertical-scroll-proportion="0.25164473">
@@ -449,13 +451,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DI/reflectionMethod.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="513" selection-end="513" vertical-scroll-proportion="0.33223686">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/diTest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="99" column="0" selection-start="3425" selection-end="3425" vertical-scroll-proportion="0.0">
@@ -463,9 +458,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/DI/reflectionMethod.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="0" selection-start="712" selection-end="712" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/DI.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="64" selection-start="2760" selection-end="2760" vertical-scroll-proportion="0.02138158">
+        <state line="2" column="38" selection-start="45" selection-end="45" vertical-scroll-proportion="0.05592105">
           <folding />
         </state>
       </provider>
