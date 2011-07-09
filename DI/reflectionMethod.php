@@ -4,7 +4,7 @@ class DI_reflectionMethod extends ReflectionMethod {
 
     private static $annotationCache;
 
-    public function parseTestMethodAnnotations($className, $methodName = '')
+    public static function parseTestMethodAnnotations($className, $methodName = '')
     {
 
         if (!isset(self::$annotationCache[$className])) {

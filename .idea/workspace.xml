@@ -44,16 +44,16 @@
       <file leaf-file-name="diTest.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/diTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="76" column="31" selection-start="2769" selection-end="2769" vertical-scroll-proportion="0.0">
+            <state line="99" column="0" selection-start="3425" selection-end="3425" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DI.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="DI.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/DI.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="74" selection-start="1007" selection-end="1007" vertical-scroll-proportion="0.0">
+            <state line="24" column="104" selection-start="733" selection-end="733" vertical-scroll-proportion="-0.25493422">
               <folding />
             </state>
           </provider>
@@ -68,10 +68,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="std2.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="std2.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/diTest/std2.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="26" selection-start="32" selection-end="32" vertical-scroll-proportion="0.027960526">
+            <state line="1" column="26" selection-start="32" selection-end="32" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -117,14 +117,14 @@
         <option value="$PROJECT_DIR$/test/diNestedTest/object_concern.php" />
         <option value="$PROJECT_DIR$/test/diNestedTest/nestedservice2.php" />
         <option value="$PROJECT_DIR$/DI/reflection.php" />
-        <option value="$PROJECT_DIR$/DI/reflectionMethod.php" />
         <option value="$PROJECT_DIR$/test/diConstructor/istd.php" />
         <option value="$PROJECT_DIR$/test/diTest.php" />
         <option value="$PROJECT_DIR$/test/diConstructor/std1.php" />
         <option value="$PROJECT_DIR$/test/diConstructor/std2.php" />
-        <option value="$PROJECT_DIR$/DI.php" />
         <option value="$PROJECT_DIR$/test/diTest/std1.php" />
         <option value="$PROJECT_DIR$/test/diTest/std2.php" />
+        <option value="$PROJECT_DIR$/DI/reflectionMethod.php" />
+        <option value="$PROJECT_DIR$/DI.php" />
       </list>
     </option>
   </component>
@@ -400,13 +400,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DI/reflectionMethod.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="50" selection-start="57" selection-end="57" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/diNestedTest/object_double.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="113" selection-start="102" selection-end="243" vertical-scroll-proportion="0.25164473">
@@ -421,13 +414,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/diTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="31" selection-start="2769" selection-end="2769" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/diConstructor/std2.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="50" selection-start="40" selection-end="56" vertical-scroll-proportion="0.0">
@@ -438,13 +424,6 @@
     <entry file="file://$PROJECT_DIR$/test/diConstructor/istd.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="26" selection-start="16" selection-end="32" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DI.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="74" selection-start="1007" selection-end="1007" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -465,7 +444,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/diTest/std2.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="26" selection-start="32" selection-end="32" vertical-scroll-proportion="0.027960526">
+        <state line="1" column="26" selection-start="32" selection-end="32" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DI/reflectionMethod.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="0" selection-start="513" selection-end="513" vertical-scroll-proportion="0.33223686">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/diTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="99" column="0" selection-start="3425" selection-end="3425" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DI.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="104" selection-start="733" selection-end="733" vertical-scroll-proportion="-0.25493422">
           <folding />
         </state>
       </provider>

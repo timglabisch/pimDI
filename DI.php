@@ -15,6 +15,31 @@ class di {
         return $interface.'|'.$concern;
     }
 
+    private function createInstance(DI_reflection $reflection) {
+
+
+        if($reflection->hasMethod('__construct')) {
+
+            $reflectionMethod = $reflection->getConstructor();
+            $params = $reflectionMethod->getParameters();
+            $annotationStrings = DI_reflectionMethod::parseTestMethodAnnotations($reflection->getName(), '__construct');
+            $annotations = $annotationStrings['method']['inject'];
+
+            $instanceParams = array();
+
+            $i = 0;
+            foreach($params as $v) {
+                $concern = (isset($annotations[$i])?$annotations[$i]:'');
+                $instanceParams[] = $this->get($v->getClass()->getName(), $concern);
+                $i++;
+            }
+
+            return $reflection->newInstanceArgs($instanceParams);
+        }
+
+        return $reflection->newInstance();
+    }
+
     public function get($interface, $concern='') {
 
         $this->knowBindings();
@@ -35,39 +60,19 @@ class di {
         if($binding->getShared() && isset($this->instances[$bindingHash]))
             return $this->instances[$bindingHash];
         
-        if(method_exists($className, '__construct')) {
-
-            $reflectionMethod = new DI_reflectionMethod($className, '__construct');
-            $params = $reflectionMethod->getParameters();
-            $annotationStrings = $reflectionMethod->parseTestMethodAnnotations($className, '__construct');
-            $annotations = $annotationStrings['method']['inject'];
-
-            $instanceParams = array();
-
-            $i = 0;
-            foreach($params as $v) {
-                $concern = (isset($annotations[$i])?$annotations[$i]:'');
-                $instanceParams[] = $this->get($v->getClass()->getName(), $concern);
-                $i++;
-            }
-
-            $instance = $reflection->newInstanceArgs($instanceParams);
-        }
-        else
-            $instance = new $className();
+        $instance = $this->createInstance($reflection);
 
          if($binding->getShared())
             $this->instances[$bindingHash] = $instance;
 
-        foreach($reflection->getMethods() as $method) {
-            $reflectionMethod = new DI_reflectionMethod($method->class, $method->name);
+        foreach($reflection->getMethods() as $reflectionMethod) {
 
             if($reflectionMethod->isConstructor() || $reflectionMethod->isDestructor() || $reflectionMethod->isStatic())
                 continue;
 
             $params = $reflectionMethod->getParameters();
 
-            $annotationStrings = $reflectionMethod->parseTestMethodAnnotations($method->class, $method->name);
+            $annotationStrings = DI_reflectionMethod::parseTestMethodAnnotations($reflectionMethod->class, $reflectionMethod->name);
             
             if(!isset($annotationStrings['method'], $annotationStrings['method']['inject']))
                 continue;
@@ -83,7 +88,7 @@ class di {
                 $i++;
             }
             
-            call_user_func_array(array($instance, $method->name), $instanceParams);
+            call_user_func_array(array($instance, $reflectionMethod->name), $instanceParams);
         }
 
         return $instance;
