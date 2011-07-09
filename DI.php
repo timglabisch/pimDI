@@ -10,10 +10,6 @@ class di {
     var $unknownBindings = array();
     var $instances = array();
 
-    private function getHasFromString($interface, $concern='') {
-        return $interface.'|'.$concern;
-    }
-
     private function createInstance(ReflectionClass $reflection) {
 
 
@@ -37,29 +33,34 @@ class di {
         return $reflection->newInstance();
     }
 
-    public function get($interface, $concern='') {
+    private function getBinding($interface, $concern='') {
 
-        $this->knowBindings();
-
-        $bindingHash = $this->getHasFromString($interface, $concern);
+        $bindingHash = $interface.'|'.$concern;
 
         if(!isset($this->bindings[$bindingHash]))
             throw new Exception('Interfaces "'.$interface.'" with concern "'.$concern.'" is not mapped to a class');
 
-        $binding = $this->bindings[$bindingHash];
+        return $this->bindings[$bindingHash];
+    }
+
+    public function get($interface, $concern='') {
+
+        $this->knowBindings();
+
+        $binding = $this->getBinding($interface, $concern);
         
         $reflection = new ReflectionClass($binding->getInterfaceImpl());
 
         if(!$reflection->implementsInterface($interface))
             throw new Exception($reflection->getName() .' must implement '. $interface);
 
-        if($binding->getShared() && isset($this->instances[$bindingHash]))
-            return $this->instances[$bindingHash];
+        if($binding->getShared() && isset($this->instances[$interface .'|'. $concern]))
+            return $this->instances[$interface .'|'. $concern];
         
         $instance = $this->createInstance($reflection);
 
         if($binding->getShared())
-            $this->instances[$bindingHash] = $instance;
+            $this->instances[$interface .'|'. $concern] = $instance;
 
         $this->injectSetters($instance, $reflection);
 
