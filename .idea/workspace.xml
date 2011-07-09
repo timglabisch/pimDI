@@ -35,7 +35,7 @@
       <file leaf-file-name="std2.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/diConstructor/std2.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="50" selection-start="56" selection-end="56" vertical-scroll-proportion="0.0">
+            <state line="1" column="50" selection-start="40" selection-end="56" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -50,10 +50,37 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DI.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="DI.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DI.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="55" column="0" selection-start="1912" selection-end="1912" vertical-scroll-proportion="0.63980263">
+            <state line="32" column="74" selection-start="1007" selection-end="1007" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="std1.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/diTest/std1.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="26" selection-start="32" selection-end="32" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="std2.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/diTest/std2.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="26" selection-start="32" selection-end="32" vertical-scroll-proportion="0.027960526">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="istd.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/diTest/istd.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="14" selection-start="16" selection-end="20" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -82,8 +109,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/test/diNestedTest/inestedservice.php" />
-        <option value="$PROJECT_DIR$/test/diNestedTest/nestedservice1.php" />
         <option value="$PROJECT_DIR$/test/diNestedTest/inestedservice1.php" />
         <option value="$PROJECT_DIR$/test/diNestedTest/object.php" />
         <option value="$PROJECT_DIR$/test/diNestedTest/object_double_extended.php" />
@@ -98,6 +123,8 @@
         <option value="$PROJECT_DIR$/test/diConstructor/std1.php" />
         <option value="$PROJECT_DIR$/test/diConstructor/std2.php" />
         <option value="$PROJECT_DIR$/DI.php" />
+        <option value="$PROJECT_DIR$/test/diTest/std1.php" />
+        <option value="$PROJECT_DIR$/test/diTest/std2.php" />
       </list>
     </option>
   </component>
@@ -156,6 +183,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="diTest" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -319,21 +364,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test/diNestedTest/object.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="5" selection-start="255" selection-end="255" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/diNestedTest/nestedservice2.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="27" selection-start="33" selection-end="33" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/diNestedTest/object_concern.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="26" selection-start="12" selection-end="32" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/diNestedTest/object_double2.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="26" selection-start="12" selection-end="32" vertical-scroll-proportion="0.0" />
@@ -384,23 +414,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/diConstructor/istd.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="26" selection-start="16" selection-end="32" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/diConstructor/std1.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="50" selection-start="29" selection-end="56" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/diConstructor/std2.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="50" selection-start="56" selection-end="56" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -412,9 +428,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test/diConstructor/std2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="50" selection-start="40" selection-end="56" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/diConstructor/istd.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="26" selection-start="16" selection-end="32" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/DI.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="0" selection-start="1912" selection-end="1912" vertical-scroll-proportion="0.63980263">
+        <state line="32" column="74" selection-start="1007" selection-end="1007" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/diTest/istd.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="14" selection-start="16" selection-end="20" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/diTest/std1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="26" selection-start="32" selection-end="32" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/diTest/std2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="26" selection-start="32" selection-end="32" vertical-scroll-proportion="0.027960526">
           <folding />
         </state>
       </provider>

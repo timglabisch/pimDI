@@ -1,5 +1,5 @@
 <?php
-class std2 {
+class std2 implements istd {
 
     var $o = null;
 

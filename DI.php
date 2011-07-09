@@ -11,18 +11,12 @@ class di {
     var $unknownBindings = array();
     var $instances = array();
 
-    private function verifInterfaceExists($interface) {
-        if(!interface_exists('\\'.$interface))
-            throw new Exception('interface '.$interface.' does not exists.');
-    }
-
     private function getHasFromString($interface, $concern='') {
         return $interface.'|'.$concern;
     }
 
     public function get($interface, $concern='') {
 
-        $this->verifInterfaceExists($interface);
         $this->knowBindings();
 
         $bindingHash = $this->getHasFromString($interface, $concern);
@@ -34,6 +28,9 @@ class di {
         
         $className = $binding->getInterfaceImpl();
         $reflection = new DI_reflection($className);
+
+        if(!$reflection->implementsInterface($interface))
+            throw new Exception($className .' must implement '. $interface);
 
         if($binding->getShared() && isset($this->instances[$bindingHash]))
             return $this->instances[$bindingHash];
