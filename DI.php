@@ -68,37 +68,43 @@ class di {
             if($reflectionMethod->isConstructor() || $reflectionMethod->isDestructor() || $reflectionMethod->isStatic())
                 continue;
 
-            $params = $reflectionMethod->getParameters();
-
             $annotationStrings = DI_reflectionMethod::parseTestMethodAnnotations($reflectionMethod->class, $reflectionMethod->name);
             
             if(!isset($annotationStrings['method'], $annotationStrings['method']['inject']))
                 continue;
 
+            $params = $reflectionMethod->getParameters();
+            if(!count($params))
+                throw new Exception('parameters cant be empty');
+
             $annotations = $annotationStrings['method']['inject'];
           
-            $instanceParams = array();
+            $args = array();
 
             for($i=0;count($params) > $i; $i++) {
                 $concern = (isset($annotations[$i])?$annotations[$i]:'');
-                $instanceParams[] = $this->get($params[$i]->getClass()->getName(), $concern);
+                $args[] = $this->get($params[$i]->getClass()->getName(), $concern);
             }
 
-            switch(count($instanceParams)) {
-            case 0:
-                    throw new Exception('wtf?');
-                break;
-            case 1:
-                   $instance->{$reflectionMethod->name}($instanceParams[0]);
-                break;
-            default:
-                    call_user_func_array(array($instance, $reflectionMethod->name), $instanceParams);
-                break;
-            }
+            $this->callMethod($instance, $reflectionMethod->name, $args);
         }
 
 
         return $instance;
+    }
+
+    public function callMethod($instance, $methodName, $args) {
+        switch(count($args)) {
+            case 0:
+                    $instance->$methodName();
+                break;
+            case 1:
+                   $instance->$methodName($args[0]);
+                break;
+            default:
+                    call_user_func_array(array($instance, $methodName), $args);
+                break;
+            }
     }
 
     public function knowBindings() {
