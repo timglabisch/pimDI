@@ -37,9 +37,25 @@ class di {
 
         if($binding->getShared() && isset($this->instances[$bindingHash]))
             return $this->instances[$bindingHash];
+        
+        if(method_exists($className, '__construct')) {
 
-        if(method_exists($className, '__construct'))
-            $instance = call_user_func_array(array($className, '__construct'), array());
+            $reflectionMethod = new DI_reflectionMethod($className, '__construct');
+            $params = $reflectionMethod->getParameters();
+            $annotationStrings = $reflectionMethod->parseTestMethodAnnotations($className, '__construct');
+            $annotations = $annotationStrings['method']['inject'];
+
+            $instanceParams = array();
+
+            $i = 0;
+            foreach($params as $v) {
+                $concern = (isset($annotations[$i])?$annotations[$i]:'');
+                $instanceParams[] = $this->get($v->getClass()->getName(), $concern);
+                $i++;
+            }
+
+            $instance = $reflection->newInstanceArgs($instanceParams);
+        }
         else
             $instance = new $className();
 
@@ -48,6 +64,10 @@ class di {
 
         foreach($reflection->getMethods() as $method) {
             $reflectionMethod = new DI_reflectionMethod($method->class, $method->name);
+
+            if($reflectionMethod->isConstructor() || $reflectionMethod->isDestructor() || $reflectionMethod->isStatic())
+                continue;
+
             $params = $reflectionMethod->getParameters();
 
             $annotationStrings = $reflectionMethod->parseTestMethodAnnotations($method->class, $method->name);

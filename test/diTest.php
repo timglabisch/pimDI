@@ -4,6 +4,7 @@ require_once __DIR__.'/../DI.php';
 
 array_map(function($v) { include_once  $v; }, glob(__DIR__.'/'.basename(__FILE__,'.php').'/*.php'));
 array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diNestedTest/*.php'));
+array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diConstructor/*.php'));
 
 class DITest extends PHPUnit_Framework_TestCase {
 
@@ -88,6 +89,16 @@ class DITest extends PHPUnit_Framework_TestCase {
 
        $di->bind('istd')->to('std1')->shared(true);
        $this->assertTrue($di->get('istd') === $di->get('istd'));
+    }
+
+    function testConstructorInjection() {
+        $di = new di();
+
+        $di->bind('constructor_istd')->to('constructor_std1');
+        $di->bind('constructor_istd')->to('constructor_std2')->concern('std2');
+
+        $instance = $di->get('constructor_istd');
+        $this->assertInstanceOf('constructor_std2', $instance->getService());
     }
 
 }
