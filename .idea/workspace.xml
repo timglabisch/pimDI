@@ -23,19 +23,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DI.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/DI.php">
+      <file leaf-file-name="ReflectionAnnotation.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DI/ReflectionAnnotation.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="53" selection-start="2153" selection-end="2173" vertical-scroll-proportion="0.78289473">
+            <state line="2" column="26" selection-start="13" selection-end="33" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReflectionAnnotation.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DI/ReflectionAnnotation.php">
+      <file leaf-file-name="DI.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/DI.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="26" selection-start="13" selection-end="33" vertical-scroll-proportion="0.0">
+            <state line="20" column="5" selection-start="603" selection-end="603" vertical-scroll-proportion="0.55921054">
               <folding />
             </state>
           </provider>
@@ -216,7 +216,7 @@
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.67481405" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3995749" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32518598" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32518598" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -330,7 +330,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DI.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="53" selection-start="2153" selection-end="2173" vertical-scroll-proportion="0.78289473">
+        <state line="20" column="5" selection-start="603" selection-end="603" vertical-scroll-proportion="0.55921054">
           <folding />
         </state>
       </provider>

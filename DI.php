@@ -12,27 +12,13 @@ class di {
 
     private function createInstance(ReflectionClass $reflection) {
 
+        if(!$reflection->hasMethod('__construct'))
+            return $reflection->newInstance();
 
-        if($reflection->hasMethod('__construct')) {
-
-            $reflectionMethod = $reflection->getConstructor();
-            $params = $reflectionMethod->getParameters();
-            $annotationStrings = ReflectionAnnotation::parseMethodAnnotations($reflectionMethod);
-            $annotations = $annotationStrings['inject'];
-
-            $instanceParams = array();
-
-            for($i=0;count($params) > $i; $i++) {
-                $concern = (isset($annotations[$i])?$annotations[$i]:'');
-                $instanceParams[] = $this->get($params[$i]->getClass()->getName(), $concern);
-            }
-
-            return $reflection->newInstanceArgs($instanceParams);
-        }
-
-        return $reflection->newInstance();
+        $reflectionMethod = $reflection->getConstructor();
+        $args = $this->getInjectedArgs($reflectionMethod);
+        return $reflection->newInstanceArgs($args);
     }
-
 
     public function get($interface, $concern='') {
 
@@ -56,6 +42,21 @@ class di {
         return $instance;
     }
 
+    public function getInjectedArgs(ReflectionMethod $reflectionMethod) {
+        $params = $reflectionMethod->getParameters();
+        $annotationStrings = ReflectionAnnotation::parseMethodAnnotations($reflectionMethod);
+        $annotations = $annotationStrings['inject'];
+
+        $args = array();
+
+        for($i=0;count($params) > $i; $i++) {
+            $concern = (isset($annotations[$i])?$annotations[$i]:'');
+            $args[] = $this->get($params[$i]->getClass()->getName(), $concern);
+        }
+
+        return $args;
+    }
+
     public function injectSetters($instance, ReflectionClass $reflection) {
         foreach($reflection->getMethods() as $reflectionMethod) {
 
@@ -67,18 +68,7 @@ class di {
             if(!isset($annotationStrings['inject']))
                 continue;
 
-            $params = $reflectionMethod->getParameters();
-            if(!count($params))
-                throw new Exception('parameters cant be empty');
-
-            $annotations = $annotationStrings['inject'];
-
-            $args = array();
-
-            for($i=0;count($params) > $i; $i++) {
-                $concern = (isset($annotations[$i])?$annotations[$i]:'');
-                $args[] = $this->get($params[$i]->getClass()->getName(), $concern);
-            }
+            $args = $this->getInjectedArgs($reflectionMethod);
 
             $this->callMethod($instance, $reflectionMethod->name, $args);
         }
