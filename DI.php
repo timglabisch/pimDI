@@ -70,22 +70,8 @@ class di {
 
             $args = $this->getInjectedArgs($reflectionMethod);
 
-            $this->callMethod($instance, $reflectionMethod->name, $args);
+            $reflectionMethod->invokeArgs($instance, $args);
         }
-    }
-
-    public function callMethod($instance, $methodName, $args) {
-        switch(count($args)) {
-            case 0:
-                    $instance->$methodName();
-                break;
-            case 1:
-                   $instance->$methodName($args[0]);
-                break;
-            default:
-                    call_user_func_array(array($instance, $methodName), $args);
-                break;
-            }
     }
 
     public function bind($interfaceName) {
