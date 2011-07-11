@@ -6,9 +6,16 @@ require_once __DIR__.'/DI/binderRepository.php';
 
 class di {
 
-    static $annotationCache;
     private $binderRepository = null;
-    var $instances = array();
+    private $instances = array();
+
+    public function createInstanceFromClassname($classname) {
+        if(!class_exists($classname))
+            throw new Exception('class with classname '. $classname.' not found');
+
+        $reflectionClass = new ReflectionClass($classname);
+        return $this->createInstance($reflectionClass);
+    }
 
     private function createInstance(ReflectionClass $reflection) {
 
@@ -42,7 +49,7 @@ class di {
         return $instance;
     }
 
-    public function getInjectedArgs(ReflectionMethod $reflectionMethod) {
+    private function getInjectedArgs(ReflectionMethod $reflectionMethod) {
         $params = $reflectionMethod->getParameters();
         $annotationStrings = ReflectionAnnotation::parseMethodAnnotations($reflectionMethod);
         $annotations = $annotationStrings['inject'];
@@ -57,7 +64,7 @@ class di {
         return $args;
     }
 
-    public function injectSetters($instance, ReflectionClass $reflection) {
+    private function injectSetters($instance, ReflectionClass $reflection) {
         foreach($reflection->getMethods() as $reflectionMethod) {
 
             if($reflectionMethod->isConstructor() || $reflectionMethod->isDestructor() || $reflectionMethod->isStatic())

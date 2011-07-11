@@ -101,5 +101,15 @@ class DITest extends PHPUnit_Framework_TestCase {
         $this->assertInstanceOf('constructor_std2', $instance->getService());
     }
 
+    function testCreateInstanceFromClassname() {
+        $di = new di();
+
+        $di->bind('constructor_istd')->to('constructor_std1');
+        $di->bind('constructor_istd')->to('constructor_std2')->concern('std2');
+
+        $instance = $di->createInstanceFromClassname('constructor_std1');
+        $this->assertInstanceOf('constructor_std2', $instance->getService());
+    }
+
 }
  
