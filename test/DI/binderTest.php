@@ -43,6 +43,6 @@ class binderTest extends PHPUnit_Framework_TestCase {
 
         $this->assertEquals($binder->getInterfaceImpl(), 'interface');
         $this->assertEquals($binder->getConcern(), 'concern');
-        $this->assertEquals($binder->getShared(), 'true');
+        $this->assertEquals($binder->isShared(), 'true');
     }
 }

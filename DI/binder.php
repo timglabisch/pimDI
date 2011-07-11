@@ -62,17 +62,17 @@ class binder {
         return $this->argements;
     }
 
-    public function setShared($shared)
+    public function setIsShared($shared)
     {
         $this->shared = (bool)$shared;
         return $this;
     }
 
     public function shared($shared) {
-        return $this->setShared($shared);
+        return $this->setIsShared($shared);
     }
 
-    public function getShared()
+    public function isShared()
     {
         return $this->shared;
     }

@@ -29,12 +29,12 @@ class di {
         if(!$reflection->implementsInterface($interface))
             throw new Exception($reflection->getName() .' must implement '. $interface);
 
-        if($binding->getShared() && isset($this->instances[$interface .'|'. $concern]))
+        if($binding->isShared() && isset($this->instances[$interface .'|'. $concern]))
             return $this->instances[$interface .'|'. $concern];
         
         $instance = $this->createInstance($reflection);
 
-        if($binding->getShared())
+        if($binding->isShared())
             $this->instances[$interface .'|'. $concern] = $instance;
 
         $this->injectSetters($instance, $reflection);
