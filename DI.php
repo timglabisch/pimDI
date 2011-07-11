@@ -69,7 +69,6 @@ class di {
                 continue;
 
             $args = $this->getInjectedArgs($reflectionMethod);
-
             $reflectionMethod->invokeArgs($instance, $args);
         }
     }
@@ -80,8 +79,7 @@ class di {
         return $binder;
     }
 
-    public function setBinderRepository($binderRepository)
-    {
+    public function setBinderRepository($binderRepository) {
         $this->binderRepository = $binderRepository;
     }
 
