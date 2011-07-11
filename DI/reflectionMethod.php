@@ -1,26 +1,16 @@
 <?php
 
-class DI_reflectionMethod extends ReflectionMethod {
+class DI_reflectionMethod {
 
     private static $annotationCache;
 
-    public static function parseTestMethodAnnotations($className, $methodName = '')
+    public static function parseMethodAnnotations(ReflectionMethod $refelectionMethod)
     {
-
-        if (!isset(self::$annotationCache[$className])) {
-            $class = new ReflectionClass($className);
-            self::$annotationCache[$className] = self::parseAnnotations($class->getDocComment());
+        if (!isset(self::$annotationCache[$refelectionMethod->class . '::' . $refelectionMethod->name])) {
+            self::$annotationCache[$refelectionMethod->class . '::' . $refelectionMethod->name] = self::parseAnnotations($refelectionMethod->getDocComment());
         }
 
-        if (!empty($methodName) && !isset(self::$annotationCache[$className . '::' . $methodName])) {
-            $method = new ReflectionMethod($className, $methodName);
-            self::$annotationCache[$className . '::' . $methodName] = self::parseAnnotations($method->getDocComment());
-        }
-
-        return array(
-          'class'  => self::$annotationCache[$className],
-          'method' => !empty($methodName) ? self::$annotationCache[$className . '::' . $methodName] : array()
-        );
+        return self::$annotationCache[$refelectionMethod->class . '::' . $refelectionMethod->name];
     }
 
     private static function parseAnnotations($docblock)
@@ -37,4 +27,5 @@ class DI_reflectionMethod extends ReflectionMethod {
 
         return $annotations;
     }
+    
 }

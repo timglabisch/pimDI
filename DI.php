@@ -17,8 +17,8 @@ class di {
 
             $reflectionMethod = $reflection->getConstructor();
             $params = $reflectionMethod->getParameters();
-            $annotationStrings = DI_reflectionMethod::parseTestMethodAnnotations($reflection->getName(), '__construct');
-            $annotations = $annotationStrings['method']['inject'];
+            $annotationStrings = DI_reflectionMethod::parseMethodAnnotations($reflectionMethod);
+            $annotations = $annotationStrings['inject'];
 
             $instanceParams = array();
 
@@ -62,16 +62,18 @@ class di {
             if($reflectionMethod->isConstructor() || $reflectionMethod->isDestructor() || $reflectionMethod->isStatic())
                 continue;
 
-            $annotationStrings = DI_reflectionMethod::parseTestMethodAnnotations($reflectionMethod->class, $reflectionMethod->name);
+            $annotationStrings = DI_reflectionMethod::parseMethodAnnotations($reflectionMethod);
 
-            if(!isset($annotationStrings['method'], $annotationStrings['method']['inject']))
+            var_dump($annotationStrings);
+
+            if(!isset($annotationStrings['inject']))
                 continue;
 
             $params = $reflectionMethod->getParameters();
             if(!count($params))
                 throw new Exception('parameters cant be empty');
 
-            $annotations = $annotationStrings['method']['inject'];
+            $annotations = $annotationStrings['inject'];
 
             $args = array();
 
