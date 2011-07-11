@@ -1,7 +1,7 @@
 <?php
 
 require_once __DIR__.'/DI/binder.php';
-require_once __DIR__.'/DI/reflectionMethod.php';
+require_once __DIR__ . '/DI/ReflectionAnnotation.php';
 require_once __DIR__.'/DI/binderRepository.php';
 
 class di {
@@ -17,7 +17,7 @@ class di {
 
             $reflectionMethod = $reflection->getConstructor();
             $params = $reflectionMethod->getParameters();
-            $annotationStrings = DI_reflectionMethod::parseMethodAnnotations($reflectionMethod);
+            $annotationStrings = ReflectionAnnotation::parseMethodAnnotations($reflectionMethod);
             $annotations = $annotationStrings['inject'];
 
             $instanceParams = array();
@@ -62,9 +62,7 @@ class di {
             if($reflectionMethod->isConstructor() || $reflectionMethod->isDestructor() || $reflectionMethod->isStatic())
                 continue;
 
-            $annotationStrings = DI_reflectionMethod::parseMethodAnnotations($reflectionMethod);
-
-            var_dump($annotationStrings);
+            $annotationStrings = ReflectionAnnotation::parseMethodAnnotations($reflectionMethod);
 
             if(!isset($annotationStrings['inject']))
                 continue;

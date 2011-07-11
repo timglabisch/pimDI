@@ -26,16 +26,16 @@
       <file leaf-file-name="DI.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/DI.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="56" selection-start="651" selection-end="651" vertical-scroll-proportion="0.33223686">
+            <state line="64" column="53" selection-start="2153" selection-end="2173" vertical-scroll-proportion="0.78289473">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="reflectionMethod.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DI/reflectionMethod.php">
+      <file leaf-file-name="ReflectionAnnotation.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DI/ReflectionAnnotation.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="99" selection-start="543" selection-end="543" vertical-scroll-proportion="0.0">
+            <state line="2" column="26" selection-start="13" selection-end="33" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -55,7 +55,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/test/diNestedTest/object_double2.php" />
         <option value="$PROJECT_DIR$/test/diNestedTest/object_concern.php" />
         <option value="$PROJECT_DIR$/test/diNestedTest/nestedservice2.php" />
         <option value="$PROJECT_DIR$/DI/reflection.php" />
@@ -70,6 +69,7 @@
         <option value="$PROJECT_DIR$/Reflection/reflectionClass.php" />
         <option value="$PROJECT_DIR$/Reflection/reflectionMethod.php" />
         <option value="$PROJECT_DIR$/DI/reflectionMethod.php" />
+        <option value="$PROJECT_DIR$/DI/ReflectionAnnotaten.php" />
         <option value="$PROJECT_DIR$/DI.php" />
       </list>
     </option>
@@ -321,16 +321,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DI/reflectionMethod.php">
+    <entry file="file://$PROJECT_DIR$/DI/ReflectionAnnotation.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="99" selection-start="543" selection-end="543" vertical-scroll-proportion="0.0">
+        <state line="2" column="26" selection-start="13" selection-end="33" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DI.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="56" selection-start="651" selection-end="651" vertical-scroll-proportion="0.33223686">
+        <state line="64" column="53" selection-start="2153" selection-end="2173" vertical-scroll-proportion="0.78289473">
           <folding />
         </state>
       </provider>

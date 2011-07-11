@@ -1,6 +1,6 @@
 <?php
 
-class DI_reflectionMethod {
+class ReflectionAnnotation {
 
     private static $annotationCache;
 
