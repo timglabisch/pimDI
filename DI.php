@@ -2,12 +2,12 @@
 
 require_once __DIR__.'/DI/binder.php';
 require_once __DIR__.'/DI/reflectionMethod.php';
+require_once __DIR__.'/DI/binderRepository.php';
 
 class di {
 
     static $annotationCache;
-    var $bindings = array();
-    var $unknownBindings = array();
+    private $binderRepository = null;
     var $instances = array();
 
     private function createInstance(ReflectionClass $reflection) {
@@ -33,22 +33,11 @@ class di {
         return $reflection->newInstance();
     }
 
-    private function getBinding($interface, $concern='') {
-
-        $bindingHash = $interface.'|'.$concern;
-
-        if(!isset($this->bindings[$bindingHash]))
-            throw new Exception('Interfaces "'.$interface.'" with concern "'.$concern.'" is not mapped to a class');
-
-        return $this->bindings[$bindingHash];
-    }
 
     public function get($interface, $concern='') {
 
-        $this->knowBindings();
+        $binding = $this->getBinderRepository()->getBinding($interface, $concern);
 
-        $binding = $this->getBinding($interface, $concern);
-        
         $reflection = new ReflectionClass($binding->getInterfaceImpl());
 
         if(!$reflection->implementsInterface($interface))
@@ -109,21 +98,26 @@ class di {
             }
     }
 
-    public function knowBindings() {
-
-        if(!count($this->unknownBindings))
-            return;
-
-        foreach($this->unknownBindings as $key => $unknownBinding) {
-            $this->bindings[$unknownBinding->getHashKey()] = $unknownBinding;
-            unset($this->unknownBindings[$key]);
-        }
+    public function bind($interfaceName) {
+        $binder = new binder($interfaceName);
+        $this->getBinderRepository()->addBinding($binder);
+        return $binder;
     }
 
-    public function bind($interfaceName) {
-        $binder =  new binder($interfaceName);
-        $this->unknownBindings[] = $binder;
-        return $binder;
+    public function setBinderRepository($binderRepository)
+    {
+        $this->binderRepository = $binderRepository;
+    }
+
+    /**
+     * @return binderRepository
+     */
+    public function getBinderRepository()
+    {
+        if($this->binderRepository === null)
+            $this->binderRepository = new binderRepository();
+        
+        return $this->binderRepository;
     }
 
 }
