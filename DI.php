@@ -3,7 +3,6 @@ namespace de\any;
 
 require_once __DIR__.'/DI/binder.php';
 require_once __DIR__.'/DI/ReflectionAnnotation.php';
-require_once __DIR__.'/DI/binderRepository.php';
 
 class di {
 
@@ -97,7 +96,7 @@ class di {
     public function getBinderRepository()
     {
         if($this->binderRepository === null)
-            $this->binderRepository = new di\binderRepository();
+            $this->binderRepository = new di\binder\repository();
         
         return $this->binderRepository;
     }

@@ -2,6 +2,8 @@
 
 namespace de\any\di;
 
+require_once __DIR__ . '/binder/repository.php';
+
 class binder {
 
     private $interfaceName;

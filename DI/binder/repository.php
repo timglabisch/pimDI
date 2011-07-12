@@ -1,8 +1,9 @@
 <?php
 
-namespace de\any\di;
+namespace de\any\di\binder;
+use de\any\di\binder;
 
-class binderRepository {
+class repository {
 
     private $bindings = array();
     private $unknownBindings = array();
@@ -25,7 +26,7 @@ class binderRepository {
      * @throws Exception
      * @param  $interface
      * @param  $concern
-     * @return binder
+     * @return repository
      */
     public function getBinding($interface, $concern) {
 
