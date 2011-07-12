@@ -31,6 +31,14 @@ class binderTest extends \PHPUnit_Framework_TestCase {
         $this->assertEquals($binder->getInterfaceName(), 'impl');
     }
 
+    function testSetIsDecorated() {
+        $binder = new binder('$');
+        $binder->setIsDecorated(true);
+        $this->assertEquals($binder->isDecorated(), true);
+        $binder->setIsDecorated(false);
+        $this->assertEquals($binder->isDecorated(), false);
+    }
+
     function testGetGetHasKey() {
         $binder = new binder('$');
         $this->assertEquals($binder->getHashKey(), '$|');
@@ -43,10 +51,12 @@ class binderTest extends \PHPUnit_Framework_TestCase {
         $binder = new binder('$');
         $binder->to('interface')
                 ->concern('concern')
-                ->shared(true);
+                ->shared(true)
+                ->decorated(true);
 
         $this->assertEquals($binder->getInterfaceImpl(), 'interface');
         $this->assertEquals($binder->getConcern(), 'concern');
-        $this->assertEquals($binder->isShared(), 'true');
+        $this->assertEquals($binder->isShared(), true);
+        $this->assertEquals($binder->isDecorated(), true);
     }
 }

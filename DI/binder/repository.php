@@ -17,8 +17,17 @@ class repository {
             return;
 
         foreach($this->unknownBindings as $key => $unknownBinding) {
-            $this->bindings[$unknownBinding->getHashKey()] = $unknownBinding;
+
+            if(!isset($this->bindings[$unknownBinding->getHashKey()]))
+                $this->bindings[$unknownBinding->getHashKey()] = array('decorator', 'impl');
+
+            if(!$unknownBinding->isDecorated())
+                $this->bindings[$unknownBinding->getHashKey()]['impl'] = $unknownBinding;
+            else
+                $this->bindings[$unknownBinding->getHashKey()]['decorator'][] = $unknownBinding;
+
             unset($this->unknownBindings[$key]);
+
         }
     }
 
@@ -28,15 +37,33 @@ class repository {
      * @param  $concern
      * @return repository
      */
-    public function getBinding($interface, $concern) {
+    public function getBinding($interface, $concern='') {
 
         $this->knowBindings();
 
         if(!isset($this->bindings[$interface.'|'.$concern]))
             throw new Exception('Binding for interface "'.$interface.'" with concern "'.$concern.'" doesn\'t exists');
 
-        return $this->bindings[$interface.'|'.$concern];
+        return $this->bindings[$interface.'|'.$concern]['impl'];
+    }
+
+    /**
+     * @throws Exception
+     * @param $interface
+     * @param $concern
+     * @return array
+     */
+    public function getBindingDecorators($interface, $concern='') {
+
+        $this->knowBindings();
+
+        if(!isset($this->bindings[$interface.'|'.$concern]))
+            throw new Exception('Binding for interface "'.$interface.'" with concern "'.$concern.'" doesn\'t exists');
+
+        return $this->bindings[$interface.'|'.$concern]['decorator'];
     }
 
 }
+
+
  

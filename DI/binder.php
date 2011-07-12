@@ -11,6 +11,7 @@ class binder {
     private $concern;
     private $shared = false;
     private $argements = array();
+    private $decorated = false;
 
     function __construct($interfaceName) {
         $this->interfaceName = $interfaceName;
@@ -79,5 +80,19 @@ class binder {
     public function isShared()
     {
         return $this->shared;
+    }
+
+    public function decorated($decorated) {
+        return $this->setIsDecorated($decorated);
+    }
+
+    public function setIsDecorated($decorate)
+    {
+        $this->decorated = (bool)$decorate;
+    }
+
+    public function isDecorated()
+    {
+        return $this->decorated;
     }
 }
