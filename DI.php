@@ -1,7 +1,9 @@
 <?php
 
+namespace de\any;
+
 require_once __DIR__.'/DI/binder.php';
-require_once __DIR__ . '/DI/ReflectionAnnotation.php';
+require_once __DIR__.'/DI/ReflectionAnnotation.php';
 require_once __DIR__.'/DI/binderRepository.php';
 
 class di {
@@ -13,11 +15,11 @@ class di {
         if(!class_exists($classname))
             throw new Exception('class with classname '. $classname.' not found');
 
-        $reflectionClass = new ReflectionClass($classname);
+        $reflectionClass = new \ReflectionClass($classname);
         return $this->createInstance($reflectionClass);
     }
 
-    private function createInstance(ReflectionClass $reflection) {
+    private function createInstance(\ReflectionClass $reflection) {
 
         if(!$reflection->hasMethod('__construct'))
             return $reflection->newInstance();
@@ -31,7 +33,7 @@ class di {
 
         $binding = $this->getBinderRepository()->getBinding($interface, $concern);
 
-        $reflection = new ReflectionClass($binding->getInterfaceImpl());
+        $reflection = new \ReflectionClass($binding->getInterfaceImpl());
 
         if(!$reflection->implementsInterface($interface))
             throw new Exception($reflection->getName() .' must implement '. $interface);
@@ -49,9 +51,9 @@ class di {
         return $instance;
     }
 
-    private function getInjectedArgs(ReflectionMethod $reflectionMethod) {
+    private function getInjectedArgs(\ReflectionMethod $reflectionMethod) {
         $params = $reflectionMethod->getParameters();
-        $annotationStrings = ReflectionAnnotation::parseMethodAnnotations($reflectionMethod);
+        $annotationStrings = di\ReflectionAnnotation::parseMethodAnnotations($reflectionMethod);
         $annotations = $annotationStrings['inject'];
 
         $args = array();
@@ -64,13 +66,13 @@ class di {
         return $args;
     }
 
-    private function injectSetters($instance, ReflectionClass $reflection) {
+    private function injectSetters($instance, \ReflectionClass $reflection) {
         foreach($reflection->getMethods() as $reflectionMethod) {
 
             if($reflectionMethod->isConstructor() || $reflectionMethod->isDestructor() || $reflectionMethod->isStatic())
                 continue;
 
-            $annotationStrings = ReflectionAnnotation::parseMethodAnnotations($reflectionMethod);
+            $annotationStrings = di\ReflectionAnnotation::parseMethodAnnotations($reflectionMethod);
 
             if(!isset($annotationStrings['inject']))
                 continue;
@@ -81,7 +83,7 @@ class di {
     }
 
     public function bind($interfaceName) {
-        $binder = new binder($interfaceName);
+        $binder = new di\binder($interfaceName);
         $this->getBinderRepository()->addBinding($binder);
         return $binder;
     }
@@ -96,7 +98,7 @@ class di {
     public function getBinderRepository()
     {
         if($this->binderRepository === null)
-            $this->binderRepository = new binderRepository();
+            $this->binderRepository = new di\binderRepository();
         
         return $this->binderRepository;
     }

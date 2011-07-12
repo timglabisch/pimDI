@@ -1,8 +1,12 @@
 <?php
 
+namespace de\any\di\test;
+use de\any;
+use de\any\di\binder;
+
 require_once __DIR__.'/../../DI.php';
 
-class binderTest extends PHPUnit_Framework_TestCase {
+class binderTest extends \PHPUnit_Framework_TestCase {
     
     function testConstruct() {
         $binder = new binder('interface');

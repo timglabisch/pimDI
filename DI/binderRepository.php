@@ -1,5 +1,7 @@
 <?php
 
+namespace de\any\di;
+
 class binderRepository {
 
     private $bindings = array();

@@ -1,10 +1,12 @@
 <?php
 
+namespace de\any\di;
+
 class ReflectionAnnotation {
 
     private static $annotationCache;
 
-    public static function parseMethodAnnotations(ReflectionMethod $refelectionMethod) {
+    public static function parseMethodAnnotations(\ReflectionMethod $refelectionMethod) {
         if (!isset(self::$annotationCache[$refelectionMethod->class . '::' . $refelectionMethod->name])) {
             self::$annotationCache[$refelectionMethod->class . '::' . $refelectionMethod->name] = self::parseAnnotations($refelectionMethod->getDocComment());
         }
