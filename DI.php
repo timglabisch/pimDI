@@ -1,5 +1,4 @@
 <?php
-
 namespace de\any;
 
 require_once __DIR__.'/DI/binder.php';
