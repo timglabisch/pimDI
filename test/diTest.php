@@ -125,5 +125,15 @@ class DITest extends \PHPUnit_Framework_TestCase {
         $this->assertEquals($di->get('istd')->foo(), 'foo, decorated1!');
     }
 
+    public function testDecorateMultiple() {
+        $di = new di();
+
+        $di->bind('istd')->to('diDecorateStd1');
+        $di->bind('istd')->to('diDecorateDecorator1')->decorated(true);
+        $di->bind('istd')->to('diDecorateDecorator2')->decorated(true);
+
+        $this->assertEquals($di->get('istd')->foo(), 'foo, decorated1!, decorated2!');
+    }
+
 }
  
