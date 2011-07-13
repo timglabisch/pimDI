@@ -9,6 +9,7 @@ require_once __DIR__.'/../DI.php';
 array_map(function($v) { include_once  $v; }, glob(__DIR__.'/'.basename(__FILE__,'.php').'/*.php'));
 array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diNestedTest/*.php'));
 array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diConstructor/*.php'));
+array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diDecorateTest/*.php'));
 
 class DITest extends \PHPUnit_Framework_TestCase {
 
@@ -113,6 +114,15 @@ class DITest extends \PHPUnit_Framework_TestCase {
 
         $instance = $di->createInstanceFromClassname('constructor_std1');
         $this->assertInstanceOf('constructor_std2', $instance->getService());
+    }
+
+    public function testDecorate() {
+        $di = new di();
+
+        $di->bind('istd')->to('diDecorateDecorator1')->decorated(true);
+        $di->bind('istd')->to('diDecorateStd1');
+
+        $this->assertEquals($di->get('istd')->foo(), 'foo, decorated1!');
     }
 
 }

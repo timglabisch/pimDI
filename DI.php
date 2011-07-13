@@ -38,8 +38,17 @@ class di {
 
         if($binding->isShared() && isset($this->instances[$interface .'|'. $concern]))
             return $this->instances[$interface .'|'. $concern];
-        
+
+        $decorators = $this->getBinderRepository()->getBindingDecorators($interface, $concern);
+
         $instance = $this->createInstance($reflection);
+
+        if(count($decorators)) {
+            foreach($decorators as $decorator) {
+                $reflection = new \ReflectionClass($decorator->getInterfaceImpl());
+                $instance = $reflection->newInstanceArgs(array($instance));
+            }
+        }
 
         if($binding->isShared())
             $this->instances[$interface .'|'. $concern] = $instance;
@@ -91,7 +100,7 @@ class di {
     }
 
     /**
-     * @return binderRepository
+     * @return di\binder\repository
      */
     public function getBinderRepository()
     {
@@ -100,5 +109,9 @@ class di {
         
         return $this->binderRepository;
     }
+
+
+
+    
 
 }

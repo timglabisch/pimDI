@@ -19,7 +19,7 @@ class repository {
         foreach($this->unknownBindings as $key => $unknownBinding) {
 
             if(!isset($this->bindings[$unknownBinding->getHashKey()]))
-                $this->bindings[$unknownBinding->getHashKey()] = array('decorator', 'impl');
+                $this->bindings[$unknownBinding->getHashKey()] = array('decorator'=>array(), 'impl'=>null);
 
             if(!$unknownBinding->isDecorated())
                 $this->bindings[$unknownBinding->getHashKey()]['impl'] = $unknownBinding;
