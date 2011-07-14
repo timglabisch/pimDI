@@ -17,53 +17,61 @@ class di {
         return $this->createInstance($reflectionClass);
     }
 
-    private function createInstance(\ReflectionClass $reflection) {
+    private function createInstance(\ReflectionClass $reflection, $args=array()) {
 
         if(!$reflection->hasMethod('__construct'))
             return $reflection->newInstance();
 
         $reflectionMethod = $reflection->getConstructor();
-        $args = $this->getInjectedArgs($reflectionMethod);
+        $args = array_merge($args, $this->getInjectedArgs($reflectionMethod));
         return $reflection->newInstanceArgs($args);
     }
 
-    public function get($interface, $concern='') {
-
-        $binding = $this->getBinderRepository()->getBinding($interface, $concern);
-
+    private function getByBinding($binding, $args=array(), $decorated=false) {
         $reflection = new \ReflectionClass($binding->getInterfaceImpl());
 
-        if(!$reflection->implementsInterface($interface))
-            throw new Exception($reflection->getName() .' must implement '. $interface);
+        if(!$reflection->implementsInterface($binding->getInterfaceName()))
+            throw new Exception($reflection->getName() .' must implement '. $binding->getInterfaceName());
 
-        if($binding->isShared() && isset($this->instances[$interface .'|'. $concern]))
-            return $this->instances[$interface .'|'. $concern];
+        if($binding->isShared() && isset($this->instances[$binding->getInterfaceName() .'|'. $binding->getConcern()]))
+            return $this->instances[$binding->getInterfaceName() .'|'. $binding->getConcern()];
 
-        $decorators = $this->getBinderRepository()->getBindingDecorators($interface, $concern);
-
-        $instance = $this->createInstance($reflection);
-
-        if(count($decorators)) {
-            foreach($decorators as $decorator) {
-                $reflection = new \ReflectionClass($decorator->getInterfaceImpl());
-                $instance = $reflection->newInstanceArgs(array($instance));
-            }
-        }
+        $instance = $this->createInstance($reflection, $args);
 
         if($binding->isShared())
-            $this->instances[$interface .'|'. $concern] = $instance;
+            $this->instances[$binding->getInterfaceName() .'|'. $binding->getConcern()] = $instance;
 
         $this->injectSetters($instance, $reflection);
 
+        if(!$decorated) {
+            $decorators = $this->getBinderRepository()->getBindingDecorators($binding->getInterfaceName(), $binding->getConcern());
+            if(count($decorators)) {
+                foreach($decorators as $decorator) {
+                    $instance = $this->getByBinding($decorator, array($instance), true);
+                }
+            }
+        }
+
         return $instance;
+    }
+
+    public function get($interface, $concern='', $args=array()) {
+
+        $binding = $this->getBinderRepository()->getBinding($interface, $concern);
+
+        return $this->getByBinding($binding, $args);
     }
 
     private function getInjectedArgs(\ReflectionMethod $reflectionMethod) {
         $params = $reflectionMethod->getParameters();
         $annotationStrings = di\ReflectionAnnotation::parseMethodAnnotations($reflectionMethod);
-        $annotations = $annotationStrings['inject'];
 
         $args = array();
+
+        if(!isset($annotationStrings['inject']))
+            return $args;
+
+        $annotations = $annotationStrings['inject'];
 
         for($i=0;count($params) > $i; $i++) {
             $concern = (isset($annotations[$i])?$annotations[$i]:'');

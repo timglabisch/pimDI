@@ -119,8 +119,8 @@ class DITest extends \PHPUnit_Framework_TestCase {
     public function testDecorate() {
         $di = new di();
 
-        $di->bind('istd')->to('diDecorateDecorator1')->decorated(true);
         $di->bind('istd')->to('diDecorateStd1');
+        $di->bind('istd')->to('diDecorateDecorator1')->decorated(true);
 
         $this->assertEquals($di->get('istd')->foo(), 'foo, decorated1!');
     }
@@ -133,6 +133,18 @@ class DITest extends \PHPUnit_Framework_TestCase {
         $di->bind('istd')->to('diDecorateDecorator2')->decorated(true);
 
         $this->assertEquals($di->get('istd')->foo(), 'foo, decorated1!, decorated2!');
+    }
+
+    public function testDecoratedNested() {
+        $di = new di();
+
+        $di->bind('istd')->to('diDecorateStd1');
+        $di->bind('istd')->to('diDecorateDecorator1')->decorated(true);
+        $di->bind('istd')->to('diDecorateDecoratorNested')->decorated(true);
+        $di->bind('nested_inestedservice1')->to('nested_nestedservice1');
+
+        $this->assertInstanceOf('nested_inestedservice1', $di->get('istd')->getService());
+        $this->assertEquals($di->get('istd')->getService()->identify(), 'nested_nestedservice1');
     }
 
 }
