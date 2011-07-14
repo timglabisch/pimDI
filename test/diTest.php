@@ -10,6 +10,7 @@ array_map(function($v) { include_once  $v; }, glob(__DIR__.'/'.basename(__FILE__
 array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diNestedTest/*.php'));
 array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diConstructor/*.php'));
 array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diDecorateTest/*.php'));
+array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diDecoratorNeedDecorated/*.php'));
 
 class DITest extends \PHPUnit_Framework_TestCase {
 
@@ -140,12 +141,23 @@ class DITest extends \PHPUnit_Framework_TestCase {
 
         $di->bind('istd')->to('diDecorateStd1');
         $di->bind('istd')->to('diDecorateDecorator1')->decorated(true);
-        $di->bind('istd')->to('diDecorateDecoratorNested')->decorated(true);
+        $di->bind('istd')->to('diDecorateDecoratorNested1')->decorated(true);
         $di->bind('nested_inestedservice1')->to('nested_nestedservice1');
 
         $this->assertInstanceOf('nested_inestedservice1', $di->get('istd')->getService());
         $this->assertEquals($di->get('istd')->getService()->identify(), 'nested_nestedservice1');
     }
 
+    public function testDecoratedDecorator() {
+        $di = new di();
+
+        $di->bind('decoratorDecorated_iBase1')->to('decoratorDecorated_base1');
+        $di->bind('decoratorDecorated_iBase1')->to('decoratorDecorated_base1_decorator')->decorated(true);
+        $di->bind('decoratorDecorated_iBase2')->to('decoratorDecorated_base2');
+        $di->bind('decoratorDecorated_iBase2')->to('decoratorDecorated_base2_decorator')->decorated(true);
+
+        $this->assertEquals($di->get('decoratorDecorated_iBase1')->getClassname(), 'decoratorDecorated_base1|decoratorDecorated_base1_decorator|decoratorDecorated_base2|decoratorDecorated_base2_decorator');
+    }
+    
 }
  

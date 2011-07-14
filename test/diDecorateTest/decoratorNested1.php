@@ -1,5 +1,5 @@
 <?php
-class diDecorateDecoratorNested implements istd {
+class diDecorateDecoratorNested1 implements istd {
 
     private $original;
 
