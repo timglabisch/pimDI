@@ -12,7 +12,7 @@ class di {
     public function createInstanceFromClassname($classname) {
         if(!class_exists($classname))
             throw new Exception('class with classname '. $classname.' not found');
-
+        
         $reflectionClass = new \ReflectionClass($classname);
         return $this->createInstance($reflectionClass);
     }

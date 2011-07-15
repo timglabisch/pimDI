@@ -180,6 +180,19 @@ class DITest extends \PHPUnit_Framework_TestCase {
         $this->assertInstanceOf('sharedDecorators_base1_decorator', $decorator);
         $this->assertTrue($di->get('sharedDecorators_iBase1')->getService() === $decorator);
     }
+
+    public function testSetBinderRepositoy() {
+        $di = new di();
+        
+        $class = new \stdClass();
+        $di->setBinderRepository($class);
+        $this->assertTrue($class === $di->getBinderRepository());
+    }
+
+    public function testDefaultBinderRepository() {
+        $di = new di();
+        $this->assertInstanceOf('\de\any\di\binder\repository', $di->getBinderRepository());
+    }
     
 }
  
