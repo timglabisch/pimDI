@@ -99,5 +99,6 @@ class binder {
     public function decoratedWith($class) {
         $this->setIsDecorated(true);
         $this->setInterfaceImpl($class);
+        return $this;
     }
 }
