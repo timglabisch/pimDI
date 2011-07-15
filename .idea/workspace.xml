@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fcd12fa5-c305-4a9b-9d83-be9a31350558" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DI/binder.php" afterPath="$PROJECT_DIR$/DI/binder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/DI/binderTest.php" afterPath="$PROJECT_DIR$/test/DI/binderTest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/diSharedDecorators/_sharedDecorators_iBase1.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/diSharedDecorators/sharedDecorators_base1.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/diSharedDecorators/sharedDecorators_base1_decorator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/diTest.php" afterPath="$PROJECT_DIR$/test/diTest.php" />
     </list>
     <ignored path="DI.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,46 +29,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="repository.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DI/binder/repository.php">
+      <file leaf-file-name="std1.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/diConstructor/std1.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="56" selection-start="710" selection-end="710" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="binder.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DI/binder.php">
+      <file leaf-file-name="diTest.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/diTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="21" selection-start="1022" selection-end="1022" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="decoratorNested1.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/diDecorateTest/decoratorNested1.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="1" selection-start="479" selection-end="479" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="decoratorDecorated_base2_decorator.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/diDecoratorNeedDecorated/decoratorDecorated_base2_decorator.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="77" selection-start="84" selection-end="84" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="decoratorDecorated_base2.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/diDecoratorNeedDecorated/decoratorDecorated_base2.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="67" selection-start="48" selection-end="73" vertical-scroll-proportion="0.0">
+            <state line="176" column="35" selection-start="6680" selection-end="6680" vertical-scroll-proportion="0.5565217">
               <folding />
             </state>
           </provider>
@@ -74,43 +50,34 @@
       <file leaf-file-name="DI.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DI.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="0" selection-start="1121" selection-end="1121" vertical-scroll-proportion="0.0">
+            <state line="30" column="0" selection-start="970" selection-end="970" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="binderTest.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/DI/binderTest.php">
+      <file leaf-file-name="_sharedDecorators_iBase1.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/diSharedDecorators/_sharedDecorators_iBase1.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="85" column="21" selection-start="2635" selection-end="2635" vertical-scroll-proportion="0.94285715">
+            <state line="2" column="33" selection-start="17" selection-end="40" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_decoratorDecorated_iBase1.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/diDecoratorNeedDecorated/_decoratorDecorated_iBase1.php">
+      <file leaf-file-name="sharedDecorators_base1.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/diSharedDecorators/sharedDecorators_base1.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="35" selection-start="16" selection-end="41" vertical-scroll-proportion="0.0">
+            <state line="2" column="28" selection-start="13" selection-end="35" vertical-scroll-proportion="-1.36">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_decoratorDecorated_iBase2.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/diDecoratorNeedDecorated/_decoratorDecorated_iBase2.php">
+      <file leaf-file-name="sharedDecorators_base1_decorator.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/diSharedDecorators/sharedDecorators_base1_decorator.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="35" selection-start="16" selection-end="41" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="diTest.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/diTest.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="156" column="8" selection-start="5693" selection-end="5785" vertical-scroll-proportion="0.0">
+            <state line="11" column="21" selection-start="269" selection-end="269" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -130,10 +97,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/test/diNestedTest/object.php" />
-        <option value="$PROJECT_DIR$/test/diNestedTest/nestedservice1.php" />
-        <option value="$PROJECT_DIR$/DI.php" />
-        <option value="$PROJECT_DIR$/test/diDecorateTest/decoratorNested1sub1.php" />
         <option value="$PROJECT_DIR$/test/diDecorateTest/decoratorNested2.php" />
         <option value="$PROJECT_DIR$/test/diDecorateTest/decoratorNested2Sub1.php" />
         <option value="$PROJECT_DIR$/test/diDecorateTest/iDecoratorNested2Sub1.php" />
@@ -143,9 +106,13 @@
         <option value="$PROJECT_DIR$/test/diDecoratorNeedDecorated/decoratorDecorated_base1_decorator.php" />
         <option value="$PROJECT_DIR$/test/diDecoratorNeedDecorated/decoratorDecorated_base2.php" />
         <option value="$PROJECT_DIR$/test/diDecoratorNeedDecorated/decoratorDecorated_base2_decorator.php" />
-        <option value="$PROJECT_DIR$/test/diTest.php" />
         <option value="$PROJECT_DIR$/DI/binder.php" />
         <option value="$PROJECT_DIR$/test/DI/binderTest.php" />
+        <option value="$PROJECT_DIR$/test/diSharedDecotators/sharedDecorators_iBase1.php" />
+        <option value="$PROJECT_DIR$/test/diSharedDecotators/sharedDecorators_base1.php" />
+        <option value="$PROJECT_DIR$/test/diSharedDecotators/sharedDecorators_base1_decorator.php" />
+        <option value="$PROJECT_DIR$/test/diSharedDecorators/sharedDecorators_base1_decorator.php" />
+        <option value="$PROJECT_DIR$/test/diTest.php" />
       </list>
     </option>
   </component>
@@ -222,7 +189,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="DI" />
+              <option name="myItemId" value="diSharedDecorators" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -273,11 +240,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\ZendCe\Apache2\htdocs\DI\test\diSharedDecotators" />
       <recent name="C:\ZendCe\Apache2\htdocs\DI\test\diDecoratorNeedDecorated" />
       <recent name="C:\ZendCe\Apache2\htdocs\DI\test\diDecorateTest" />
       <recent name="C:\ZendCe\Apache2\htdocs\DI\test\diTest" />
       <recent name="C:\ZendCe\Apache2\htdocs\DI\test\DI\binder" />
-      <recent name="C:\ZendCe\Apache2\htdocs\DI\test" />
     </key>
   </component>
   <component name="RunManager" selected="PHPUnit.Unnamed">
@@ -426,77 +393,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test/diNestedTest/inestedservice1.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="10" selection-start="16" selection-end="16" vertical-scroll-proportion="0.028099174" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/diDecorateTest/decorator2.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="51" selection-start="249" selection-end="249" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/diDecorateTest/decorator1.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="1" selection-start="261" selection-end="261" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/_superglobals.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="717" selection-end="717" vertical-scroll-proportion="0.33277312" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/diDecoratorNeedDecorated/decoratorDecorated_base1.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="5" selection-start="81" selection-end="139" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/diDecoratorNeedDecorated/decoratorDecorated_base1_decorator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="14" selection-start="193" selection-end="193" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/diDecoratorNeedDecorated/decoratorDecorated_base2_decorator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="77" selection-start="84" selection-end="84" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/diDecorateTest/decoratorNested1.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="1" selection-start="479" selection-end="479" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/diDecoratorNeedDecorated/_decoratorDecorated_iBase1.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="35" selection-start="16" selection-end="41" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/diDecoratorNeedDecorated/_decoratorDecorated_iBase2.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="35" selection-start="16" selection-end="41" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/diTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="156" column="8" selection-start="5693" selection-end="5785" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/diDecoratorNeedDecorated/decoratorDecorated_base2.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="67" selection-start="48" selection-end="73" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DI.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="0" selection-start="1121" selection-end="1121" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DI/binder.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="45" column="21" selection-start="1022" selection-end="1022" vertical-scroll-proportion="0.0">
@@ -511,7 +407,90 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/DI/binderTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="21" selection-start="2635" selection-end="2635" vertical-scroll-proportion="0.94285715">
+        <state line="74" column="36" selection-start="2250" selection-end="2250" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/diDecorateTest/decorator1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="1" selection-start="261" selection-end="261" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/diDecoratorNeedDecorated/_decoratorDecorated_iBase1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="35" selection-start="16" selection-end="41" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/diDecoratorNeedDecorated/_decoratorDecorated_iBase2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="35" selection-start="16" selection-end="41" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/diDecoratorNeedDecorated/decoratorDecorated_base1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="5" selection-start="81" selection-end="139" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/diDecoratorNeedDecorated/decoratorDecorated_base1_decorator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="14" selection-start="193" selection-end="193" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/diConstructor/istd.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/diConstructor/std2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/diConstructor/std1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DI.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="0" selection-start="970" selection-end="970" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/diSharedDecorators/_sharedDecorators_iBase1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="33" selection-start="17" selection-end="40" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/diSharedDecorators/sharedDecorators_base1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="28" selection-start="13" selection-end="35" vertical-scroll-proportion="-1.36">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/diSharedDecorators/sharedDecorators_base1_decorator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="21" selection-start="269" selection-end="269" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/diTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="176" column="35" selection-start="6680" selection-end="6680" vertical-scroll-proportion="0.5565217">
           <folding />
         </state>
       </provider>

@@ -11,6 +11,7 @@ array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diNestedTest/*.php'
 array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diConstructor/*.php'));
 array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diDecorateTest/*.php'));
 array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diDecoratorNeedDecorated/*.php'));
+array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diSharedDecorators/*.php'));
 
 class DITest extends \PHPUnit_Framework_TestCase {
 
@@ -23,7 +24,6 @@ class DITest extends \PHPUnit_Framework_TestCase {
         $di->bind('istd')->to('std2');
         $this->assertInstanceOf('std2', $di->get('istd'));
     }
-
 
     public function testDIConcern() {
 
@@ -157,6 +157,30 @@ class DITest extends \PHPUnit_Framework_TestCase {
         $di->bind('decoratorDecorated_iBase2')->decoratedWith('decoratorDecorated_base2_decorator');
 
         $this->assertEquals($di->get('decoratorDecorated_iBase1')->getClassname(), 'decoratorDecorated_base1|decoratorDecorated_base1_decorator|decoratorDecorated_base2|decoratorDecorated_base2_decorator');
+    }
+
+    function testSharedNotDecorator() {
+        $di = new di();
+
+        $di->bind('sharedDecorators_iBase1')->to('sharedDecorators_base1');
+        $di->bind('sharedDecorators_iBase1')->decoratedWith('sharedDecorators_base1_decorator');
+
+        $decorator = $di->get('sharedDecorators_iBase1')->getService();
+
+        $this->assertInstanceOf('sharedDecorators_base1_decorator', $decorator);
+        $this->assertTrue($di->get('sharedDecorators_iBase1')->getService() !== $decorator);
+    }
+
+    function testSharedDecorator() {
+        $di = new di();
+
+        $di->bind('sharedDecorators_iBase1')->to('sharedDecorators_base1');
+        $di->bind('sharedDecorators_iBase1')->decoratedWith('sharedDecorators_base1_decorator')->shared(true);
+
+        $decorator = $di->get('sharedDecorators_iBase1')->getService();
+
+        $this->assertInstanceOf('sharedDecorators_base1_decorator', $decorator);
+        $this->assertTrue($di->get('sharedDecorators_iBase1')->getService() === $decorator);
     }
     
 }
