@@ -34,6 +34,7 @@ class binder {
     public function setInterfaceImpl($interfaceImpl)
     {
         $this->interfaceImpl = $interfaceImpl;
+        return $this;
     }
 
     public function getInterfaceImpl() {
@@ -42,6 +43,7 @@ class binder {
 
     public function setInterfaceName($interfaceName) {
         $this->interfaceName = $interfaceName;
+        return $this;
     }
 
     public function getInterfaceName() {
@@ -60,6 +62,7 @@ class binder {
     public function setArgements($argements)
     {
         $this->argements = $argements;
+        return $this;
     }
 
     public function getArgements()
@@ -89,6 +92,7 @@ class binder {
     public function setIsDecorated($decorate)
     {
         $this->decorated = (bool)$decorate;
+        return $this;
     }
 
     public function isDecorated()

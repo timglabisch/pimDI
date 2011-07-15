@@ -59,4 +59,30 @@ class binderTest extends \PHPUnit_Framework_TestCase {
         $this->assertEquals($binder->isShared(), true);
         $this->assertEquals($binder->isDecorated(), true);
     }
+
+    function testDecoratedWith() {
+        $binder = new binder('$');
+        $binder->to('interface')->decoratedWith('foobar');
+
+        $this->assertEquals($binder->getInterfaceImpl(), 'foobar');
+        $this->assertEquals($binder->isDecorated(), true);
+    }
+
+    public function testIsFluent() {
+        $binder = new binder('$');
+
+        $return = $binder->to('interface')
+                ->concern('concern')
+                ->shared(true)
+                ->decorated(true)
+                ->decoratedWith('class')
+                ->setArgements('abc')
+                ->setConcern('concern')
+                ->setInterfaceImpl('interface')
+                ->setInterfaceName('interfaceName')
+                ->setIsDecorated(true)
+                ->setIsShared('true');
+
+        $this->assertTrue($binder === $return);
+    }
 }

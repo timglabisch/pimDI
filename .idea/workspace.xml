@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fcd12fa5-c305-4a9b-9d83-be9a31350558" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DI/binder.php" afterPath="$PROJECT_DIR$/DI/binder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/DI/binderTest.php" afterPath="$PROJECT_DIR$/test/DI/binderTest.php" />
     </list>
     <ignored path="DI.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,10 +35,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="binder.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="binder.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DI/binder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="99" column="25" selection-start="2056" selection-end="2056" vertical-scroll-proportion="0.7103918">
+            <state line="45" column="21" selection-start="1022" selection-end="1022" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -47,15 +48,6 @@
         <entry file="file://$PROJECT_DIR$/test/diDecorateTest/decoratorNested1.php">
           <provider selected="true" editor-type-id="text-editor">
             <state line="24" column="1" selection-start="479" selection-end="479" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="decoratorDecorated_base1_decorator.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/diDecoratorNeedDecorated/decoratorDecorated_base1_decorator.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="14" selection-start="193" selection-end="193" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -88,6 +80,15 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="binderTest.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/DI/binderTest.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="85" column="21" selection-start="2635" selection-end="2635" vertical-scroll-proportion="0.94285715">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="_decoratorDecorated_iBase1.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/diDecoratorNeedDecorated/_decoratorDecorated_iBase1.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -109,7 +110,7 @@
       <file leaf-file-name="diTest.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/diTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="142" column="56" selection-start="4981" selection-end="4981" vertical-scroll-proportion="0.0">
+            <state line="156" column="8" selection-start="5693" selection-end="5785" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -129,7 +130,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/test/diDecorateTest/decorator2.php" />
         <option value="$PROJECT_DIR$/test/diNestedTest/object.php" />
         <option value="$PROJECT_DIR$/test/diNestedTest/nestedservice1.php" />
         <option value="$PROJECT_DIR$/DI.php" />
@@ -145,6 +145,7 @@
         <option value="$PROJECT_DIR$/test/diDecoratorNeedDecorated/decoratorDecorated_base2_decorator.php" />
         <option value="$PROJECT_DIR$/test/diTest.php" />
         <option value="$PROJECT_DIR$/DI/binder.php" />
+        <option value="$PROJECT_DIR$/test/DI/binderTest.php" />
       </list>
     </option>
   </component>
@@ -204,6 +205,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DI" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -343,14 +362,14 @@
     <frame x="58" y="-8" width="1870" height="1096" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32979852" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32979852" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32979852" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1759823" sideWeight="0.6702015" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1759823" sideWeight="0.67868507" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3995749" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32131496" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32131496" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32979852" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -407,11 +426,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test/diNestedTest/object.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="73" selection-end="110" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/diNestedTest/inestedservice1.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="10" selection-start="16" selection-end="16" vertical-scroll-proportion="0.028099174" />
@@ -447,24 +461,9 @@
         <state line="2" column="77" selection-start="84" selection-end="84" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/diDecoratorNeedDecorated/decoratorDecorated_base2.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="67" selection-start="48" selection-end="73" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/diDecorateTest/decoratorNested1.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="1" selection-start="479" selection-end="479" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DI/binder/repository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="56" selection-start="710" selection-end="710" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DI.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="0" selection-start="1121" selection-end="1121" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/diDecoratorNeedDecorated/_decoratorDecorated_iBase1.php">
@@ -481,14 +480,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/diTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="142" column="56" selection-start="4981" selection-end="4981" vertical-scroll-proportion="0.0">
+        <state line="156" column="8" selection-start="5693" selection-end="5785" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/diDecoratorNeedDecorated/decoratorDecorated_base2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="67" selection-start="48" selection-end="73" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DI.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="0" selection-start="1121" selection-end="1121" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DI/binder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="99" column="25" selection-start="2056" selection-end="2056" vertical-scroll-proportion="0.7103918">
+        <state line="45" column="21" selection-start="1022" selection-end="1022" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DI/binder/repository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="56" selection-start="710" selection-end="710" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/DI/binderTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="85" column="21" selection-start="2635" selection-end="2635" vertical-scroll-proportion="0.94285715">
           <folding />
         </state>
       </provider>
