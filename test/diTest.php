@@ -26,14 +26,12 @@ class DITest extends \PHPUnit_Framework_TestCase {
     }
 
     public function testDIConcern() {
-
         $di = new di();
         $di->bind('istd')->to('std1');
         $di->bind('istd')->to('std2')->concern('abc');
 
         $this->assertInstanceOf('std2', $di->get('istd', 'abc'));#
         $this->assertInstanceOf('std1', $di->get('istd'));
-        
     }
 
     /**
@@ -47,26 +45,26 @@ class DITest extends \PHPUnit_Framework_TestCase {
     }
 
     public function testBasicInjection() {
-        $di = new di();
-        $di->bind('nested_iobject')->to('nested_object');
-        $di->bind('nested_inestedservice1')->to('nested_nestedservice1');
+       $di = new di();
+       $di->bind('nested_iobject')->to('nested_object');
+       $di->bind('nested_inestedservice1')->to('nested_nestedservice1');
 
        $this->assertInstanceOf('nested_inestedservice1', $di->get('nested_iobject')->getNestedService1());
     }
 
      public function testDoubleInjection() {
-        $di = new di();
-        $di->bind('nested_iobject')->to('nested_objectDouble');
-        $di->bind('nested_inestedservice1')->to('nested_nestedservice1');
+       $di = new di();
+       $di->bind('nested_iobject')->to('nested_objectDouble');
+       $di->bind('nested_inestedservice1')->to('nested_nestedservice1');
 
        $this->assertInstanceOf('nested_inestedservice1', $di->get('nested_iobject')->getNestedService1());
        $this->assertInstanceOf('nested_inestedservice1', $di->get('nested_iobject')->getNestedService1_2());
     }
 
      public function testDouble2Injection() {
-        $di = new di();
-        $di->bind('nested_iobject')->to('nested_objectDouble2');
-        $di->bind('nested_inestedservice1')->to('nested_nestedservice1');
+       $di = new di();
+       $di->bind('nested_iobject')->to('nested_objectDouble2');
+       $di->bind('nested_inestedservice1')->to('nested_nestedservice1');
 
        $this->assertInstanceOf('nested_inestedservice1', $di->get('nested_iobject')->getNestedService1());
        $this->assertInstanceOf('nested_inestedservice1', $di->get('nested_iobject')->getNestedService1_2());
