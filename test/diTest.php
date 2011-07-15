@@ -154,7 +154,7 @@ class DITest extends \PHPUnit_Framework_TestCase {
         $di->bind('decoratorDecorated_iBase1')->to('decoratorDecorated_base1');
         $di->bind('decoratorDecorated_iBase1')->to('decoratorDecorated_base1_decorator')->decorated(true);
         $di->bind('decoratorDecorated_iBase2')->to('decoratorDecorated_base2');
-        $di->bind('decoratorDecorated_iBase2')->to('decoratorDecorated_base2_decorator')->decorated(true);
+        $di->bind('decoratorDecorated_iBase2')->decoratedWith('decoratorDecorated_base2_decorator');
 
         $this->assertEquals($di->get('decoratorDecorated_iBase1')->getClassname(), 'decoratorDecorated_base1|decoratorDecorated_base1_decorator|decoratorDecorated_base2|decoratorDecorated_base2_decorator');
     }
