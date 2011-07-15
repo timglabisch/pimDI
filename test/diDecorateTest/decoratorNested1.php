@@ -18,8 +18,4 @@ class diDecorateDecoratorNested1 implements istd {
         return $this->service;
     }
 
-    public function foo() {
-        return $this->original->foo().', decorated2!';
-    }
-
 }
