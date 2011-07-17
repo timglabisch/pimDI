@@ -8,7 +8,6 @@ require_once __DIR__.'/Idi.php';
 class di implements iDi {
 
     private $binderRepository = null;
-    private $instances = array();
 
     public function createInstanceFromClassname($classname) {
         if(!class_exists($classname))
@@ -34,13 +33,13 @@ class di implements iDi {
         if(!$reflection->implementsInterface($binding->getInterfaceName()))
             throw new Exception($reflection->getName() .' must implement '. $binding->getInterfaceName());
 
-        if($binding->isShared() && isset($this->instances[$binding->getInterfaceName() .'|'. $binding->getConcern()]))
-            return $this->instances[$binding->getInterfaceName() .'|'. $binding->getConcern()];
+        if($binding->isShared() && $binding->getInstance())
+            return $binding->getInstance();
 
         $instance = $this->createInstance($reflection, $args);
 
         if($binding->isShared())
-            $this->instances[$binding->getInterfaceName() .'|'. $binding->getConcern()] = $instance;
+            $binding->setInstance($instance);
 
         $this->injectSetters($instance, $reflection);
 
@@ -111,8 +110,7 @@ class di implements iDi {
     /**
      * @return di\binder\repository
      */
-    public function getBinderRepository()
-    {
+    public function getBinderRepository() {
         if($this->binderRepository === null)
             $this->binderRepository = new di\binder\repository();
         

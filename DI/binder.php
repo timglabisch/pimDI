@@ -12,12 +12,23 @@ class binder {
     private $shared = false;
     private $argements = array();
     private $decorated = false;
+    private $instance;
 
     function __construct($interfaceName) {
         $this->interfaceName = $interfaceName;
     }
 
+    private function toObject($obj) {
+        $this->setInterfaceImpl(get_class($obj));
+        $this->setInstance($obj);
+        $this->setIsShared(true);
+    }
+
     function to($interfaceImpl) {
+
+        if(is_object($interfaceImpl))
+            return $this->toObject($interfaceImpl);
+
         $this->interfaceImpl = $interfaceImpl;
         return $this;
     }
@@ -105,4 +116,16 @@ class binder {
         $this->setInterfaceImpl($class);
         return $this;
     }
+
+    public function setInstance($instance)
+    {
+        $this->instance = $instance;
+        return $this;
+    }
+
+    public function getInstance()
+    {
+        return $this->instance;
+    }
+
 }
