@@ -192,11 +192,31 @@ class DITest extends \PHPUnit_Framework_TestCase {
         $this->assertInstanceOf('\de\any\di\binder\repository', $di->getBinderRepository());
     }
 
+    public function testBindInstances() {
+        $di = new di();
+        $std = new \std1();
+        $di->bind('istd')->to($std);
+
+        $this->assertTrue($di->get('istd') === $std);
+        return $di;
+    }
+
+    /**
+     * @depends testBindInstances
+     */
+    public function testBindSharedInstances($di) {
+        $std = new \std1();
+        $di->bind('istd')->to($std)->shared(false);
+
+        $this->assertTrue($di->get('istd') !== $std);
+        $this->assertInstanceOf('\std1', $di->get('istd'));
+    }
+
     public function testInjectDiItself() {
         $di = new di();
         $di->bind('\de\any\iDi')->to($di);
 
-        $this->assertInstanceOf('\de\any\di', $di->get('\de\any\iDi'));
+        $this->assertTrue($di === $di->get('\de\any\iDi'));
     }
     
 }

@@ -22,6 +22,7 @@ class binder {
         $this->setInterfaceImpl(get_class($obj));
         $this->setInstance($obj);
         $this->setIsShared(true);
+        return $this;
     }
 
     function to($interfaceImpl) {
