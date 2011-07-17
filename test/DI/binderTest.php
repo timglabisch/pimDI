@@ -72,6 +72,7 @@ class binderTest extends \PHPUnit_Framework_TestCase {
         $binder = new binder('$');
 
         $return = $binder->to('interface')
+                ->to(new \stdClass())
                 ->concern('concern')
                 ->shared(true)
                 ->decorated(true)
