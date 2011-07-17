@@ -3,8 +3,9 @@ namespace de\any;
 
 require_once __DIR__.'/DI/binder.php';
 require_once __DIR__.'/DI/ReflectionAnnotation.php';
+require_once __DIR__.'/Idi.php';
 
-class di {
+class di implements iDi {
 
     private $binderRepository = null;
     private $instances = array();
@@ -117,9 +118,5 @@ class di {
         
         return $this->binderRepository;
     }
-
-
-
-    
 
 }

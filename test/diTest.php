@@ -191,6 +191,12 @@ class DITest extends \PHPUnit_Framework_TestCase {
         
         $this->assertInstanceOf('\de\any\di\binder\repository', $di->getBinderRepository());
     }
+
+    public function injectDiItself() {
+        $di = new di();
+
+
+    }
     
 }
  
