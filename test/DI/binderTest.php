@@ -86,4 +86,17 @@ class binderTest extends \PHPUnit_Framework_TestCase {
 
         $this->assertTrue($binder === $return);
     }
+
+    public function testToInstance() {
+        $binder = new binder('$');
+
+        $this->assertEquals($binder->isShared(), false);
+
+        $instance = new \stdClass();
+        $binder->to($instance);
+
+        $this->assertEquals($binder->isShared(), true);
+        $this->assertEquals($binder->getInterfaceImpl(), 'stdClass');
+        $this->assertEquals($binder->getInstance(), $instance);
+    }
 }
