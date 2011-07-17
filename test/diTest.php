@@ -17,11 +17,18 @@ class DITest extends \PHPUnit_Framework_TestCase {
 
     public function testDiSet() {
         $di = new di();
-
         $di->bind('istd')->to('std1');
-        $this->assertInstanceOf('std1', $di->get('istd'));
 
+        $this->assertInstanceOf('std1', $di->get('istd'));
+        return $di;
+    }
+
+    /**
+     * @depends testDiSet
+     */
+    public function testDiOverwrite($di) {
         $di->bind('istd')->to('std2');
+
         $this->assertInstanceOf('std2', $di->get('istd'));
     }
 
@@ -71,7 +78,6 @@ class DITest extends \PHPUnit_Framework_TestCase {
     }
 
    public function testConcern() {
-
        $di = new di();
        $di->bind('nested_iobject')->to('nested_objectConcern');
        $di->bind('nested_inestedservice1')->to('nested_nestedservice1');
@@ -83,8 +89,8 @@ class DITest extends \PHPUnit_Framework_TestCase {
 
     public function testSharedDefault() {
        $di = new di();
-
        $di->bind('istd')->to('std1');
+
        $this->assertTrue($di->get('istd') !== $di->get('istd'));
     }
 
@@ -92,32 +98,30 @@ class DITest extends \PHPUnit_Framework_TestCase {
        $di = new di();
 
        $di->bind('istd')->to('std1')->shared(true);
+
        $this->assertTrue($di->get('istd') === $di->get('istd'));
     }
 
     function testConstructorInjection() {
         $di = new di();
-
         $di->bind('constructor_istd')->to('constructor_std1');
         $di->bind('constructor_istd')->to('constructor_std2')->concern('std2');
-
         $instance = $di->get('constructor_istd');
+
         $this->assertInstanceOf('constructor_std2', $instance->getService());
     }
 
     function testCreateInstanceFromClassname() {
         $di = new di();
-
         $di->bind('constructor_istd')->to('constructor_std1');
         $di->bind('constructor_istd')->to('constructor_std2')->concern('std2');
-
         $instance = $di->createInstanceFromClassname('constructor_std1');
+
         $this->assertInstanceOf('constructor_std2', $instance->getService());
     }
 
     public function testDecorate() {
         $di = new di();
-
         $di->bind('istd')->to('diDecorateStd1');
         $di->bind('istd')->to('diDecorateDecorator1')->decorated(true);
 
@@ -126,7 +130,6 @@ class DITest extends \PHPUnit_Framework_TestCase {
 
     public function testDecorateMultiple() {
         $di = new di();
-
         $di->bind('istd')->to('diDecorateStd1');
         $di->bind('istd')->to('diDecorateDecorator1')->decorated(true);
         $di->bind('istd')->to('diDecorateDecorator2')->decorated(true);
@@ -136,7 +139,6 @@ class DITest extends \PHPUnit_Framework_TestCase {
 
     public function testDecoratedNested() {
         $di = new di();
-
         $di->bind('istd')->to('diDecorateStd1');
         $di->bind('istd')->to('diDecorateDecorator1')->decorated(true);
         $di->bind('istd')->to('diDecorateDecoratorNested1')->decorated(true);
@@ -148,7 +150,6 @@ class DITest extends \PHPUnit_Framework_TestCase {
 
     public function testDecoratedDecorator() {
         $di = new di();
-
         $di->bind('decoratorDecorated_iBase1')->to('decoratorDecorated_base1');
         $di->bind('decoratorDecorated_iBase1')->to('decoratorDecorated_base1_decorator')->decorated(true);
         $di->bind('decoratorDecorated_iBase2')->to('decoratorDecorated_base2');
@@ -159,10 +160,8 @@ class DITest extends \PHPUnit_Framework_TestCase {
 
     function testSharedNotDecorator() {
         $di = new di();
-
         $di->bind('sharedDecorators_iBase1')->to('sharedDecorators_base1');
         $di->bind('sharedDecorators_iBase1')->decoratedWith('sharedDecorators_base1_decorator');
-
         $decorator = $di->get('sharedDecorators_iBase1')->getService();
 
         $this->assertInstanceOf('sharedDecorators_base1_decorator', $decorator);
@@ -171,10 +170,8 @@ class DITest extends \PHPUnit_Framework_TestCase {
 
     function testSharedDecorator() {
         $di = new di();
-
         $di->bind('sharedDecorators_iBase1')->to('sharedDecorators_base1');
         $di->bind('sharedDecorators_iBase1')->decoratedWith('sharedDecorators_base1_decorator')->shared(true);
-
         $decorator = $di->get('sharedDecorators_iBase1')->getService();
 
         $this->assertInstanceOf('sharedDecorators_base1_decorator', $decorator);
@@ -183,14 +180,15 @@ class DITest extends \PHPUnit_Framework_TestCase {
 
     public function testSetBinderRepositoy() {
         $di = new di();
-        
         $class = new \stdClass();
         $di->setBinderRepository($class);
+
         $this->assertTrue($class === $di->getBinderRepository());
     }
 
     public function testDefaultBinderRepository() {
         $di = new di();
+        
         $this->assertInstanceOf('\de\any\di\binder\repository', $di->getBinderRepository());
     }
     
