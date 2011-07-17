@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fcd12fa5-c305-4a9b-9d83-be9a31350558" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DI/binder.php" afterPath="$PROJECT_DIR$/DI/binder.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/DI/binderTest.php" afterPath="$PROJECT_DIR$/test/DI/binderTest.php" />
     </list>
     <ignored path="DI.iws" />
@@ -64,7 +65,7 @@
       <file leaf-file-name="binder.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DI/binder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="21" selection-start="566" selection-end="566" vertical-scroll-proportion="0.0">
+            <state line="12" column="17" selection-start="219" selection-end="219" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -73,7 +74,7 @@
       <file leaf-file-name="binderTest.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/DI/binderTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="89" column="34" selection-start="2727" selection-end="2741" vertical-scroll-proportion="0.58401304">
+            <state line="102" column="39" selection-start="3127" selection-end="3146" vertical-scroll-proportion="0.80587274">
               <folding />
             </state>
           </provider>
@@ -459,14 +460,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DI/binder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="21" selection-start="566" selection-end="566" vertical-scroll-proportion="0.0">
+        <state line="12" column="17" selection-start="219" selection-end="219" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/DI/binderTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="34" selection-start="2727" selection-end="2741" vertical-scroll-proportion="0.58401304">
+        <state line="102" column="39" selection-start="3127" selection-end="3146" vertical-scroll-proportion="0.80587274">
           <folding />
         </state>
       </provider>

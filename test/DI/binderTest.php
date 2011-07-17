@@ -77,7 +77,7 @@ class binderTest extends \PHPUnit_Framework_TestCase {
                 ->shared(true)
                 ->decorated(true)
                 ->decoratedWith('class')
-                ->setArgements('abc')
+                ->setArguments('abc')
                 ->setConcern('concern')
                 ->setInterfaceImpl('interface')
                 ->setInterfaceName('interfaceName')
@@ -98,5 +98,13 @@ class binderTest extends \PHPUnit_Framework_TestCase {
         $this->assertEquals($binder->isShared(), true);
         $this->assertEquals($binder->getInterfaceImpl(), 'stdClass');
         $this->assertEquals($binder->getInstance(), $instance);
+    }
+
+    public function testSetGetArguments() {
+        $binder = new binder('$');
+
+        $binder->setArguments(array(1,2,3));
+
+        $this->assertEquals(array(1,2,3), $binder->getArguments());
     }
 }

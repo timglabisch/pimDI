@@ -10,7 +10,7 @@ class binder {
     private $interfaceImpl;
     private $concern;
     private $shared = false;
-    private $argements = array();
+    private $arguments = array();
     private $decorated = false;
     private $instance;
 
@@ -71,15 +71,15 @@ class binder {
         return $this->concern;
     }
 
-    public function setArgements($argements)
+    public function setArguments($argements)
     {
-        $this->argements = $argements;
+        $this->arguments = $argements;
         return $this;
     }
 
-    public function getArgements()
+    public function getArguments()
     {
-        return $this->argements;
+        return $this->arguments;
     }
 
     public function setIsShared($shared)
