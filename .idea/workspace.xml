@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fcd12fa5-c305-4a9b-9d83-be9a31350558" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/diParam/concern.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DI.php" afterPath="$PROJECT_DIR$/DI.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DI/ReflectionAnnotation.php" afterPath="$PROJECT_DIR$/DI/ReflectionAnnotation.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/diTest.php" afterPath="$PROJECT_DIR$/test/diTest.php" />
     </list>
     <ignored path="DI.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,25 +31,16 @@
       <file leaf-file-name="DI.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DI.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="89" column="57" selection-start="3216" selection-end="3216" vertical-scroll-proportion="-7.84">
+            <state line="33" column="23" selection-start="1172" selection-end="1172" vertical-scroll-proportion="-7.84">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="repository.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DI/binder/repository.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="23" selection-start="1218" selection-end="1218" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ReflectionAnnotation.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ReflectionAnnotation.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DI/ReflectionAnnotation.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="50" selection-start="2331" selection-end="2331" vertical-scroll-proportion="1.1177446">
+            <state line="58" column="50" selection-start="2331" selection-end="2331" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -66,7 +58,7 @@
       <file leaf-file-name="standard.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/diParam/standard.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="26" selection-start="60" selection-end="73" vertical-scroll-proportion="0.0">
+            <state line="2" column="0" selection-start="47" selection-end="97" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -90,10 +82,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="diTest.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="diTest.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/diTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="227" column="0" selection-start="8590" selection-end="8590" vertical-scroll-proportion="0.0">
+            <state line="240" column="55" selection-start="9155" selection-end="9155" vertical-scroll-proportion="0.66056573">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="concern.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/diParam/concern.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="3" selection-start="50" selection-end="50" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -108,10 +109,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_sharedDecorators_iBase1.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/diSharedDecorators/_sharedDecorators_iBase1.php">
+      <file leaf-file-name="ostd1.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/diTest/ostd1.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="1" column="11" selection-start="12" selection-end="17" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -131,7 +132,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/test/diExampels/getterInjection/withoutDiC/MailerTest.php" />
         <option value="$PROJECT_DIR$/test/diExampels/getterInjection/withoutDiC/Mailer.php" />
         <option value="$PROJECT_DIR$/test/diExampels/getterInjection/withoutDiC/Registration.php" />
         <option value="$PROJECT_DIR$/test/diExampels/getterInjection/withoutDiC/RegistrationTest.php" />
@@ -142,11 +142,12 @@
         <option value="$PROJECT_DIR$/test/diExampels/getterInjection/diC/Registration.php" />
         <option value="$PROJECT_DIR$/test/diExampels/getterInjection/diC/RegistrationTest.php" />
         <option value="$PROJECT_DIR$/test/diParam/standard_injected.php" />
-        <option value="$PROJECT_DIR$/test/diTest.php" />
         <option value="$PROJECT_DIR$/DI/binder/repository.php" />
-        <option value="$PROJECT_DIR$/test/diParam/standard.php" />
-        <option value="$PROJECT_DIR$/DI.php" />
         <option value="$PROJECT_DIR$/DI/ReflectionAnnotation.php" />
+        <option value="$PROJECT_DIR$/test/diParam/standard.php" />
+        <option value="$PROJECT_DIR$/test/diParam/concern.php" />
+        <option value="$PROJECT_DIR$/DI.php" />
+        <option value="$PROJECT_DIR$/test/diTest.php" />
       </list>
     </option>
   </component>
@@ -379,17 +380,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="58" y="-8" width="1870" height="1092" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3290735" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32979852" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1936912" sideWeight="0.6709265" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1936912" sideWeight="0.6826411" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3995749" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31735888" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31735888" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32979852" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -425,7 +426,7 @@
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="basic parameter injection" />
+    <option name="LAST_COMMIT_MESSAGE" value="improved property support" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -442,21 +443,12 @@
     <MESSAGE value="better decorator support" />
     <MESSAGE value="add logger example" />
     <MESSAGE value="basic parameter injection" />
+    <MESSAGE value="improved property support" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test/diDecorateTest/decorator2.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/diDecorateTest/decorator1.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/diConstructor/std2.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
@@ -486,23 +478,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/diTest/std2.php">
+    <entry file="file://$PROJECT_DIR$/DI/binder/repository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="44" column="23" selection-start="1218" selection-end="1218" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/diTest/std1.php">
+    <entry file="file://$PROJECT_DIR$/DI/ReflectionAnnotation.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="26" selection-start="28" selection-end="32" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/diTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="227" column="0" selection-start="8590" selection-end="8590" vertical-scroll-proportion="0.0">
+        <state line="58" column="50" selection-start="2331" selection-end="2331" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -514,16 +499,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/diParam/standard.php">
+    <entry file="file://$PROJECT_DIR$/test/diTest/std2.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="26" selection-start="60" selection-end="73" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DI/binder/repository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="23" selection-start="1218" selection-end="1218" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -537,14 +515,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DI.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="57" selection-start="3216" selection-end="3216" vertical-scroll-proportion="-7.84">
+        <state line="33" column="23" selection-start="1172" selection-end="1172" vertical-scroll-proportion="-7.84">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DI/ReflectionAnnotation.php">
+    <entry file="file://$PROJECT_DIR$/test/diTest/std1.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="50" selection-start="2331" selection-end="2331" vertical-scroll-proportion="1.1177446">
+        <state line="1" column="26" selection-start="28" selection-end="32" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/diTest/ostd1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="11" selection-start="12" selection-end="17" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/diParam/standard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="47" selection-end="97" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/diParam/concern.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="3" selection-start="50" selection-end="50" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/diTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="240" column="55" selection-start="9155" selection-end="9155" vertical-scroll-proportion="0.66056573">
           <folding />
         </state>
       </provider>

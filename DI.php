@@ -31,7 +31,7 @@ class di implements iDi {
         $reflection = new \ReflectionClass($binding->getInterfaceImpl());
 
         if(!$reflection->implementsInterface($binding->getInterfaceName()))
-            throw new Exception($reflection->getName() .' must implement '. $binding->getInterfaceName());
+            throw new \Exception($reflection->getName() .' must implement '. $binding->getInterfaceName());
 
         if($binding->isShared() && $binding->getInstance())
             return $binding->getInstance();

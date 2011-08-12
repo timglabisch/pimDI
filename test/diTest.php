@@ -226,6 +226,20 @@ class DITest extends \PHPUnit_Framework_TestCase {
 
         $this->assertInstanceOf('diParam_standard', $di->get('istd'));
         $this->assertInstanceOf('diParam_standard_injected', $di->get('istd')->service);
+        return $di;
+    }
+
+
+    public function testParamConcern() {
+        $di = new di();
+        $di->bind('istd')->to('diParam_concern');
+        $di->bind('iostd')->to('diParam_standard_injected');
+        $di->bind('iostd')->to('ostd1')->concern('abc');
+
+        $this->assertInstanceOf('diParam_concern', $di->get('istd'));
+        $this->assertInstanceOf('diParam_standard_injected', $di->get('istd')->service);
+        $this->assertInstanceOf('ostd1', $di->get('istd')->service_concern);
+        return $di;
     }
     
 }
