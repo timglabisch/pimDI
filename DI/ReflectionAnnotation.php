@@ -14,6 +14,14 @@ class ReflectionAnnotation {
         return self::$annotationCache[$refelectionMethod->class . '::' . $refelectionMethod->name];
     }
 
+    public static function parsePropertyAnnotations(\ReflectionProperty $refelectionProperty) {
+        if (!isset(self::$annotationCache['property::'.$refelectionProperty->class . '::' . $refelectionProperty->name])) {
+            self::$annotationCache['property::'.$refelectionProperty->class . '::' . $refelectionProperty->name] = self::parseAnnotations($refelectionProperty->getDocComment());
+        }
+
+        return self::$annotationCache['property::'.$refelectionProperty->class . '::' . $refelectionProperty->name];
+    }
+
     private static function parseAnnotations($docblock) {
         $annotations = array();
 

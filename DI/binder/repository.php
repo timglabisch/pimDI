@@ -42,7 +42,7 @@ class repository {
         $this->knowBindings();
 
         if(!isset($this->bindings[$interface.'|'.$concern]))
-            throw new Exception('Binding for interface "'.$interface.'" with concern "'.$concern.'" doesn\'t exists');
+            throw new \Exception('Binding for interface "'.$interface.'" with concern "'.$concern.'" doesn\'t exists');
 
         return $this->bindings[$interface.'|'.$concern]['impl'];
     }

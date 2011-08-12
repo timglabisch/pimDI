@@ -23,7 +23,7 @@ class di implements iDi {
             return $reflection->newInstance();
 
         $reflectionMethod = $reflection->getConstructor();
-        $args = array_merge($args, $this->getInjectedArgs($reflectionMethod));
+        $args = array_merge($args, $this->getInjectedMethodArgs($reflectionMethod));
         return $reflection->newInstanceArgs($args);
     }
 
@@ -42,6 +42,7 @@ class di implements iDi {
             $binding->setInstance($instance);
 
         $this->injectSetters($instance, $reflection);
+        $this->injectProperties($instance, $reflection);
 
         if(!$decorated) {
             $decorators = $this->getBinderRepository()->getBindingDecorators($binding->getInterfaceName(), $binding->getConcern());
@@ -62,7 +63,7 @@ class di implements iDi {
         return $this->getByBinding($binding, $args);
     }
 
-    private function getInjectedArgs(\ReflectionMethod $reflectionMethod) {
+    private function getInjectedMethodArgs(\ReflectionMethod $reflectionMethod) {
         $params = $reflectionMethod->getParameters();
         $annotationStrings = di\ReflectionAnnotation::parseMethodAnnotations($reflectionMethod);
 
@@ -81,6 +82,14 @@ class di implements iDi {
         return $args;
     }
 
+    private function getInjectedPropertyArg(\ReflectionProperty $reflectionProperty) {
+        $annotationStrings = di\ReflectionAnnotation::parsePropertyAnnotations($reflectionProperty);
+
+        $classname = trim(str_replace(array('!inject','*/'),array('', ''),$annotationStrings['var'][0]));
+
+        return $this->get($classname);
+    }
+
     private function injectSetters($instance, \ReflectionClass $reflection) {
         foreach($reflection->getMethods() as $reflectionMethod) {
 
@@ -92,8 +101,27 @@ class di implements iDi {
             if(!isset($annotationStrings['inject']))
                 continue;
 
-            $args = $this->getInjectedArgs($reflectionMethod);
+            $args = $this->getInjectedMethodArgs($reflectionMethod);
             $reflectionMethod->invokeArgs($instance, $args);
+        }
+    }
+
+    private function injectProperties($instance, \ReflectionClass $reflection) {
+        foreach($reflection->getProperties() as $reflectionProperty) {
+
+            $annotationStrings = di\ReflectionAnnotation::parsePropertyAnnotations($reflectionProperty);
+
+            if(!isset($annotationStrings['var']))
+                continue;
+
+            if(count($annotationStrings['var']) !== 1) {
+                throw new Exception('multiple @var annotation is not supportet');
+            }
+
+            if(strpos($annotationStrings['var'][0], '!inject') === false)
+                continue;
+
+            $reflectionProperty->setValue($instance, $this->getInjectedPropertyArg($reflectionProperty));
         }
     }
 

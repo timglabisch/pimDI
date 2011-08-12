@@ -12,6 +12,7 @@ array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diConstructor/*.php
 array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diDecorateTest/*.php'));
 array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diDecoratorNeedDecorated/*.php'));
 array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diSharedDecorators/*.php'));
+array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diParam/*.php'));
 
 class DITest extends \PHPUnit_Framework_TestCase {
 
@@ -96,7 +97,6 @@ class DITest extends \PHPUnit_Framework_TestCase {
 
     public function testIsShared() {
        $di = new di();
-
        $di->bind('istd')->to('std1')->shared(true);
 
        $this->assertTrue($di->get('istd') === $di->get('istd'));
@@ -217,6 +217,15 @@ class DITest extends \PHPUnit_Framework_TestCase {
         $di->bind('\de\any\iDi')->to($di);
 
         $this->assertTrue($di === $di->get('\de\any\iDi'));
+    }
+
+    public function testParam() {
+        $di = new di();
+        $di->bind('istd')->to('diParam_standard');
+        $di->bind('iostd')->to('diParam_standard_injected');
+
+        $this->assertInstanceOf('diParam_standard', $di->get('istd'));
+        $this->assertInstanceOf('diParam_standard_injected', $di->get('istd')->service);
     }
     
 }
