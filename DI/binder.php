@@ -26,7 +26,6 @@ class binder {
     }
 
     function to($interfaceImpl) {
-
         if(is_object($interfaceImpl))
             return $this->toObject($interfaceImpl);
 
@@ -77,13 +76,11 @@ class binder {
         return $this;
     }
 
-    public function getArguments()
-    {
+    public function getArguments() {
         return $this->arguments;
     }
 
-    public function setIsShared($shared)
-    {
+    public function setIsShared($shared) {
         $this->shared = (bool)$shared;
         return $this;
     }
@@ -92,8 +89,7 @@ class binder {
         return $this->setIsShared($shared);
     }
 
-    public function isShared()
-    {
+    public function isShared() {
         return $this->shared;
     }
 
@@ -101,14 +97,12 @@ class binder {
         return $this->setIsDecorated($decorated);
     }
 
-    public function setIsDecorated($decorate)
-    {
+    public function setIsDecorated($decorate) {
         $this->decorated = (bool)$decorate;
         return $this;
     }
 
-    public function isDecorated()
-    {
+    public function isDecorated() {
         return $this->decorated;
     }
 
@@ -118,14 +112,12 @@ class binder {
         return $this;
     }
 
-    public function setInstance($instance)
-    {
+    public function setInstance($instance) {
         $this->instance = $instance;
         return $this;
     }
 
-    public function getInstance()
-    {
+    public function getInstance() {
         return $this->instance;
     }
 

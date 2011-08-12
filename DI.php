@@ -18,7 +18,6 @@ class di implements iDi {
     }
 
     private function createInstance(\ReflectionClass $reflection, $args=array()) {
-
         if(!$reflection->hasMethod('__construct'))
             return $reflection->newInstance();
 
@@ -57,7 +56,6 @@ class di implements iDi {
     }
 
     public function get($interface, $concern='', $args=array()) {
-
         $binding = $this->getBinderRepository()->getBinding($interface, $concern);
 
         return $this->getByBinding($binding, $args);

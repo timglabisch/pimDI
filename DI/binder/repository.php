@@ -17,7 +17,6 @@ class repository {
             return;
 
         foreach($this->unknownBindings as $key => $unknownBinding) {
-
             if(!isset($this->bindings[$unknownBinding->getHashKey()]))
                 $this->bindings[$unknownBinding->getHashKey()] = array('decorator'=>array(), 'impl'=>null);
 
@@ -38,7 +37,6 @@ class repository {
      * @return repository
      */
     public function getBinding($interface, $concern='') {
-
         $this->knowBindings();
 
         if(!isset($this->bindings[$interface.'|'.$concern]))
@@ -54,7 +52,6 @@ class repository {
      * @return array
      */
     public function getBindingDecorators($interface, $concern='') {
-
         $this->knowBindings();
 
         if(!isset($this->bindings[$interface.'|'.$concern]))

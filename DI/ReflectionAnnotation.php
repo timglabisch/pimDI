@@ -37,7 +37,6 @@ class ReflectionAnnotation {
     }
 
     public static function parsePropertyVarAnnotation($annotationContent) {
-
         if(count($annotationContent) !== 1)
             throw new \Exception('there can be just one @var annotation for a property');
 
