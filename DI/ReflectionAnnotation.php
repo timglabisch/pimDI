@@ -35,5 +35,32 @@ class ReflectionAnnotation {
 
         return $annotations;
     }
+
+    public static function parsePropertyVarAnnotation($annotationContent) {
+
+        if(count($annotationContent) !== 1)
+            throw new \Exception('there can be just one @var annotation for a property');
+
+        $annotationContent = trim(str_replace('*/', '', $annotationContent[0]));
+
+        $annotationContent = explode(' ', $annotationContent);
+
+        $res = array();
+
+        if(!isset($annotationContent[0]))
+            throw new \Exception('var annotation needs a class');
+
+        $res['class'] = $annotationContent[0];
+
+        if(!isset($annotationContent[1]) || $annotationContent[1] !== '!inject')
+            throw new \Exception('var annotation doesnt use !inject');
+
+        if(isset($annotationContent[2]))
+            $res['concern'] = $annotationContent[2];
+        else
+            $res['concern'] = null;
+
+        return $res;
+    }
     
 }

@@ -85,9 +85,9 @@ class di implements iDi {
     private function getInjectedPropertyArg(\ReflectionProperty $reflectionProperty) {
         $annotationStrings = di\ReflectionAnnotation::parsePropertyAnnotations($reflectionProperty);
 
-        $classname = trim(str_replace(array('!inject','*/'),array('', ''),$annotationStrings['var'][0]));
+        $classname = di\ReflectionAnnotation::parsePropertyVarAnnotation($annotationStrings['var']);
 
-        return $this->get($classname);
+        return $this->get($classname['class'], $classname['concern']);
     }
 
     private function injectSetters($instance, \ReflectionClass $reflection) {
