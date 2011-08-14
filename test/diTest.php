@@ -14,6 +14,7 @@ array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diDecoratorNeedDeco
 array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diSharedDecorators/*.php'));
 array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diParam/*.php'));
 array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diCircular/*.php'));
+array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diCircularNested/*.php'));
 
 class DITest extends \PHPUnit_Framework_TestCase {
 
@@ -252,17 +253,28 @@ class DITest extends \PHPUnit_Framework_TestCase {
     }
 
     /**
-     * B Depends on C and C depends on A
-     * @expectedException \Exception
-     */
+       * A Depends on B and B depends on A,
+       * @expectedException \Exception
+       */
     public function testCicular() {
         $di = new di();
         $di->bind('iCircular')->to('circular_a')->concern('a');
         $di->bind('iCircular')->to('circular_b')->concern('b');
-        $di->bind('iCircular')->to('circular_c')->concern('c');
 
         $this->assertInstanceOf('circular_a', $di->get('iCircular', 'a'));
     }
-    
+
+   /**
+     * B Depends on C and C depends on A, get instance A
+     * @expectedException \Exception
+     */
+    public function testCicularNested() {
+        $di = new di();
+        $di->bind('iCircular')->to('circularNested_a')->concern('a');
+        $di->bind('iCircular')->to('circularNested_b')->concern('b');
+        $di->bind('iCircular')->to('circularNested_c')->concern('c');
+
+        $this->assertInstanceOf('circular_a', $di->get('iCircular', 'a'));
+    }
 }
  

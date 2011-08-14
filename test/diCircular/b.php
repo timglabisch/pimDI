@@ -2,7 +2,7 @@
 
 class circular_b implements iCircular {
 
-    /** @var  iCircular !inject c    */
-    public $c;
+    /** @var  iCircular !inject a   */
+    public $a;
 
 }
