@@ -13,6 +13,7 @@ array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diDecorateTest/*.ph
 array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diDecoratorNeedDecorated/*.php'));
 array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diSharedDecorators/*.php'));
 array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diParam/*.php'));
+array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diCircular/*.php'));
 
 class DITest extends \PHPUnit_Framework_TestCase {
 
@@ -230,6 +231,14 @@ class DITest extends \PHPUnit_Framework_TestCase {
     }
 
 
+    public function testClosure() {
+        $di = new di();
+        $di->foo = function() { return 'abc'; };
+
+#        var_dump(($di->foo)());
+##        $this->assertEquals('abc', $di->foo());
+    }
+
     public function testParamConcern() {
         $di = new di();
         $di->bind('istd')->to('diParam_concern');
@@ -240,6 +249,19 @@ class DITest extends \PHPUnit_Framework_TestCase {
         $this->assertInstanceOf('diParam_standard_injected', $di->get('istd')->service);
         $this->assertInstanceOf('ostd1', $di->get('istd')->service_concern);
         return $di;
+    }
+
+    /**
+     * B Depends on C and C depends on A
+     * @expectedException \Exception
+     */
+    public function testCicular() {
+        $di = new di();
+        $di->bind('iCircular')->to('circular_a')->concern('a');
+        $di->bind('iCircular')->to('circular_b')->concern('b');
+        $di->bind('iCircular')->to('circular_c')->concern('c');
+
+        $this->assertInstanceOf('circular_a', $di->get('iCircular', 'a'));
     }
     
 }

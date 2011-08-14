@@ -2,10 +2,11 @@
 <project version="4">
   <component name="PhpProjectConfiguration">
     <sdk>
-      <PhpSdkConfig version="5.3.0" home="C:\ZendCe\ZendServer\bin">
+      <PhpSdkConfig version="5.3.5-1ubuntu7.2" home="/usr/bin">
         <include_paths>
           <path value="." />
-          <path value="C:\ZendCe\ZendServer\bin\pear" />
+          <path value="/usr/share/php" />
+          <path value="/usr/share/pear" />
         </include_paths>
       </PhpSdkConfig>
     </sdk>

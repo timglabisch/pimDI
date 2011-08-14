@@ -8,11 +8,12 @@ require_once __DIR__.'/Idi.php';
 class di implements iDi {
 
     private $binderRepository = null;
+    private $lock = array();
 
     public function createInstanceFromClassname($classname) {
         if(!class_exists($classname))
             throw new Exception('class with classname '. $classname.' not found');
-        
+
         $reflectionClass = new \ReflectionClass($classname);
         return $this->createInstance($reflectionClass);
     }
@@ -36,6 +37,11 @@ class di implements iDi {
         if($binding->isShared() && $binding->getInstance())
             return $binding->getInstance();
 
+        if(isset($this->lock[$binding->getHashKey()]))
+            throw new \Exception('circual!');
+
+        $this->lock[$binding->getHashKey()] = true;
+
         $instance = $this->createInstance($reflection, $args);
 
         if($binding->isShared())
@@ -43,6 +49,9 @@ class di implements iDi {
 
         $this->injectSetters($instance, $reflection);
         $this->injectProperties($instance, $reflection);
+
+
+        unset($this->lock[$binding->getHashKey()]);
 
         if(!$decorated) {
             $decorators = $this->getBinderRepository()->getBindingDecorators($binding->getInterfaceName(), $binding->getConcern());

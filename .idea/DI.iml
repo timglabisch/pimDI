@@ -7,7 +7,7 @@
     <orderEntry type="module-library">
       <library name="PHP 5.3.0">
         <CLASSES>
-          <root url="file://$MODULE_DIR$/../../../ZendServer/bin/PEAR" />
+          <root url="file:///usr/share/php" />
         </CLASSES>
         <SOURCES />
       </library>
