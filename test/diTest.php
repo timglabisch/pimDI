@@ -254,7 +254,7 @@ class DITest extends \PHPUnit_Framework_TestCase {
 
     /**
        * A Depends on B and B depends on A,
-       * @expectedException \Exception
+       * @expectedException \de\any\di\exception\circular
        */
     public function testCicular() {
         $di = new di();
@@ -266,7 +266,7 @@ class DITest extends \PHPUnit_Framework_TestCase {
 
    /**
      * B Depends on C and C depends on A, get instance A
-     * @expectedException \Exception
+     * @expectedException \de\any\di\exception\circular
      */
     public function testCicularNested() {
         $di = new di();
