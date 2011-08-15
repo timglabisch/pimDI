@@ -16,6 +16,7 @@ array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diParam/*.php'));
 array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diCircular/*.php'));
 array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diCircularNested/*.php'));
 array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diPropertyParseException/*.php'));
+array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diTestIgnoreAnnotation/*.php'));
 
 class DITest extends \PHPUnit_Framework_TestCase {
 
@@ -285,6 +286,14 @@ class DITest extends \PHPUnit_Framework_TestCase {
         $di= new di();
         $di->bind('istd')->to('diPropertyParseException_std1');
         $di->get('istd');
+    }
+
+    public function testIgnoreAnnotationProperty() {
+        $di = new di();
+        $di->bind('istd')->to('diTestIgnoreAnnotation_property');
+        $this->assertNull($di->get('istd')->basic);
+        $this->assertNull($di->get('istd')->author);
+        $this->assertNull($di->get('istd')->doctrine);
     }
 }
  
