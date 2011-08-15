@@ -305,4 +305,3 @@ class DITest extends \PHPUnit_Framework_TestCase {
     }
 
 }
- 

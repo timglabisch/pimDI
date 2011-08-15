@@ -13,6 +13,7 @@ class binder {
     private $arguments = array();
     private $decorated = false;
     private $instance;
+    private $hashKey;
 
     function __construct($interfaceName) {
         $this->interfaceName = $interfaceName;
@@ -39,8 +40,15 @@ class binder {
         return $this;
     }
 
+    public function dropHashKey() {
+        $this->hashKey = null;
+    }
+
     public function getHashKey() {
-        return $this->getInterfaceName().'|'.$this->getConcern();
+        if(!$this->hashKey)
+            $this->hashKey = $this->getInterfaceName().'|'.$this->getConcern();
+
+        return $this->hashKey;
     }
 
     public function setInterfaceImpl($interfaceImpl)
@@ -54,6 +62,7 @@ class binder {
     }
 
     public function setInterfaceName($interfaceName) {
+        $this->dropHashKey();
         $this->interfaceName = $interfaceName;
         return $this;
     }
@@ -63,6 +72,7 @@ class binder {
     }
 
     public function setConcern($named) {
+        $this->dropHashKey();
         $this->concern = $named;
         return $this;
     }

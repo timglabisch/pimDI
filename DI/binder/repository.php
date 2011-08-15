@@ -7,13 +7,15 @@ class repository {
 
     private $bindings = array();
     private $unknownBindings = array();
+    private $unknownBindingsCount = 0;
 
     public function addBinding(binder $binding) {
+        $this->unknownBindingsCount++;
         $this->unknownBindings[] = $binding;
     }
 
     private function knowBindings() {
-        if(!count($this->unknownBindings))
+        if($this->unknownBindingsCount === 0)
             return;
 
         foreach($this->unknownBindings as $key => $unknownBinding) {
@@ -25,10 +27,10 @@ class repository {
                 $this->bindings[$unknownBinding->getHashKey()]['impl'] = $unknownBinding;
             else
                 $this->bindings[$unknownBinding->getHashKey()]['decorator'][] = $unknownBinding;
-
-            unset($this->unknownBindings[$key]);
-
         }
+
+        $this->unknownBindings = array();
+        $this->unknownBindingsCount = 0;
     }
 
     /**
