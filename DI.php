@@ -30,13 +30,14 @@ class di implements iDi {
     }
 
     private function getByBinding($binding, $args=array(), $decorated=false) {
+
+        if($binding->isShared() && $binding->getInstance())
+            return $binding->getInstance();
+
         $reflection = new \ReflectionClass($binding->getInterfaceImpl());
 
         if(!$reflection->implementsInterface($binding->getInterfaceName()))
             throw new \Exception($reflection->getName() .' must implement '. $binding->getInterfaceName());
-
-        if($binding->isShared() && $binding->getInstance())
-            return $binding->getInstance();
 
         if(isset($this->lock[$binding->getHashKey()]))
             throw new \de\any\di\exception\circular('a', 'b');
@@ -50,7 +51,6 @@ class di implements iDi {
 
         $this->injectSetters($instance, $reflection);
         $this->injectProperties($instance, $reflection);
-
 
         unset($this->lock[$binding->getHashKey()]);
 
