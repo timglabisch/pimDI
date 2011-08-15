@@ -295,5 +295,14 @@ class DITest extends \PHPUnit_Framework_TestCase {
         $this->assertNull($di->get('istd')->author);
         $this->assertNull($di->get('istd')->doctrine);
     }
+
+    public function testIgnoreAnnotationMethod() {
+        $di = new di();
+        $di->bind('istd')->to('diTestIgnoreAnnotation_method');
+        $this->assertTrue($di->get('istd')->basic());
+        $this->assertTrue($di->get('istd')->author());
+        $this->assertTrue($di->get('istd')->doctrine());
+    }
+
 }
  
