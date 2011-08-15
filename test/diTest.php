@@ -15,6 +15,7 @@ array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diSharedDecorators/
 array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diParam/*.php'));
 array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diCircular/*.php'));
 array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diCircularNested/*.php'));
+array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diPropertyParseException/*.php'));
 
 class DITest extends \PHPUnit_Framework_TestCase {
 
@@ -275,6 +276,15 @@ class DITest extends \PHPUnit_Framework_TestCase {
         $di->bind('iCircular')->to('circularNested_c')->concern('c');
 
         $this->assertInstanceOf('circular_a', $di->get('iCircular', 'a'));
+    }
+
+   /**
+     * @expectedException  \de\any\di\exception\parse
+     */
+    public function testPropertyParseException() {
+        $di= new di();
+        $di->bind('istd')->to('diPropertyParseException_std1');
+        $di->get('istd');
     }
 }
  

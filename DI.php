@@ -125,7 +125,7 @@ class di implements iDi {
                 continue;
 
             if(count($annotationStrings['var']) !== 1) {
-                throw new Exception('multiple @var annotation is not supportet');
+                throw new di\exception\parse('multiple @var annotation is not supportet');
             }
 
             if(strpos($annotationStrings['var'][0], '!inject') === false)
