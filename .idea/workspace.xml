@@ -4,6 +4,7 @@
     <list default="true" id="fcd12fa5-c305-4a9b-9d83-be9a31350558" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DI.php" afterPath="$PROJECT_DIR$/DI.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DI/binder/repository.php" afterPath="$PROJECT_DIR$/DI/binder/repository.php" />
     </list>
     <ignored path="DI.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -53,19 +54,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="exception.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DI/exception.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="38" selection-start="168" selection-end="168" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="DI.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/DI.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="73" selection-start="1240" selection-end="1240" vertical-scroll-proportion="0.31615925">
+            <state line="102" column="0" selection-start="3573" selection-end="3573" vertical-scroll-proportion="0.035629455">
               <folding />
             </state>
           </provider>
@@ -89,19 +81,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="classNotFound.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DI/exception/classNotFound.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="104" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="binder.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DI/binder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="29" selection-start="921" selection-end="922" vertical-scroll-proportion="-5.48">
+            <state line="78" column="0" selection-start="1747" selection-end="1747" vertical-scroll-proportion="-14.88">
               <folding />
             </state>
           </provider>
@@ -110,7 +93,7 @@
       <file leaf-file-name="repository.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DI/binder/repository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="1" selection-start="1972" selection-end="1972" vertical-scroll-proportion="0.0">
+            <state line="15" column="0" selection-start="331" selection-end="331" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -393,7 +376,7 @@
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="improved performance" />
+    <option name="LAST_COMMIT_MESSAGE" value="performance boost for shared instances" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -418,21 +401,12 @@
     <MESSAGE value="add test for ignore other annotations" />
     <MESSAGE value="add needed files" />
     <MESSAGE value="improved performance" />
+    <MESSAGE value="performance boost for shared instances" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test/diCircularNested/a.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="20" selection-start="21" selection-end="27" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/diCircularNested/b.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="20" selection-start="27" selection-end="27" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/diCircularNested/c.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="20" selection-start="27" selection-end="27" vertical-scroll-proportion="0.0" />
@@ -504,21 +478,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DI/binder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="29" selection-start="921" selection-end="922" vertical-scroll-proportion="-5.48">
+        <state line="78" column="0" selection-start="1747" selection-end="1747" vertical-scroll-proportion="-14.88">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DI/binder/repository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="1" selection-start="1972" selection-end="1972" vertical-scroll-proportion="0.0">
+        <state line="15" column="0" selection-start="331" selection-end="331" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/Reflection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1018" column="20" selection-start="27784" selection-end="27784" vertical-scroll-proportion="0.3318078">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DI/ReflectionAnnotation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="27" selection-start="124" selection-end="124" vertical-scroll-proportion="0.27088037">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DI.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="73" selection-start="1240" selection-end="1240" vertical-scroll-proportion="0.31615925">
+        <state line="102" column="0" selection-start="3573" selection-end="3573" vertical-scroll-proportion="0.035629455">
           <folding />
         </state>
       </provider>

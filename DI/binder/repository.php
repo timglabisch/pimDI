@@ -18,15 +18,17 @@ class repository {
         if($this->unknownBindingsCount === 0)
             return;
 
-        foreach($this->unknownBindings as $key => $unknownBinding) {
+        foreach($this->unknownBindings as &$unknownBinding) {
 
-            if(!isset($this->bindings[$unknownBinding->getHashKey()]))
-                $this->bindings[$unknownBinding->getHashKey()] = array('decorator'=>array(), 'impl'=>null);
+            $hashKey = $unknownBinding->getHashKey();
+
+            if(!isset($this->bindings[$hashKey]))
+                $this->bindings[$hashKey] = array('decorator'=>array(), 'impl'=>null);
 
             if(!$unknownBinding->isDecorated())
-                $this->bindings[$unknownBinding->getHashKey()]['impl'] = $unknownBinding;
+                $this->bindings[$hashKey]['impl'] = $unknownBinding;
             else
-                $this->bindings[$unknownBinding->getHashKey()]['decorator'][] = $unknownBinding;
+                $this->bindings[$hashKey]['decorator'][] = $unknownBinding;
         }
 
         $this->unknownBindings = array();
