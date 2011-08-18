@@ -51,4 +51,19 @@ class binderRepositoryTest extends \PHPUnit_Framework_TestCase {
         $this->assertEquals($decorators[1], $binder1);
         $this->assertEquals($decorators[2], $binder2);
     }
+
+    function testAddBindings() {
+        $repository = new repository();
+
+        $binder1 = new binder('istd');
+        $binder1->to('std1');
+
+        $binder2 = new binder('istd2');
+        $binder2->to('std1');
+
+        $repository->addBindings(array($binder1, $binder2));
+
+        $this->assertTrue($repository->getBinding('istd') === $binder1);
+        $this->assertTrue($repository->getBinding('istd2') === $binder2);
+    }
 }

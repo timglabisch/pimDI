@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fcd12fa5-c305-4a9b-9d83-be9a31350558" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DI/binder/iParser.php" afterPath="$PROJECT_DIR$/DI/binder/iParser.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DI/binder/repository.php" afterPath="$PROJECT_DIR$/DI/binder/repository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/DI/binder/parser/xmlTest.php" afterPath="$PROJECT_DIR$/test/DI/binder/parser/xmlTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/DI/binder/repositoryTest.php" afterPath="$PROJECT_DIR$/test/DI/binder/repositoryTest.php" />
     </list>
     <ignored path="DI.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,7 +29,16 @@
       <file leaf-file-name="repositoryTest.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/DI/binder/repositoryTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="15" selection-start="60" selection-end="60" vertical-scroll-proportion="0.033632286">
+            <state line="64" column="0" selection-start="1694" selection-end="1694" vertical-scroll-proportion="1.1816144">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="repository.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DI/binder/repository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="43" column="24" selection-start="1174" selection-end="1174" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -51,7 +58,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/DI/exception/circular.php" />
         <option value="$PROJECT_DIR$/DI/exception/parse.php" />
         <option value="$PROJECT_DIR$/DI/exception.php" />
         <option value="$PROJECT_DIR$/test/diPropertyParseException/std1.php" />
@@ -67,6 +73,7 @@
         <option value="$PROJECT_DIR$/DI/binder/iParser.php" />
         <option value="$PROJECT_DIR$/test/DI/binder/parser/xmlTest.php" />
         <option value="$PROJECT_DIR$/DI/binder/repository.php" />
+        <option value="$PROJECT_DIR$/test/DI/binder/repositoryTest.php" />
       </list>
     </option>
   </component>
@@ -354,7 +361,7 @@
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="rename test" />
+    <option name="LAST_COMMIT_MESSAGE" value="parser has an valid interace" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -386,6 +393,7 @@
     <MESSAGE value="improved coding standards" />
     <MESSAGE value="xml parser works now" />
     <MESSAGE value="rename test" />
+    <MESSAGE value="parser has an valid interace" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -468,13 +476,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DI/binder/repository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="336" selection-end="336" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DI.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="142" column="5" selection-start="5119" selection-end="5119" vertical-scroll-proportion="0.21615201">
@@ -482,9 +483,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/DI/binder/repository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="24" selection-start="1174" selection-end="1174" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test/DI/binder/repositoryTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="15" selection-start="60" selection-end="60" vertical-scroll-proportion="0.033632286">
+        <state line="64" column="0" selection-start="1694" selection-end="1694" vertical-scroll-proportion="1.1816144">
           <folding />
         </state>
       </provider>
