@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fcd12fa5-c305-4a9b-9d83-be9a31350558" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/fixtures/parse/xml/multiple.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DI/binder.php" afterPath="$PROJECT_DIR$/DI/binder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DI/binder/parser/xml.php" afterPath="$PROJECT_DIR$/DI/binder/parser/xml.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/DI/binder/parser/xmlTest.php" afterPath="$PROJECT_DIR$/test/DI/binder/parser/xmlTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/fixtures/parse/xml/basic.xml" afterPath="$PROJECT_DIR$/test/fixtures/parse/xml/basic.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/fixtures/parse/xml/mapping.xsd" afterPath="$PROJECT_DIR$/test/fixtures/parse/xml/mapping.xsd" />
     </list>
     <ignored path="DI.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -70,7 +65,7 @@
       <file leaf-file-name="xmlTest.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/DI/binder/parser/xmlTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="27" selection-start="303" selection-end="303" vertical-scroll-proportion="0.17264573">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -110,11 +105,11 @@
         <option value="$PROJECT_DIR$/DI/binder/repository.php" />
         <option value="$PROJECT_DIR$/DI.php" />
         <option value="$PROJECT_DIR$/DI/binder/iParser.php" />
-        <option value="$PROJECT_DIR$/test/DI/binder/parser/xmlTest.php" />
         <option value="$PROJECT_DIR$/test/fixtures/parse/xml/basic.xml" />
         <option value="$PROJECT_DIR$/test/fixtures/parse/xml/mapping.xsd" />
         <option value="$PROJECT_DIR$/DI/binder/parser/xml.php" />
         <option value="$PROJECT_DIR$/test/fixtures/parse/xml/multiple.xml" />
+        <option value="$PROJECT_DIR$/test/DI/binder/parser/xmlTest.php" />
       </list>
     </option>
   </component>
@@ -366,7 +361,8 @@
     <frame x="-1" y="24" width="1602" height="853" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32765958" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32765958" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32946485" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32979852" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
@@ -379,7 +375,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32765958" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -410,7 +405,7 @@
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="basic xml parser" />
+    <option name="LAST_COMMIT_MESSAGE" value="basic xml parser multiple" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -438,6 +433,7 @@
     <MESSAGE value="performance boost for shared instances" />
     <MESSAGE value="speed up" />
     <MESSAGE value="basic xml parser" />
+    <MESSAGE value="basic xml parser multiple" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -524,7 +520,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/DI/binder/parser/xmlTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="27" selection-start="303" selection-end="303" vertical-scroll-proportion="0.17264573">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
