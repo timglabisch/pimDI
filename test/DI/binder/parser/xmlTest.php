@@ -31,7 +31,7 @@ class xmlTest extends \PHPUnit_Framework_TestCase {
         $this->assertEquals($bindings[0]->getInterfaceName(), 'iFoo');
         $this->assertEquals($bindings[0]->getInterfaceImpl(), 'foo');
         $this->assertEquals($bindings[0]->isShared(), true);
-        $this->assertEquals($bindings[0]->isDecorated(), true);
+        $this->assertEquals($bindings[0]->isDecorated(), false);
 
         $this->assertEquals($bindings[1]->getInterfaceName(), 'iFoo2');
         $this->assertEquals($bindings[1]->getInterfaceImpl(), 'foo2');
