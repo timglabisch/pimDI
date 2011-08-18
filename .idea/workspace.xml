@@ -29,7 +29,7 @@
       <file leaf-file-name="repositoryTest.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/DI/binder/repositoryTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="0" selection-start="1694" selection-end="1694" vertical-scroll-proportion="1.1816144">
+            <state line="69" column="38" selection-start="1887" selection-end="1887" vertical-scroll-proportion="0.8789238">
               <folding />
             </state>
           </provider>
@@ -361,7 +361,7 @@
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="parser has an valid interace" />
+    <option name="LAST_COMMIT_MESSAGE" value="add bindings test" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -394,6 +394,7 @@
     <MESSAGE value="xml parser works now" />
     <MESSAGE value="rename test" />
     <MESSAGE value="parser has an valid interace" />
+    <MESSAGE value="add bindings test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -492,7 +493,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/DI/binder/repositoryTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="0" selection-start="1694" selection-end="1694" vertical-scroll-proportion="1.1816144">
+        <state line="69" column="38" selection-start="1887" selection-end="1887" vertical-scroll-proportion="0.8789238">
           <folding />
         </state>
       </provider>
