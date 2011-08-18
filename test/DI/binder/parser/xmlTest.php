@@ -7,7 +7,7 @@ require_once __DIR__.'/../../../../DI/binder/parser/xml.php';
 
 class xmlTest extends \PHPUnit_Framework_TestCase {
 
-    /** @var xml */
+    /** @var \de\any\di\binder\parser\xml */
     private $xml;
 
     public function testGetBindings() {

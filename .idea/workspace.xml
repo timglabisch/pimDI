@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="fcd12fa5-c305-4a9b-9d83-be9a31350558" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DI/binder/parser/xml.php" afterPath="$PROJECT_DIR$/DI/binder/parser/xml.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DI/binder/iParser.php" afterPath="$PROJECT_DIR$/DI/binder/iParser.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DI/binder/repository.php" afterPath="$PROJECT_DIR$/DI/binder/repository.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/DI/binder/parser/xmlTest.php" afterPath="$PROJECT_DIR$/test/DI/binder/parser/xmlTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/fixtures/parse/xml/multiple.xml" afterPath="$PROJECT_DIR$/test/fixtures/parse/xml/multiple.xml" />
     </list>
     <ignored path="DI.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,64 +28,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="mapping.xsd" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/fixtures/parse/xml/mapping.xsd">
+      <file leaf-file-name="repositoryTest.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/DI/binder/repositoryTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="26" selection-start="656" selection-end="656" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="basic.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/fixtures/parse/xml/basic.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="21" selection-start="174" selection-end="174" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="xml.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/DI/binder/parser/xml.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="32" selection-start="935" selection-end="935" vertical-scroll-proportion="0.91255605">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="multiple.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/fixtures/parse/xml/multiple.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="51" selection-start="282" selection-end="287" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="xmlTest.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/DI/binder/parser/xmlTest.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="0" selection-start="1469" selection-end="1469" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Assert.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file:///usr/share/php/PHPUnit/Framework/Assert.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2061" column="0" selection-start="67010" selection-end="67010" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="binder.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DI/binder.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="6" selection-start="85" selection-end="85" vertical-scroll-proportion="0.0">
+            <state line="4" column="15" selection-start="60" selection-end="60" vertical-scroll-proportion="0.033632286">
               <folding />
             </state>
           </provider>
@@ -113,14 +59,14 @@
         <option value="$PROJECT_DIR$/test/diTestIgnoreAnnotation/method.php" />
         <option value="$PROJECT_DIR$/test/diTest.php" />
         <option value="$PROJECT_DIR$/DI/binder.php" />
-        <option value="$PROJECT_DIR$/DI/binder/repository.php" />
         <option value="$PROJECT_DIR$/DI.php" />
-        <option value="$PROJECT_DIR$/DI/binder/iParser.php" />
         <option value="$PROJECT_DIR$/test/fixtures/parse/xml/basic.xml" />
         <option value="$PROJECT_DIR$/test/fixtures/parse/xml/mapping.xsd" />
-        <option value="$PROJECT_DIR$/test/DI/binder/parser/xmlTest.php" />
         <option value="$PROJECT_DIR$/test/fixtures/parse/xml/multiple.xml" />
         <option value="$PROJECT_DIR$/DI/binder/parser/xml.php" />
+        <option value="$PROJECT_DIR$/DI/binder/iParser.php" />
+        <option value="$PROJECT_DIR$/test/DI/binder/parser/xmlTest.php" />
+        <option value="$PROJECT_DIR$/DI/binder/repository.php" />
       </list>
     </option>
   </component>
@@ -201,15 +147,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="fixtures" />
+              <option name="myItemId" value="DI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pimDI" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="parse" />
+              <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="xml" />
+              <option name="myItemId" value="DI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="binder" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -242,28 +202,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="binder" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pimDI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="binder" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="parser" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -392,7 +330,7 @@
     </layout>
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="false" />
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_NEW_TODO" value="true" />
     <option name="myTodoPanelSettings">
@@ -416,7 +354,7 @@
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="improved coding standards" />
+    <option name="LAST_COMMIT_MESSAGE" value="rename test" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -446,6 +384,8 @@
     <MESSAGE value="basic xml parser" />
     <MESSAGE value="basic xml parser multiple" />
     <MESSAGE value="improved coding standards" />
+    <MESSAGE value="xml parser works now" />
+    <MESSAGE value="rename test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -476,41 +416,16 @@
         <state line="8" column="27" selection-start="124" selection-end="124" vertical-scroll-proportion="0.27088037" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DI.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="17" selection-start="237" selection-end="237" vertical-scroll-proportion="-0.6" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DI/binder/repository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="76" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DI/binder/iParser.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="10" selection-start="17" selection-end="33" vertical-scroll-proportion="0.065789476" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/DI/binder/binderTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="15" selection-start="60" selection-end="60" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DI/binder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="6" selection-start="85" selection-end="85" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file:///usr/share/php/PHPUnit/Framework/Assert.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2061" column="0" selection-start="67010" selection-end="67010" vertical-scroll-proportion="0.0">
+        <state line="6" column="6" selection-start="85" selection-end="85" vertical-scroll-proportion="0.033632286">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/DI/binder/parser/xmlTest.php">
+    <entry file="file:///usr/share/php/PHPUnit/Framework/Assert.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="0" selection-start="1469" selection-end="1469" vertical-scroll-proportion="0.0">
+        <state line="2061" column="0" selection-start="67010" selection-end="67010" vertical-scroll-proportion="0.34180138">
           <folding />
         </state>
       </provider>
@@ -522,19 +437,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/fixtures/parse/xml/mapping.xsd">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="26" selection-start="656" selection-end="656" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/fixtures/parse/xml/basic.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="21" selection-start="174" selection-end="174" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test/fixtures/parse/xml/mapping.xsd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="26" selection-start="656" selection-end="656" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DI/binder/iParser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="31" selection-start="182" selection-end="182" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/DI/binder/parser/xml.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="32" selection-start="935" selection-end="935" vertical-scroll-proportion="0.91255605">
+        <state line="50" column="0" selection-start="1180" selection-end="1180" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/DI/binder/parser/xmlTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="44" selection-start="241" selection-end="241" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DI/binder/repository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="0" selection-start="336" selection-end="336" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DI.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="142" column="5" selection-start="5119" selection-end="5119" vertical-scroll-proportion="0.21615201">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/DI/binder/repositoryTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="15" selection-start="60" selection-end="60" vertical-scroll-proportion="0.033632286">
           <folding />
         </state>
       </provider>

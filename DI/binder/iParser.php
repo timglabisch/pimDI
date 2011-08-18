@@ -7,7 +7,7 @@ interface parser {
 
     public function parse($str);
 
-    /** @return \de\any\di\binder\repository */
-    public function getBindingRepository();
+    /** @return \de\any\di\binder[] */
+    public function getBindings();
 
 }

@@ -14,6 +14,11 @@ class repository {
         $this->unknownBindings[] = $binding;
     }
 
+    public function addBindings(array $bindings) {
+        foreach($bindings as $binding)
+            $this->addBinding($binding);
+    }
+
     private function knowBindings() {
         if($this->unknownBindingsCount === 0)
             return;
