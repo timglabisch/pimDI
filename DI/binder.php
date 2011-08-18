@@ -117,8 +117,7 @@ class binder {
         return $this;
     }
 
-    public function isDecorated()
-    {
+    public function isDecorated() {
         return $this->decorated;
     }
 

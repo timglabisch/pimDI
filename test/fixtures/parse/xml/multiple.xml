@@ -4,5 +4,7 @@
       xmlns:di="mapping.xsd">
 
     <bind interface="iFoo" to="foo" shared="true" decorated="true"/>
+    <bind interface="iFoo2" to="foo2" shared="false" decorated="true"/>
+    <bind interface="iFoo3" to="foo3" shared="true" decorated="false"/>
 
 </di:bindings>
