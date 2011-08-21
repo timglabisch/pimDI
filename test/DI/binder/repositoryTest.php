@@ -5,7 +5,7 @@ use de\any;
 use de\any\di\binder;
 use de\any\di\binder\repository;
 
-require_once __DIR__.'/../../../DI.php';
+require_once __DIR__ . '/../../../di.php';
 
 class binderRepositoryTest extends \PHPUnit_Framework_TestCase {
     

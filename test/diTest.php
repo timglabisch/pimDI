@@ -4,7 +4,7 @@ namespace de\any\di\test;
 use de\any\di;
 use de\any\di\binder;
 
-require_once __DIR__.'/../DI.php';
+require_once __DIR__ . '/../di.php';
 
 array_map(function($v) { include_once  $v; }, glob(__DIR__.'/'.basename(__FILE__,'.php').'/*.php'));
 array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diNestedTest/*.php'));
