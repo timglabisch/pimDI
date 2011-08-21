@@ -5,9 +5,6 @@
       <change type="MOVED" beforePath="$PROJECT_DIR$/DI.php" afterPath="$PROJECT_DIR$/di.php" />
       <change type="MOVED" beforePath="$PROJECT_DIR$/Idi.php" afterPath="$PROJECT_DIR$/iDi.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/DI/binder/repositoryTest.php" afterPath="$PROJECT_DIR$/test/DI/binder/repositoryTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/DI/binderTest.php" afterPath="$PROJECT_DIR$/test/DI/binderTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/diTest.php" afterPath="$PROJECT_DIR$/test/diTest.php" />
     </list>
     <ignored path="DI.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -329,7 +326,7 @@
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="overwrite bindings in a repository" />
+    <option name="LAST_COMMIT_MESSAGE" value="improved tests" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -364,6 +361,7 @@
     <MESSAGE value="parser has an valid interace" />
     <MESSAGE value="add bindings test" />
     <MESSAGE value="overwrite bindings in a repository" />
+    <MESSAGE value="improved tests" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />

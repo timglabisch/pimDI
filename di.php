@@ -3,7 +3,7 @@ namespace de\any;
 
 require_once __DIR__.'/DI/binder.php';
 require_once __DIR__.'/DI/ReflectionAnnotation.php';
-require_once __DIR__.'/Idi.php';
+require_once __DIR__ . '/iDi.php';
 require_once __DIR__.'/DI/exception.php';
 
 class di implements iDi {
