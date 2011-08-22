@@ -2,9 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fcd12fa5-c305-4a9b-9d83-be9a31350558" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DI/iRunable.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DI/binder/iParser.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DI/binder/parser/xml.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DI/exception.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DI/exception/circular.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DI/exception/classNotFound.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DI/exception/parse.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/phpunit.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/DI/binder/parser/xmlTest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/DI/binder/repositoryTest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/diCircularNested/a.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/diCircularNested/b.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/diCircularNested/c.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/diCircular/_iCircular.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/diCircular/a.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/diCircular/b.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/diPropertyParseException/std1.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/diTestIgnoreAnnotation/method.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/diTestIgnoreAnnotation/property.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/fixtures/parse/xml/basic.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/fixtures/parse/xml/mapping.xsd" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/fixtures/parse/xml/multiple.xml" />
+      <change type="DELETED" beforePath="C:\ZendCe\Apache2\htdocs\DI\test\DI\binder\binderTest.php" afterPath="" />
+      <change type="MOVED" beforePath="C:\ZendCe\Apache2\htdocs\DI\DI.php" afterPath="$PROJECT_DIR$/di.php" />
+      <change type="MOVED" beforePath="C:\ZendCe\Apache2\htdocs\DI\Idi.php" afterPath="$PROJECT_DIR$/iDi.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/DI.iml" afterPath="$PROJECT_DIR$/.idea/DI.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/php.xml" afterPath="$PROJECT_DIR$/.idea/php.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DI.php" afterPath="$PROJECT_DIR$/DI.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DI/binder.php" afterPath="$PROJECT_DIR$/DI/binder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DI/binder/repository.php" afterPath="$PROJECT_DIR$/DI/binder/repository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/DI/binderTest.php" afterPath="$PROJECT_DIR$/test/DI/binderTest.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/diTest.php" afterPath="$PROJECT_DIR$/test/diTest.php" />
     </list>
     <ignored path="DI.iws" />
@@ -28,37 +55,64 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="binder.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DI/binder.php">
+      <file leaf-file-name="repositoryTest.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/DI/binder/repositoryTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="0" selection-start="7" selection-end="77" vertical-scroll-proportion="0.0">
+            <state line="82" column="1" selection-start="2284" selection-end="2284" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="iRunable.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DI/iRunable.php">
+      <file leaf-file-name="basic.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/fixtures/parse/xml/basic.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="19" selection-start="16" selection-end="25" vertical-scroll-proportion="0.0">
+            <state line="3" column="20" selection-start="173" selection-end="173" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DI.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/DI.php">
+      <file leaf-file-name="istd.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/diConstructor/istd.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="152" column="5" selection-start="5142" selection-end="5385" vertical-scroll-proportion="0.94361526">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="diTest.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/diTest.php">
+      <file leaf-file-name="std1.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/diConstructor/std1.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="201" column="5" selection-start="7865" selection-end="7865" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="di.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/di.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="38" selection-start="232" selection-end="232" vertical-scroll-proportion="0.19224556">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="std2.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/diConstructor/std2.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="repository.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DI/binder/repository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="43" column="24" selection-start="1198" selection-end="1198" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -78,54 +132,29 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/test/diExampels/getterInjection/diC/iMailer.php" />
-        <option value="$PROJECT_DIR$/test/diExampels/getterInjection/diC/iRegistration.php" />
-        <option value="$PROJECT_DIR$/test/diExampels/getterInjection/diC/Mailer.php" />
-        <option value="$PROJECT_DIR$/test/diExampels/getterInjection/diC/MailerTest.php" />
-        <option value="$PROJECT_DIR$/test/diExampels/getterInjection/diC/Registration.php" />
-        <option value="$PROJECT_DIR$/test/diExampels/getterInjection/diC/RegistrationTest.php" />
-        <option value="$PROJECT_DIR$/test/diParam/standard_injected.php" />
-        <option value="$PROJECT_DIR$/test/diParam/standard.php" />
-        <option value="$PROJECT_DIR$/test/diParam/concern.php" />
-        <option value="$PROJECT_DIR$/test.xml" />
-        <option value="$PROJECT_DIR$/DI/binder.php" />
-        <option value="$PROJECT_DIR$/DI/ReflectionAnnotation.php" />
-        <option value="$PROJECT_DIR$/DI/binder/repository.php" />
-        <option value="$PROJECT_DIR$/DI/iRunable.php" />
+        <option value="$PROJECT_DIR$/test/diPropertyParseException/std1.php" />
+        <option value="$PROJECT_DIR$/test/diTestIgnoreAnnotation/property.php" />
+        <option value="$PROJECT_DIR$/test/diTestIgnoreAnnotation/method.php" />
         <option value="$PROJECT_DIR$/test/diTest.php" />
+        <option value="$PROJECT_DIR$/DI/binder.php" />
         <option value="$PROJECT_DIR$/DI.php" />
+        <option value="$PROJECT_DIR$/test/fixtures/parse/xml/basic.xml" />
+        <option value="$PROJECT_DIR$/test/fixtures/parse/xml/mapping.xsd" />
+        <option value="$PROJECT_DIR$/test/fixtures/parse/xml/multiple.xml" />
+        <option value="$PROJECT_DIR$/DI/binder/parser/xml.php" />
+        <option value="$PROJECT_DIR$/DI/binder/iParser.php" />
+        <option value="$PROJECT_DIR$/test/DI/binder/parser/xmlTest.php" />
+        <option value="$PROJECT_DIR$/DI/binder/repository.php" />
+        <option value="$PROJECT_DIR$/test/DI/binder/repositoryTest.php" />
+        <option value="$PROJECT_DIR$/test/fixtures/parse/xml/overwrite/eins.xml" />
+        <option value="$PROJECT_DIR$/di.php" />
       </list>
     </option>
   </component>
-  <component name="ProjectInspectionProfilesVisibleTreeState">
-    <entry key="Project Default">
-      <profile-state>
-        <expanded-state>
-          <State>
-            <id />
-          </State>
-        </expanded-state>
-        <selected-state>
-          <State>
-            <id>CSS</id>
-          </State>
-        </selected-state>
-      </profile-state>
-    </entry>
-    <entry key="default">
-      <profile-state>
-        <expanded-state>
-          <State>
-            <id />
-          </State>
-        </expanded-state>
-        <selected-state>
-          <State>
-            <id>CSS</id>
-          </State>
-        </selected-state>
-      </profile-state>
-    </entry>
+  <component name="PHPUnitCoveragePlugin">
+    <option name="cloverXmlPath" value="$PROJECT_DIR$/coverage.xml" />
+    <option name="highlightSides" value="true" />
+    <option name="highlightLines" value="false" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -187,20 +216,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -215,11 +230,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\ZendCe\Apache2\htdocs\DI\test\diParam" />
-      <recent name="C:\ZendCe\Apache2\htdocs\DI\test\diExampels\getterInjection\diC" />
-      <recent name="C:\ZendCe\Apache2\htdocs\DI\test\diExampels\getterInjection\withoutDiC" />
-      <recent name="C:\ZendCe\Apache2\htdocs\DI\test\diExampels\getterInjection\dic" />
-      <recent name="C:\ZendCe\Apache2\htdocs\DI\test\diExampels\getterInjection" />
+      <recent name="$PROJECT_DIR$/test/fixtures/parse/xml/overwrite" />
+      <recent name="$PROJECT_DIR$/test/diTestIgnoreAnnotation" />
+      <recent name="$PROJECT_DIR$/test/diPropertyParseException" />
+      <recent name="$PROJECT_DIR$/DI" />
+      <recent name="$PROJECT_DIR$/test" />
     </key>
   </component>
   <component name="RunManager" selected="PHPUnit.Unnamed">
@@ -242,7 +257,7 @@
         <option name="PhingTarget" enabled="false" />
       </method>
     </configuration>
-    <configuration default="false" name="Unnamed" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" config_file="C:\ZendCe\Apache2\htdocs\DI\test.xml" scope="XML" path="$PROJECT_DIR$/test.xml" workingDirectory="">
+    <configuration default="false" name="Unnamed" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" config_file="$PROJECT_DIR$/phpunit.xml" scope="XML" path="$PROJECT_DIR$/phpunit.xml" workingDirectory="$PROJECT_DIR$/">
       <RunnerSettings RunnerId="PhpRunner" />
       <RunnerSettings RunnerId="PhpUnitDebugRunner" />
       <ConfigurationWrapper RunnerId="PhpRunner" />
@@ -269,7 +284,7 @@
     <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
     <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
     <option name="FORCE_UPDATE" value="false" />
-    <configuration useDefault="true">C:\Users\Tim\AppData\Roaming\Subversion</configuration>
+    <configuration useDefault="true">$USER_HOME$/.subversion_IDEA</configuration>
     <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
   </component>
   <component name="TaskManager">
@@ -302,21 +317,21 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="58" y="-8" width="1870" height="1092" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3290735" sideWeight="0.0" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32694355" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32946485" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32979852" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3386829" sideWeight="0.6709265" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19701162" sideWeight="0.6879659" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3995749" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31735888" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32979852" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31203407" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32907802" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32873806" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32765958" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -324,7 +339,7 @@
     </layout>
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="false" />
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_NEW_TODO" value="true" />
     <option name="myTodoPanelSettings">
@@ -348,7 +363,7 @@
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="improved coding standards" />
+    <option name="LAST_COMMIT_MESSAGE" value="improved tests" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -366,98 +381,106 @@
     <MESSAGE value="add logger example" />
     <MESSAGE value="basic parameter injection" />
     <MESSAGE value="improved property support" />
+    <MESSAGE value="exception if circular dependencies" />
+    <MESSAGE value="add some exceptions" />
+    <MESSAGE value="property parse exception if multiple @var annotations" />
+    <MESSAGE value="test Ignore property annotation" />
+    <MESSAGE value="add test for ignore other annotations" />
+    <MESSAGE value="add needed files" />
+    <MESSAGE value="improved performance" />
+    <MESSAGE value="performance boost for shared instances" />
+    <MESSAGE value="speed up" />
+    <MESSAGE value="basic xml parser" />
+    <MESSAGE value="basic xml parser multiple" />
     <MESSAGE value="improved coding standards" />
+    <MESSAGE value="xml parser works now" />
+    <MESSAGE value="rename test" />
+    <MESSAGE value="parser has an valid interace" />
+    <MESSAGE value="add bindings test" />
+    <MESSAGE value="overwrite bindings in a repository" />
+    <MESSAGE value="improved tests" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test/diTest/iostd.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="15" selection-start="16" selection-end="21" vertical-scroll-proportion="0.027687296" />
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/Reflection.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1987" column="13" selection-start="53154" selection-end="53210" vertical-scroll-proportion="0.08306189" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/diNestedTest/object_double2.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/diTest/std2.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/diParam/standard_injected.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="48" selection-start="49" selection-end="54" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="10" selection-start="236" selection-end="236" vertical-scroll-proportion="0.0" />
+        <state line="1018" column="20" selection-start="27784" selection-end="27784" vertical-scroll-proportion="0.3318078" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DI/ReflectionAnnotation.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="75" selection-start="1622" selection-end="1622" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DI/binder/repository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="47" selection-start="652" selection-end="652" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/diParam/standard.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="1" selection-start="99" selection-end="99" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/diTest/std1.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="26" selection-start="28" selection-end="32" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/diTest/ostd1.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="11" selection-start="12" selection-end="17" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/diParam/concern.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="1" selection-start="163" selection-end="163" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="8" column="27" selection-start="124" selection-end="124" vertical-scroll-proportion="0.27088037" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DI/binder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="7" selection-end="77" vertical-scroll-proportion="0.0">
+        <state line="6" column="6" selection-start="85" selection-end="85" vertical-scroll-proportion="0.033632286">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DI/iRunable.php">
+    <entry file="file://$PROJECT_DIR$/test/fixtures/parse/xml/multiple.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="19" selection-start="16" selection-end="25" vertical-scroll-proportion="0.0">
+        <state line="6" column="51" selection-start="282" selection-end="287" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/fixtures/parse/xml/mapping.xsd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="26" selection-start="656" selection-end="656" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DI/binder/iParser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="31" selection-start="182" selection-end="182" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DI/binder/parser/xml.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="0" selection-start="1180" selection-end="1180" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/DI/binder/parser/xmlTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="44" selection-start="241" selection-end="241" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/DI/binder/repositoryTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="82" column="1" selection-start="2284" selection-end="2284" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/fixtures/parse/xml/basic.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="20" selection-start="173" selection-end="173" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/diConstructor/istd.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/diConstructor/std1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/diConstructor/std2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DI/binder/repository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="24" selection-start="1198" selection-end="1198" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/diTest.php">
+    <entry file="file://$PROJECT_DIR$/di.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="201" column="5" selection-start="7865" selection-end="7865" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DI.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="152" column="5" selection-start="5142" selection-end="5385" vertical-scroll-proportion="0.94361526">
+        <state line="7" column="38" selection-start="232" selection-end="232" vertical-scroll-proportion="0.19224556">
           <folding />
         </state>
       </provider>

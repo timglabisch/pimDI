@@ -3,16 +3,19 @@ namespace de\any;
 
 require_once __DIR__.'/DI/binder.php';
 require_once __DIR__.'/DI/ReflectionAnnotation.php';
-require_once __DIR__.'/Idi.php';
+require_once __DIR__ . '/iDi.php';
+require_once __DIR__.'/DI/exception.php';
+require_once __DIR__.'/DI/iRunable.php';
 
 class di implements iDi {
 
     private $binderRepository = null;
+    private $lock = array();
 
     public function createInstanceFromClassname($classname) {
         if(!class_exists($classname))
             throw new Exception('class with classname '. $classname.' not found');
-        
+
         $reflectionClass = new \ReflectionClass($classname);
         return $this->createInstance($reflectionClass);
     }
@@ -22,18 +25,26 @@ class di implements iDi {
             return $reflection->newInstance();
 
         $reflectionMethod = $reflection->getConstructor();
-        $args = array_merge($args, $this->getInjectedMethodArgs($reflectionMethod));
+        $annotationStrings = di\ReflectionAnnotation::parseMethodAnnotations($reflectionMethod);
+
+        $args = array_merge($args, $this->getInjectedMethodArgs($reflectionMethod, $annotationStrings));
         return $reflection->newInstanceArgs($args);
     }
 
     private function getByBinding($binding, $args=array(), $decorated=false) {
+
+        if($binding->isShared() && $binding->getInstance())
+            return $binding->getInstance();
+
         $reflection = new \ReflectionClass($binding->getInterfaceImpl());
 
         if(!$reflection->implementsInterface($binding->getInterfaceName()))
             throw new \Exception($reflection->getName() .' must implement '. $binding->getInterfaceName());
 
-        if($binding->isShared() && $binding->getInstance())
-            return $binding->getInstance();
+        if(isset($this->lock[$binding->getHashKey()]))
+            throw new \de\any\di\exception\circular('a', 'b');
+
+        $this->lock[$binding->getHashKey()] = true;
 
         $instance = $this->createInstance($reflection, $args);
 
@@ -42,6 +53,8 @@ class di implements iDi {
 
         $this->injectSetters($instance, $reflection);
         $this->injectProperties($instance, $reflection);
+
+        unset($this->lock[$binding->getHashKey()]);
 
         if(!$decorated) {
             $decorators = $this->getBinderRepository()->getBindingDecorators($binding->getInterfaceName(), $binding->getConcern());
@@ -61,17 +74,16 @@ class di implements iDi {
         return $this->getByBinding($binding, $args);
     }
 
-    private function getInjectedMethodArgs(\ReflectionMethod $reflectionMethod) {
-        $params = $reflectionMethod->getParameters();
-        $annotationStrings = di\ReflectionAnnotation::parseMethodAnnotations($reflectionMethod);
-
-        $args = array();
+    private function getInjectedMethodArgs(\ReflectionMethod $reflectionMethod, $annotationStrings) {
 
         if(!isset($annotationStrings['inject']))
-            return $args;
+                return array();
 
         $annotations = $annotationStrings['inject'];
 
+        $params = $reflectionMethod->getParameters();
+
+        $args = array();
         for($i=0;count($params) > $i; $i++) {
             $concern = (isset($annotations[$i])?$annotations[$i]:'');
             $args[] = $this->get($params[$i]->getClass()->getName(), $concern);
@@ -99,7 +111,7 @@ class di implements iDi {
             if(!isset($annotationStrings['inject']))
                 continue;
 
-            $args = $this->getInjectedMethodArgs($reflectionMethod);
+            $args = $this->getInjectedMethodArgs($reflectionMethod, $annotationStrings);
             $reflectionMethod->invokeArgs($instance, $args);
         }
     }
@@ -113,7 +125,7 @@ class di implements iDi {
                 continue;
 
             if(count($annotationStrings['var']) !== 1) {
-                throw new Exception('multiple @var annotation is not supportet');
+                throw new di\exception\parse('multiple @var annotation is not supportet');
             }
 
             if(strpos($annotationStrings['var'][0], '!inject') === false)

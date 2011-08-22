@@ -7,27 +7,36 @@ class repository {
 
     private $bindings = array();
     private $unknownBindings = array();
+    private $unknownBindingsCount = 0;
 
     public function addBinding(binder $binding) {
+        $this->unknownBindingsCount++;
         $this->unknownBindings[] = $binding;
     }
 
+    public function addBindings(array $bindings) {
+        foreach($bindings as $binding)
+            $this->addBinding($binding);
+    }
+
     private function knowBindings() {
-        if(!count($this->unknownBindings))
+        if($this->unknownBindingsCount === 0)
             return;
 
-        foreach($this->unknownBindings as $key => $unknownBinding) {
-            if(!isset($this->bindings[$unknownBinding->getHashKey()]))
-                $this->bindings[$unknownBinding->getHashKey()] = array('decorator'=>array(), 'impl'=>null);
+        foreach($this->unknownBindings as &$unknownBinding) {
+            $hashKey = $unknownBinding->getHashKey();
+
+            if(!isset($this->bindings[$hashKey]))
+                $this->bindings[$hashKey] = array('decorator'=>array(), 'impl'=>null);
 
             if(!$unknownBinding->isDecorated())
-                $this->bindings[$unknownBinding->getHashKey()]['impl'] = $unknownBinding;
+                $this->bindings[$hashKey]['impl'] = $unknownBinding;
             else
-                $this->bindings[$unknownBinding->getHashKey()]['decorator'][] = $unknownBinding;
-
-            unset($this->unknownBindings[$key]);
-
+                $this->bindings[$hashKey]['decorator'][] = $unknownBinding;
         }
+
+        $this->unknownBindings = array();
+        $this->unknownBindingsCount = 0;
     }
 
     /**
@@ -61,6 +70,3 @@ class repository {
     }
 
 }
-
-
- 

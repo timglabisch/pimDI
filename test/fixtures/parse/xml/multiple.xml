@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<di:bindings xmlns="http://www.w3.org/2001/XMLSchema-instance"
+      di:schemaLocation="http://anydi/mapping.xsd"
+      xmlns:di="mapping.xsd">
+
+    <bind interface="iFoo" to="foo" shared="true"/>
+    <bind interface="iFoo2" to="foo2" shared="false" decorated="true"/>
+    <bind interface="iFoo3" to="foo3" shared="true" decorated="false"/>
+
+</di:bindings>

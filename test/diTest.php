@@ -4,7 +4,7 @@ namespace de\any\di\test;
 use de\any\di;
 use de\any\di\binder;
 
-require_once __DIR__.'/../DI.php';
+require_once __DIR__ . '/../di.php';
 
 array_map(function($v) { include_once  $v; }, glob(__DIR__.'/'.basename(__FILE__,'.php').'/*.php'));
 array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diNestedTest/*.php'));
@@ -13,6 +13,10 @@ array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diDecorateTest/*.ph
 array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diDecoratorNeedDecorated/*.php'));
 array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diSharedDecorators/*.php'));
 array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diParam/*.php'));
+array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diCircular/*.php'));
+array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diCircularNested/*.php'));
+array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diPropertyParseException/*.php'));
+array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diTestIgnoreAnnotation/*.php'));
 
 class DITest extends \PHPUnit_Framework_TestCase {
 
@@ -230,6 +234,14 @@ class DITest extends \PHPUnit_Framework_TestCase {
     }
 
 
+    public function testClosure() {
+        $di = new di();
+        $di->foo = function() { return 'abc'; };
+
+#        var_dump(($di->foo)());
+##        $this->assertEquals('abc', $di->foo());
+    }
+
     public function testParamConcern() {
         $di = new di();
         $di->bind('istd')->to('diParam_concern');
@@ -241,6 +253,55 @@ class DITest extends \PHPUnit_Framework_TestCase {
         $this->assertInstanceOf('ostd1', $di->get('istd')->service_concern);
         return $di;
     }
-        
+
+    /**
+       * A Depends on B and B depends on A,
+       * @expectedException \de\any\di\exception\circular
+       */
+    public function testCicular() {
+        $di = new di();
+        $di->bind('iCircular')->to('circular_a')->concern('a');
+        $di->bind('iCircular')->to('circular_b')->concern('b');
+
+        $this->assertInstanceOf('circular_a', $di->get('iCircular', 'a'));
+    }
+
+   /**
+     * B Depends on C and C depends on A, get instance A
+     * @expectedException \de\any\di\exception\circular
+     */
+    public function testCicularNested() {
+        $di = new di();
+        $di->bind('iCircular')->to('circularNested_a')->concern('a');
+        $di->bind('iCircular')->to('circularNested_b')->concern('b');
+        $di->bind('iCircular')->to('circularNested_c')->concern('c');
+
+        $this->assertInstanceOf('circular_a', $di->get('iCircular', 'a'));
+    }
+
+   /**
+     * @expectedException  \de\any\di\exception\parse
+     */
+    public function testPropertyParseException() {
+        $di= new di();
+        $di->bind('istd')->to('diPropertyParseException_std1');
+        $di->get('istd');
+    }
+
+    public function testIgnoreAnnotationProperty() {
+        $di = new di();
+        $di->bind('istd')->to('diTestIgnoreAnnotation_property');
+        $this->assertNull($di->get('istd')->basic);
+        $this->assertNull($di->get('istd')->author);
+        $this->assertNull($di->get('istd')->doctrine);
+    }
+
+    public function testIgnoreAnnotationMethod() {
+        $di = new di();
+        $di->bind('istd')->to('diTestIgnoreAnnotation_method');
+        $this->assertTrue($di->get('istd')->basic());
+        $this->assertTrue($di->get('istd')->author());
+        $this->assertTrue($di->get('istd')->doctrine());
+    }
+
 }
- 

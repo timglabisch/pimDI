@@ -5,7 +5,7 @@ use de\any;
 use de\any\di\binder;
 use de\any\di\binder\repository;
 
-require_once __DIR__.'/../../../DI.php';
+require_once __DIR__ . '/../../../di.php';
 
 class binderRepositoryTest extends \PHPUnit_Framework_TestCase {
     
@@ -50,5 +50,34 @@ class binderRepositoryTest extends \PHPUnit_Framework_TestCase {
         $this->assertEquals(count($decorators), 3);
         $this->assertEquals($decorators[1], $binder1);
         $this->assertEquals($decorators[2], $binder2);
+    }
+
+    function testAddBindings() {
+        $repository = new repository();
+
+        $binder1 = new binder('istd');
+        $binder1->to('std1');
+
+        $binder2 = new binder('istd2');
+        $binder2->to('std1');
+
+        $repository->addBindings(array($binder1, $binder2));
+
+        $this->assertTrue($repository->getBinding('istd') === $binder1);
+        $this->assertTrue($repository->getBinding('istd2') === $binder2);
+    }
+
+    function testOverwritebindings() {
+        $repository = new repository();
+
+        $binder1 = new binder('istd');
+        $binder1->to('std');
+        $binder2 = new binder('istd');
+        $binder2->to('std2');
+
+        $repository->addBindings(array($binder1, $binder2));
+
+        $this->assertTrue($repository->getBinding('istd') !== $binder1);
+        $this->assertTrue($repository->getBinding('istd') === $binder2);
     }
 }

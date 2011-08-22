@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+    elementFormDefault="qualified">
+
+  <xs:annotation>
+    <xs:documentation><![CDATA[
+       This is the XML Schema for the object/relational
+       mapping file used by the Doctrine ORM.
+     ]]></xs:documentation>
+  </xs:annotation>
+
+  <xs:element name="bindings">
+      <xs:complexType>
+        <xs:sequence>
+          <xs:element name="bind" type="bind" />
+        </xs:sequence>
+      </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="bind">
+    <xs:attribute name="to" type="xs:string" use="required" />
+    <xs:attribute name="interface" type="xs:string" use="required" />
+    <xs:attribute name="concern" type="xs:string" />
+    <xs:attribute name="shared" type="xs:boolean" />
+    <xs:attribute name="decorated" type="xs:boolean" />
+  </xs:complexType>
+
+</xs:schema>
