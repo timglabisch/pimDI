@@ -17,6 +17,7 @@ array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diCircular/*.php'))
 array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diCircularNested/*.php'));
 array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diPropertyParseException/*.php'));
 array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diTestIgnoreAnnotation/*.php'));
+array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diRunable/*.php'));
 
 class DITest extends \PHPUnit_Framework_TestCase {
 
@@ -302,6 +303,15 @@ class DITest extends \PHPUnit_Framework_TestCase {
         $this->assertTrue($di->get('istd')->basic());
         $this->assertTrue($di->get('istd')->author());
         $this->assertTrue($di->get('istd')->doctrine());
+    }
+
+    public function testRunable() {
+        ob_start();
+        $di = new di();
+        $di->run(new \diRunable_Basic());
+
+        $this->assertEquals(ob_get_contents(), 'ok!');
+        ob_end_clean();
     }
 
 }

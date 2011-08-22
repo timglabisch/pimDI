@@ -161,6 +161,8 @@ class di implements iDi {
         $this->injectSetters($runable, $reflection);
         $this->injectProperties($runable, $reflection);
 
+        $runable->run();
+
         return $runable;
     }
 
