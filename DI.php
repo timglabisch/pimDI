@@ -143,4 +143,13 @@ class di implements iDi {
         return $this->binderRepository;
     }
 
+    function run(di\iRunable $runable) {
+        $reflection = new \ReflectionClass(get_class($runable));
+
+        $this->injectSetters($runable, $reflection);
+        $this->injectProperties($runable, $reflection);
+
+        return $runable;
+    }
+
 }

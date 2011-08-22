@@ -241,6 +241,6 @@ class DITest extends \PHPUnit_Framework_TestCase {
         $this->assertInstanceOf('ostd1', $di->get('istd')->service_concern);
         return $di;
     }
-    
+        
 }
  
