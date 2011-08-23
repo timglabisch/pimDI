@@ -314,4 +314,22 @@ class DITest extends \PHPUnit_Framework_TestCase {
         ob_end_clean();
     }
 
+    public function testRunableInjection() {
+        $di = new di();
+        $di->bind('istd')->to('std1');
+        $di->bind('istd')->to('std2')->concern('std2');
+        $di->bind('iostd')->to('ostd1');
+        $di->bind('iostd')->to('ostd1')->concern('std2');
+
+        $runable = new \diRunable_Inject();
+
+        $di->run($runable);
+
+        $this->assertInstanceOf('std1', $runable->std);
+        $this->assertInstanceOf('std2', $runable->std2);
+        $this->assertInstanceOf('ostd1', $runable->getIostd());
+        $this->assertInstanceOf('ostd1', $runable->getIostd2());
+    }
+
+
 }
