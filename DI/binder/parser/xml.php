@@ -40,6 +40,9 @@ class xml {
                     $binding->setIsDecorated(true);
                 else
                     $binding->setIsDecorated(false);
+
+             if(isset($v['concern']))
+                    $binding->setConcern($v['concern']->__toString());
             
             $buffer[] = $binding;
         }
