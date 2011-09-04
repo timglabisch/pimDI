@@ -6,6 +6,7 @@ class standard implements \de\any\di\reflection\iKlass  {
     private $classname;
     private $methods = null;
     private $reflectionClass = null;
+    private $properties;
 
     public function __construct($classname) {
         $this->setClassname($classname);
@@ -29,14 +30,14 @@ class standard implements \de\any\di\reflection\iKlass  {
     }
 
     public function hasMethod($method) {
-        $methods = $this->getMethodNames();
+        $methods = $this->getMethods();
 
         return isset($methods[$method]);
     }
 
-    private function getMethodNames() {
+    public function getMethods() {
         if($this->methods == null) {
-            $this->methods = apc_fetch('reflection|'.$this->getClassname());
+            $this->methods = apc_fetch('reflection|'.$this->getClassname().'|methods');
 
             if(!$this->methods) {
                 $methods = $this->getReflectionClass()->getMethods();
@@ -44,10 +45,10 @@ class standard implements \de\any\di\reflection\iKlass  {
                 $this->methods = array();
 
                 foreach($methods as $method) {
-                    $this->methods[$method->getName()] = $method->getName();
+                    $this->methods[$method->getName()] = $method;
                 }
-
-                apc_store('reflection|'.$this->getClassname(), $this->methods);
+                
+                apc_store('reflection|'.$this->getClassname(), $this->methods.'|methods');
             }
         }
 
@@ -55,15 +56,18 @@ class standard implements \de\any\di\reflection\iKlass  {
     }
 
     public function getProperties() {
-        return $this->getReflectionClass()->getProperties();
-    }
+        if($this->properties == null) {
 
-    public function getMethods() {
-        $buffer = array();
-        foreach($this->getMethodNames() as $method)
-            $buffer[] = new \ReflectionMethod($this->getClassname(), $method);
+            $this->properties = apc_fetch('reflection|'.$this->getClassname().'|properties');
 
-        return $buffer;
+            if(!$this->properties) {
+                $this->properties = $this->getReflectionClass()->getProperties();
+
+                apc_store('reflection|'.$this->getClassname(), $this->methods.'|properties');
+            }
+        }
+
+        return $this->properties;
     }
 
     public function getClassname() {
