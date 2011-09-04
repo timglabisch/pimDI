@@ -17,7 +17,36 @@ class standard implements \de\any\di\reflection\iKlass  {
         return new $classname;
     }
 
-    public function newInstanceArgs($args) {
+    public function newInstanceArgs(array $args) {
+
+        $argsLength = count($args);
+
+        $classname = $this->getClassname();
+
+        switch($argsLength) {
+            case 0:
+                return new $classname;
+                break;
+            case 1:
+                return new $classname($args[0]);
+                break;
+            case 2:
+                return new $classname($args[0], $args[1]);
+                break;
+            case 3:
+                return new $classname($args[0], $args[1], $args[2]);
+                break;
+            case 4:
+                return new $classname($args[0], $args[1], $args[2], $args[3]);
+                break;
+            case 5:
+                return new $classname($args[0], $args[1], $args[2], $args[3], $args[4]);
+                break;
+            case 6:
+                return new $classname($args[0], $args[1], $args[2], $args[3], $args[4], $args[5]);
+                break;
+        }
+
         return $this->getReflectionClass()->newInstanceArgs($args);
     }
 

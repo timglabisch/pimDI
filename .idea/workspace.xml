@@ -47,7 +47,7 @@
       <file leaf-file-name="standard.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/DI/reflection/klass/standard.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="16" selection-start="1303" selection-end="1303" vertical-scroll-proportion="0.442029">
+            <state line="19" column="35" selection-start="452" selection-end="467" vertical-scroll-proportion="0.050724637">
               <folding />
             </state>
           </provider>
@@ -367,7 +367,7 @@
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="new reflection class" />
+    <option name="LAST_COMMIT_MESSAGE" value="save instance in apc" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -380,7 +380,6 @@
     <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="better decorator support" />
     <MESSAGE value="add logger example" />
     <MESSAGE value="basic parameter injection" />
     <MESSAGE value="improved property support" />
@@ -405,6 +404,7 @@
     <MESSAGE value="+ runable test" />
     <MESSAGE value="concern now works in xml files" />
     <MESSAGE value="new reflection class" />
+    <MESSAGE value="save instance in apc" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -513,7 +513,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DI/reflection/klass/standard.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="16" selection-start="1303" selection-end="1303" vertical-scroll-proportion="0.442029">
+        <state line="19" column="35" selection-start="452" selection-end="467" vertical-scroll-proportion="0.050724637">
           <folding />
         </state>
       </provider>
