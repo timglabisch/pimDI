@@ -8,6 +8,7 @@ class standard implements \de\any\di\reflection\iKlass  {
     private $reflectionClass = null;
     private $properties;
     private $methodsAnnotatedWith = array();
+    private $injectProperties = array();
 
     public function __construct($classname) {
         $this->setClassname($classname);
@@ -111,6 +112,41 @@ class standard implements \de\any\di\reflection\iKlass  {
         }
 
         return $this->methodsAnnotatedWith[$annotation];
+    }
+
+    public function getInjectProperties() {
+            if(!$this->injectProperties) {
+                $this->injectProperties = apc_fetch('reflection|'.$this->getClassname().'|injProp');
+
+                if(!$this->injectProperties) {
+                     foreach($this->getReflectionClass()->getProperties() as $reflectionProperty) {
+                         
+                        $annotationStrings = \de\any\di\ReflectionAnnotation::parsePropertyAnnotations($reflectionProperty);
+
+                        if(!isset($annotationStrings['var']))
+                            continue;
+
+                        if(count($annotationStrings['var']) !== 1) {
+                            throw new \de\any\di\exception\parse('multiple @var annotation is not supportet');
+                        }
+
+                        if(strpos($annotationStrings['var'][0], '!inject') === false)
+                            continue;
+
+                        $classname = \de\any\di\ReflectionAnnotation::parsePropertyVarAnnotation($annotationStrings['var']);
+
+                        $binding = new \de\any\di\binder($classname['class']);
+                        $binding->setConcern($classname['concern']);
+
+                        $this->injectProperties[$reflectionProperty->getName()] = $binding;
+                     }
+
+
+                apc_store('reflection|'.$this->getClassname().'|injProp', $this->injectProperties);
+            }
+        }
+
+        return $this->injectProperties;
     }
 
     public function getProperties() {

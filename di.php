@@ -98,22 +98,10 @@ class di implements iDi {
         return $args;
     }
 
-    private function getInjectedPropertyArg(\ReflectionProperty $reflectionProperty) {
-        $annotationStrings = di\ReflectionAnnotation::parsePropertyAnnotations($reflectionProperty);
-
-        $classname = di\ReflectionAnnotation::parsePropertyVarAnnotation($annotationStrings['var']);
-
-        return $this->get($classname['class'], $classname['concern']);
-    }
-
     private function injectSetters($instance, \de\any\di\reflection\iKlass $reflection) {
-
         $methods = $reflection->getSetterMethodsAnnotatedWith('inject');
 
         if(!$methods)
-            return;
-
-        if(!count($methods))
             return;
 
         foreach($methods as $reflectionMethod) {
@@ -123,21 +111,13 @@ class di implements iDi {
     }
 
     private function injectProperties($instance, \de\any\di\reflection\iKlass $reflection) {
-        foreach($reflection->getProperties() as $reflectionProperty) {
+        $injProp = $reflection->getInjectProperties();
 
-            $annotationStrings = di\ReflectionAnnotation::parsePropertyAnnotations($reflectionProperty);
+        if(!$injProp)
+            return;
 
-            if(!isset($annotationStrings['var']))
-                continue;
-
-            if(count($annotationStrings['var']) !== 1) {
-                throw new di\exception\parse('multiple @var annotation is not supportet');
-            }
-
-            if(strpos($annotationStrings['var'][0], '!inject') === false)
-                continue;
-
-            $reflectionProperty->setValue($instance, $this->getInjectedPropertyArg($reflectionProperty));
+        foreach($reflection->getInjectProperties() as $name => $reflectionProperty) {
+            $instance->$name = $this->get($reflectionProperty->getInterfaceName(), $reflectionProperty->getConcern());
         }
     }
 
