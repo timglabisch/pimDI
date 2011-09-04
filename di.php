@@ -107,18 +107,18 @@ class di implements iDi {
     }
 
     private function injectSetters($instance, \de\any\di\reflection\iKlass $reflection) {
-        foreach($reflection->getMethods() as $reflectionMethod) {
 
-            if($reflectionMethod->isConstructor() || $reflectionMethod->isDestructor() || $reflectionMethod->isStatic())
-                continue;
+        $methods = $reflection->getSetterMethodsAnnotatedWith('inject');
 
-            $annotationStrings = di\ReflectionAnnotation::parseMethodAnnotations($reflectionMethod);
+        if(!$methods)
+            return;
 
-            if(!isset($annotationStrings['inject']))
-                continue;
+        if(!count($methods))
+            return;
 
-            $args = $this->getInjectedMethodArgs($reflectionMethod, $annotationStrings);
-            $reflectionMethod->invokeArgs($instance, $args);
+        foreach($methods as $reflectionMethod) {
+            $args = $this->getInjectedMethodArgs($reflectionMethod['method'], $reflectionMethod['annotation']);
+            $reflectionMethod['method']->invokeArgs($instance, $args);
         }
     }
 

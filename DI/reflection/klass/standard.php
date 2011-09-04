@@ -7,6 +7,7 @@ class standard implements \de\any\di\reflection\iKlass  {
     private $methods = null;
     private $reflectionClass = null;
     private $properties;
+    private $methodsAnnotatedWith = array();
 
     public function __construct($classname) {
         $this->setClassname($classname);
@@ -82,6 +83,34 @@ class standard implements \de\any\di\reflection\iKlass  {
         }
 
         return $this->methods;
+    }
+
+    public function getSetterMethodsAnnotatedWith($annotation) {
+
+        if(!isset($this->methodsAnnotatedWith[$annotation])) {
+
+            $this->methodsAnnotatedWith[$annotation] = apc_fetch('reflection|'.$this->getClassname().'|setterMethods|'.$annotation);
+
+            if(!$this->methodsAnnotatedWith[$annotation]) {
+                $methods = $this->getMethods();
+
+                foreach($methods as $method) {
+                    if($method->isConstructor() || $method->isDestructor() || $method->isStatic())
+                        continue;
+
+                    $annotationStrings = \de\any\di\ReflectionAnnotation::parseMethodAnnotations($method);
+
+                    if(!isset($annotationStrings[$annotation]))
+                        continue;
+
+                    $this->methodsAnnotatedWith[$annotation][] = array('method' => $method, 'annotation' => $annotationStrings);
+
+                    apc_store('reflection|'.$this->getClassname().'|setterMethods|'.$annotation, $this->methodsAnnotatedWith[$annotation]);
+                }
+            }
+        }
+
+        return $this->methodsAnnotatedWith[$annotation];
     }
 
     public function getProperties() {
