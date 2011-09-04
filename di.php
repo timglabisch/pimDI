@@ -1,11 +1,17 @@
 <?php
 namespace de\any;
+use \de\any\di\reflection\klass\standard as diReflectionClass;
 
 require_once __DIR__.'/DI/binder.php';
 require_once __DIR__.'/DI/ReflectionAnnotation.php';
 require_once __DIR__ . '/iDi.php';
 require_once __DIR__.'/DI/exception.php';
+
+require_once __DIR__.'/DI/reflection/iKlass.php';
+require_once __DIR__.'/DI/reflection/klass/standard.php';
+
 require_once __DIR__.'/DI/iRunable.php';
+
 
 class di implements iDi {
 
@@ -16,11 +22,11 @@ class di implements iDi {
         if(!class_exists($classname))
             throw new Exception('class with classname '. $classname.' not found');
 
-        $reflectionClass = new \ReflectionClass($classname);
+        $reflectionClass = new diReflectionClass($classname);
         return $this->createInstance($reflectionClass);
     }
 
-    private function createInstance(\ReflectionClass $reflection, $args=array()) {
+    private function createInstance(\de\any\di\reflection\iKlass $reflection, $args=array()) {
         if(!$reflection->hasMethod('__construct'))
             return $reflection->newInstance();
 
@@ -36,7 +42,7 @@ class di implements iDi {
         if($binding->isShared() && $binding->getInstance())
             return $binding->getInstance();
 
-        $reflection = new \ReflectionClass($binding->getInterfaceImpl());
+        $reflection = new diReflectionClass($binding->getInterfaceImpl());
 
         if(!$reflection->implementsInterface($binding->getInterfaceName()))
             throw new \Exception($reflection->getName() .' must implement '. $binding->getInterfaceName());
@@ -100,7 +106,7 @@ class di implements iDi {
         return $this->get($classname['class'], $classname['concern']);
     }
 
-    private function injectSetters($instance, \ReflectionClass $reflection) {
+    private function injectSetters($instance, \de\any\di\reflection\iKlass $reflection) {
         foreach($reflection->getMethods() as $reflectionMethod) {
 
             if($reflectionMethod->isConstructor() || $reflectionMethod->isDestructor() || $reflectionMethod->isStatic())
@@ -116,7 +122,7 @@ class di implements iDi {
         }
     }
 
-    private function injectProperties($instance, \ReflectionClass $reflection) {
+    private function injectProperties($instance, \de\any\di\reflection\iKlass $reflection) {
         foreach($reflection->getProperties() as $reflectionProperty) {
 
             $annotationStrings = di\ReflectionAnnotation::parsePropertyAnnotations($reflectionProperty);
@@ -156,7 +162,7 @@ class di implements iDi {
     }
 
     function run(di\iRunable $runable) {
-        $reflection = new \ReflectionClass(get_class($runable));
+        $reflection = new diReflectionClass(get_class($runable));
 
         $this->injectSetters($runable, $reflection);
         $this->injectProperties($runable, $reflection);

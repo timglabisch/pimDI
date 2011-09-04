@@ -3,8 +3,8 @@
       di:schemaLocation="http://anydi/mapping.xsd"
       xmlns:di="mapping.xsd">
 
-    <bind interface="iFoo" to="foo" shared="true"/>
-    <bind interface="iFoo2" to="foo2" shared="false" decorated="true"/>
-    <bind interface="iFoo3" to="foo3" shared="true" decorated="false"/>
+    <bind interface="iFoo" to="foo" concern="a" shared="true"/>
+    <bind interface="iFoo2" to="foo2" concern="b" shared="false" decorated="true"/>
+    <bind interface="iFoo3" to="foo3" concern="c" shared="true" decorated="false"/>
 
 </di:bindings>

@@ -49,7 +49,6 @@ class xmlTest extends \PHPUnit_Framework_TestCase {
         $bindings = $this->xml->getBindings();
 
         $this->assertEquals(count($bindings), 3);
-
         $this->assertEquals($bindings[0]->getConcern(), 'a');
         $this->assertEquals($bindings[1]->getConcern(), 'b');
         $this->assertEquals($bindings[2]->getConcern(), 'c');
