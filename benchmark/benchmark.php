@@ -27,6 +27,8 @@ for($i=0; $i < $rows; $i++) {
     $nested_nestedservice1 = new nested_nestedservice1();
     $nested_object->setNestedService1($nested_nestedservice1);
 
+    $foo = new diDecorateDecoratorNested1(new diDecorateDecorator1(new diDecorateStd1()));
+
 }
 echo "\nnative: ".(microtime(true)-$microtime)."\n";
 
