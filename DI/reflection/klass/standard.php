@@ -9,7 +9,7 @@ class standard implements \de\any\di\reflection\iKlass  {
     private $properties;
     private $methodsAnnotatedWith = array();
     private $injectProperties = array();
-    private $cache;
+    public static $cache;
 
     public function __construct($classname) {
         $this->setClassname($classname);
@@ -219,10 +219,10 @@ class standard implements \de\any\di\reflection\iKlass  {
      */
     public function getCache()
     {
-        if($this->cache === null)
-            $this->cache = new \de\any\di\cache\memory();
+        if(self::$cache === null)
+            self::$cache = new \de\any\di\cache\memory();
 
-        return $this->cache;
+        return self::$cache;
     }
 
 }
