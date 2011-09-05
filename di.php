@@ -9,8 +9,14 @@ require_once __DIR__.'/DI/exception.php';
 
 require_once __DIR__.'/DI/reflection/iKlass.php';
 require_once __DIR__.'/DI/reflection/klass/standard.php';
+require_once __DIR__.'/DI/reflection/iMethod.php';
+require_once __DIR__.'/DI/reflection/method/standard.php';
+require_once __DIR__.'/DI/reflection/iParam.php';
+require_once __DIR__.'/DI/reflection/param/standard.php';
 
 require_once __DIR__.'/DI/iRunable.php';
+
+require_once __DIR__.'/DI/iCache.php';
 
 
 class di implements iDi {
@@ -31,9 +37,8 @@ class di implements iDi {
             return $reflection->newInstance();
 
         $reflectionMethod = $reflection->getConstructor();
-        $annotationStrings = di\ReflectionAnnotation::parseMethodAnnotations($reflectionMethod);
+        $args = array_merge($args, $this->getInjectedMethodArgs($reflectionMethod));
 
-        $args = array_merge($args, $this->getInjectedMethodArgs($reflectionMethod, $annotationStrings));
         return $reflection->newInstanceArgs($args);
     }
 
@@ -80,20 +85,18 @@ class di implements iDi {
         return $this->getByBinding($binding, $args);
     }
 
-    private function getInjectedMethodArgs(\ReflectionMethod $reflectionMethod, $annotationStrings) {
+    private function getInjectedMethodArgs(\de\any\di\reflection\iMethod $reflectionMethod) {
 
-        if(!isset($annotationStrings['inject']))
-                return array();
-
-        $annotations = $annotationStrings['inject'];
+        if(!$reflectionMethod->getInject())
+            return array();
 
         $params = $reflectionMethod->getParameters();
 
-        $args = array();
-        for($i=0;count($params) > $i; $i++) {
-            $concern = (isset($annotations[$i])?$annotations[$i]:'');
-            $args[] = $this->get($params[$i]->getClass()->getName(), $concern);
-        }
+        if(!count($params))
+            return array();
+
+       foreach($params as $param)
+            $args[] = $this->get($param->getInterface(), $param->getConcern());
 
         return $args;
     }
@@ -105,8 +108,8 @@ class di implements iDi {
             return;
 
         foreach($methods as $reflectionMethod) {
-            $args = $this->getInjectedMethodArgs($reflectionMethod['method'], $reflectionMethod['annotation']);
-            $reflectionMethod['method']->invokeArgs($instance, $args);
+            $args = $this->getInjectedMethodArgs($reflectionMethod);
+            $reflectionMethod->invokeArgs($instance, $args);
         }
     }
 
@@ -116,7 +119,7 @@ class di implements iDi {
         if(!$injProp)
             return;
 
-        foreach($reflection->getInjectProperties() as $name => $reflectionProperty) {
+        foreach($injProp as $name => $reflectionProperty) {
             $instance->$name = $this->get($reflectionProperty->getInterfaceName(), $reflectionProperty->getConcern());
         }
     }

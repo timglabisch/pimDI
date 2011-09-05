@@ -9,11 +9,12 @@ class standard implements \de\any\di\reflection\iKlass  {
     private $properties;
     private $methodsAnnotatedWith = array();
     private $injectProperties = array();
+    private $cache;
 
     public function __construct($classname) {
         $this->setClassname($classname);
     }
-
+    
     public function newInstance() {
         $classname = $this->getClassname();
         return new $classname;
@@ -68,7 +69,7 @@ class standard implements \de\any\di\reflection\iKlass  {
 
     public function getMethods() {
         if($this->methods == null) {
-            $this->methods = apc_fetch('reflection|'.$this->getClassname().'|methods');
+            $this->methods = $this->getCache()->fetch('reflection|'.$this->getClassname().'|methods');
 
             if(!$this->methods) {
                 $methods = $this->getReflectionClass()->getMethods();
@@ -76,10 +77,21 @@ class standard implements \de\any\di\reflection\iKlass  {
                 $this->methods = array();
 
                 foreach($methods as $method) {
-                    $this->methods[$method->getName()] = $method;
+
+                    $dicMethod = new \de\any\di\reflection\method\standard();
+
+                    $dicMethod->setMethodName($method->getName());
+                    $dicMethod->setParamsByReflectionMethod($method);
+
+                    $annotationStrings = \de\any\di\ReflectionAnnotation::parseMethodAnnotations($method);
+
+                    if(!isset($annotationStrings['inject']))
+                        $dicMethod->setInject(true);
+
+                    $this->methods[$method->getName()] = $dicMethod;
                 }
                 
-                apc_store('reflection|'.$this->getClassname(), $this->methods.'|methods');
+                $this->getCache()->store('reflection|'.$this->getClassname(), $this->methods.'|methods');
             }
         }
 
@@ -90,12 +102,11 @@ class standard implements \de\any\di\reflection\iKlass  {
 
         if(!isset($this->methodsAnnotatedWith[$annotation])) {
 
-            $this->methodsAnnotatedWith[$annotation] = apc_fetch('reflection|'.$this->getClassname().'|setterMethods|'.$annotation);
+            $this->methodsAnnotatedWith[$annotation] = $this->getCache()->fetch('reflection|'.$this->getClassname().'|setterMethods|'.$annotation);
 
             if(!$this->methodsAnnotatedWith[$annotation]) {
-                $methods = $this->getMethods();
-
-                foreach($methods as $method) {
+              
+                foreach($this->getReflectionClass()->getMethods() as $method) {
                     if($method->isConstructor() || $method->isDestructor() || $method->isStatic())
                         continue;
 
@@ -103,11 +114,19 @@ class standard implements \de\any\di\reflection\iKlass  {
 
                     if(!isset($annotationStrings[$annotation]))
                         continue;
+                    
+                    $dicMethod = new \de\any\di\reflection\method\standard();
 
-                    $this->methodsAnnotatedWith[$annotation][] = array('method' => $method, 'annotation' => $annotationStrings);
+                    $dicMethod->setMethodName($method->getName());
+                    $dicMethod->setParamsByReflectionMethod($method);
 
-                    apc_store('reflection|'.$this->getClassname().'|setterMethods|'.$annotation, $this->methodsAnnotatedWith[$annotation]);
+                    if(isset($annotationStrings['inject']))
+                        $dicMethod->setInject(true);
+
+                    $this->methodsAnnotatedWith[$annotation][$method->getName()] = $dicMethod;
                 }
+
+                $this->getCache()->store('reflection|'.$this->getClassname().'|setterMethods|'.$annotation, $this->methodsAnnotatedWith[$annotation]);
             }
         }
 
@@ -116,7 +135,7 @@ class standard implements \de\any\di\reflection\iKlass  {
 
     public function getInjectProperties() {
             if(!$this->injectProperties) {
-                $this->injectProperties = apc_fetch('reflection|'.$this->getClassname().'|injProp');
+                $this->injectProperties = $this->getCache()->fetch('reflection|'.$this->getClassname().'|injProp');
 
                 if(!$this->injectProperties) {
                      foreach($this->getReflectionClass()->getProperties() as $reflectionProperty) {
@@ -142,7 +161,7 @@ class standard implements \de\any\di\reflection\iKlass  {
                      }
 
 
-                apc_store('reflection|'.$this->getClassname().'|injProp', $this->injectProperties);
+                $this->getCache()->store('reflection|'.$this->getClassname().'|injProp', $this->injectProperties);
             }
         }
 
@@ -152,12 +171,12 @@ class standard implements \de\any\di\reflection\iKlass  {
     public function getProperties() {
         if($this->properties == null) {
 
-            $this->properties = apc_fetch('reflection|'.$this->getClassname().'|properties');
+            $this->properties = $this->getCache()->fetch('reflection|'.$this->getClassname().'|properties');
 
             if(!$this->properties) {
                 $this->properties = $this->getReflectionClass()->getProperties();
 
-                apc_store('reflection|'.$this->getClassname(), $this->methods.'|properties');
+                $this->getCache()->store('reflection|'.$this->getClassname(), $this->methods.'|properties');
             }
         }
 
@@ -173,7 +192,9 @@ class standard implements \de\any\di\reflection\iKlass  {
     }
 
     public function getConstructor() {
-        return $this->getReflectionClass()->getConstructor();
+         $methods = $this->getMethods();
+
+        return $methods['__construct'];
     }
 
     /**
@@ -188,6 +209,22 @@ class standard implements \de\any\di\reflection\iKlass  {
 
     public function implementsInterface($interface) {
         return $this->getReflectionClass()->implementsInterface($interface);
+    }
+
+    public function setCache($cache)
+    {
+        $this->cache = $cache;
+    }
+
+    /**
+     * @return \de\any\di\iCache
+     */
+    public function getCache()
+    {
+        if($this->cache === null)
+            $this->cache = new \de\any\di\cache\file();
+
+        return $this->cache;
     }
 
 }
