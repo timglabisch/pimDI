@@ -71,9 +71,9 @@ class standard implements \de\any\di\reflection\iKlass  {
         if($this->methods == null) {
             $this->methods = $this->getCache()->fetch('reflection|'.$this->getClassname().'|methods');
 
-            if(!$this->methods) {
+            if($this->methods === false) {
                 $methods = $this->getReflectionClass()->getMethods();
-
+                
                 $this->methods = array();
 
                 foreach($methods as $method) {
@@ -84,14 +84,12 @@ class standard implements \de\any\di\reflection\iKlass  {
                     $dicMethod->setParamsByReflectionMethod($method);
 
                     $annotationStrings = \de\any\di\ReflectionAnnotation::parseMethodAnnotations($method);
-
-                    if(!isset($annotationStrings['inject']))
-                        $dicMethod->setInject(true);
+                    $dicMethod->setInject(isset($annotationStrings['inject']));
 
                     $this->methods[$method->getName()] = $dicMethod;
                 }
                 
-                $this->getCache()->store('reflection|'.$this->getClassname(), $this->methods.'|methods');
+                $this->getCache()->store('reflection|'.$this->getClassname().'|methods', $this->methods);
             }
         }
 
@@ -104,7 +102,7 @@ class standard implements \de\any\di\reflection\iKlass  {
 
             $this->methodsAnnotatedWith[$annotation] = $this->getCache()->fetch('reflection|'.$this->getClassname().'|setterMethods|'.$annotation);
 
-            if(!$this->methodsAnnotatedWith[$annotation]) {
+            if($this->methodsAnnotatedWith[$annotation] === false) {
               
                 foreach($this->getReflectionClass()->getMethods() as $method) {
                     if($method->isConstructor() || $method->isDestructor() || $method->isStatic())
@@ -137,7 +135,7 @@ class standard implements \de\any\di\reflection\iKlass  {
             if(!$this->injectProperties) {
                 $this->injectProperties = $this->getCache()->fetch('reflection|'.$this->getClassname().'|injProp');
 
-                if(!$this->injectProperties) {
+                if($this->injectProperties === false) {
                      foreach($this->getReflectionClass()->getProperties() as $reflectionProperty) {
                          
                         $annotationStrings = \de\any\di\ReflectionAnnotation::parsePropertyAnnotations($reflectionProperty);
@@ -173,7 +171,7 @@ class standard implements \de\any\di\reflection\iKlass  {
 
             $this->properties = $this->getCache()->fetch('reflection|'.$this->getClassname().'|properties');
 
-            if(!$this->properties) {
+            if($this->properties === false) {
                 $this->properties = $this->getReflectionClass()->getProperties();
 
                 $this->getCache()->store('reflection|'.$this->getClassname(), $this->methods.'|properties');
@@ -192,7 +190,7 @@ class standard implements \de\any\di\reflection\iKlass  {
     }
 
     public function getConstructor() {
-         $methods = $this->getMethods();
+        $methods = $this->getMethods();
 
         return $methods['__construct'];
     }
@@ -222,7 +220,7 @@ class standard implements \de\any\di\reflection\iKlass  {
     public function getCache()
     {
         if($this->cache === null)
-            $this->cache = new \de\any\di\cache\file();
+            $this->cache = new \de\any\di\cache\memory();
 
         return $this->cache;
     }

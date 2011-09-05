@@ -37,7 +37,9 @@ class di implements iDi {
             return $reflection->newInstance();
 
         $reflectionMethod = $reflection->getConstructor();
-        $args = array_merge($args, $this->getInjectedMethodArgs($reflectionMethod));
+
+        if($reflectionMethod->getInject())
+           $args = array_merge($args, $this->getInjectedMethodArgs($reflectionMethod));
 
         return $reflection->newInstanceArgs($args);
     }
@@ -52,10 +54,12 @@ class di implements iDi {
         if(!$reflection->implementsInterface($binding->getInterfaceName()))
             throw new \Exception($reflection->getName() .' must implement '. $binding->getInterfaceName());
 
-        if(isset($this->lock[$binding->getHashKey()]))
+        $hashKey = $binding->getHashKey();
+        
+        if(isset($this->lock[$hashKey]))
             throw new \de\any\di\exception\circular('a', 'b');
 
-        $this->lock[$binding->getHashKey()] = true;
+        $this->lock[$hashKey] = true;
 
         $instance = $this->createInstance($reflection, $args);
 
@@ -65,7 +69,7 @@ class di implements iDi {
         $this->injectSetters($instance, $reflection);
         $this->injectProperties($instance, $reflection);
 
-        unset($this->lock[$binding->getHashKey()]);
+        unset($this->lock[$hashKey]);
 
         if(!$decorated) {
             $decorators = $this->getBinderRepository()->getBindingDecorators($binding->getInterfaceName(), $binding->getConcern());
@@ -86,9 +90,6 @@ class di implements iDi {
     }
 
     private function getInjectedMethodArgs(\de\any\di\reflection\iMethod $reflectionMethod) {
-
-        if(!$reflectionMethod->getInject())
-            return array();
 
         $params = $reflectionMethod->getParameters();
 

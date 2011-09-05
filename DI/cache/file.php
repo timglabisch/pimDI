@@ -4,7 +4,6 @@ namespace de\any\di\cache;
 class file implements \de\any\di\iCache {
 
     public function fetch($key) {
-return false;
         $filename = sys_get_temp_dir().DIRECTORY_SEPARATOR.'anyDi_'.md5($key);
 
         if(!file_exists($filename))
