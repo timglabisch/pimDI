@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fcd12fa5-c305-4a9b-9d83-be9a31350558" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DI/reflection/method/standard.php" afterPath="$PROJECT_DIR$/DI/reflection/method/standard.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DI/reflection/klass/standard.php" afterPath="$PROJECT_DIR$/DI/reflection/klass/standard.php" />
     </list>
     <ignored path="DI.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,7 +29,7 @@
       <file leaf-file-name="di.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/di.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="104" column="0" selection-start="3325" selection-end="3421" vertical-scroll-proportion="0.0">
+            <state line="98" column="23" selection-start="3300" selection-end="3300" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -44,10 +44,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="standard.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="standard.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/DI/reflection/klass/standard.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="151" column="24" selection-start="5543" selection-end="5543" vertical-scroll-proportion="-13.08">
+            <state line="151" column="68" selection-start="5587" selection-end="5587" vertical-scroll-proportion="0.75980395">
               <folding />
             </state>
           </provider>
@@ -71,10 +71,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="standard.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="standard.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DI/reflection/method/standard.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="91" column="38" selection-start="2475" selection-end="2475" vertical-scroll-proportion="0.9843014">
+            <state line="89" column="9" selection-start="2435" selection-end="2435" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -105,11 +105,11 @@
         <option value="$PROJECT_DIR$/benchmark/benchmark.php" />
         <option value="$PROJECT_DIR$/test/diTest.php" />
         <option value="$PROJECT_DIR$/DI/exception.php" />
-        <option value="$PROJECT_DIR$/DI/reflection/klass/standard.php" />
         <option value="$PROJECT_DIR$/DI/reflection/iKlass.php" />
         <option value="$PROJECT_DIR$/DI/reflection/iMethod.php" />
         <option value="$PROJECT_DIR$/di.php" />
         <option value="$PROJECT_DIR$/DI/reflection/method/standard.php" />
+        <option value="$PROJECT_DIR$/DI/reflection/klass/standard.php" />
       </list>
     </option>
   </component>
@@ -462,7 +462,7 @@
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="delete unused code" />
+    <option name="LAST_COMMIT_MESSAGE" value="wrong class setInject" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -475,7 +475,6 @@
     <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="speed up" />
     <MESSAGE value="basic xml parser" />
     <MESSAGE value="basic xml parser multiple" />
     <MESSAGE value="improved coding standards" />
@@ -500,6 +499,7 @@
     <MESSAGE value="delete dead code" />
     <MESSAGE value="nur parameter inizieren die auch injiziert werden müssen" />
     <MESSAGE value="delete unused code" />
+    <MESSAGE value="wrong class setInject" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -575,27 +575,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DI/reflection/iKlass.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="30" selection-start="359" selection-end="359" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/di.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="104" column="0" selection-start="3325" selection-end="3421" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DI/reflection/klass/standard.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="151" column="24" selection-start="5543" selection-end="5543" vertical-scroll-proportion="-13.08">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DI/reflection/iMethod.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="49" selection-start="192" selection-end="192" vertical-scroll-proportion="0.0">
@@ -612,7 +591,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DI/reflection/method/standard.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="38" selection-start="2475" selection-end="2475" vertical-scroll-proportion="0.9843014">
+        <state line="89" column="9" selection-start="2435" selection-end="2435" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/di.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="98" column="23" selection-start="3300" selection-end="3300" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DI/reflection/iKlass.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="30" selection-start="359" selection-end="359" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DI/reflection/klass/standard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="151" column="68" selection-start="5587" selection-end="5587" vertical-scroll-proportion="0.75980395">
           <folding />
         </state>
       </provider>

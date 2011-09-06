@@ -149,7 +149,8 @@ class standard implements \de\any\di\reflection\iKlass  {
                         $classname = \de\any\di\ReflectionAnnotation::parsePropertyVarAnnotation($annotationStrings['var']);
 
                         $binding = new \de\any\di\binder($classname['class']);
-                        
+                        $binding->setConcern($classname['concern']);
+
                         $this->injectProperties[$reflectionProperty->getName()] = $binding;
                      }
 
