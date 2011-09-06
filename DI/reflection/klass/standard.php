@@ -219,8 +219,13 @@ class standard implements \de\any\di\reflection\iKlass  {
      */
     public function getCache()
     {
-        if(self::$cache === null)
-            self::$cache = new \de\any\di\cache\memory();
+        if(self::$cache === null) {
+
+            if(function_exists('apc_cache_info'))
+                self::$cache = new \de\any\di\cache\apc();
+            else
+                self::$cache = new \de\any\di\cache\memory();
+        }
 
         return self::$cache;
     }
