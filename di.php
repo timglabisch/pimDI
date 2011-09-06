@@ -93,7 +93,7 @@ class di implements iDi {
 
         $params = $reflectionMethod->getParameters();
 
-        if(!count($params))
+        if(!$params)
             return array();
 
        foreach($params as $param)
