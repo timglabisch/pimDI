@@ -166,21 +166,6 @@ class standard implements \de\any\di\reflection\iKlass  {
         return $this->injectProperties;
     }
 
-    public function getProperties() {
-        if($this->properties == null) {
-
-            $this->properties = $this->getCache()->fetch('reflection|'.$this->getClassname().'|properties');
-
-            if($this->properties === false) {
-                $this->properties = $this->getReflectionClass()->getProperties();
-
-                $this->getCache()->store('reflection|'.$this->getClassname(), $this->methods.'|properties');
-            }
-        }
-
-        return $this->properties;
-    }
-
     public function getClassname() {
         return $this->classname;
     }
@@ -225,6 +210,8 @@ class standard implements \de\any\di\reflection\iKlass  {
                 self::$cache = new \de\any\di\cache\apc();
             else
                 self::$cache = new \de\any\di\cache\memory();
+
+            self::$cache = new \de\any\di\cache\void();
         }
 
         return self::$cache;
