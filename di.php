@@ -96,8 +96,15 @@ class di implements iDi {
         if(!$params)
             return array();
 
-       foreach($params as $param)
-            $args[] = $this->get($param->getInterface(), $param->getConcern());
+       foreach($params as $param) {
+
+           if(!$param->getInject()) {
+               $args[] = null;
+               continue;
+           }
+
+           $args[] = $this->get($param->getInterface(), $param->getConcern());
+       }
 
         return $args;
     }
