@@ -8,7 +8,6 @@ interface iKlass {
     public function getMethods();
     public function getConstructor();
     public function implementsInterface($interface);
-    public function getName();
     public function getSetterMethodsAnnotatedWith($annotation);
     public function getInjectProperties();
 }

@@ -53,10 +53,6 @@ class standard implements \de\any\di\reflection\iKlass  {
         return $this->getReflectionClass()->newInstanceArgs($args);
     }
 
-    public function getName() {
-        return $this->classname;
-    }
-
     public function setClassname($classname) {
         $this->classname = $classname;
     }
