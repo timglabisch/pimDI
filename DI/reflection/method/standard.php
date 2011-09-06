@@ -82,7 +82,6 @@ public function getParameters() {
                 $dicParam->setConcern(isset($annotations['inject'][$i])?$annotations['inject'][$i]:'');
             } else {
                 $this->setInject(false);
-                $this->setConcern('');
             }
 
             $params[$i] = $dicParam;
@@ -91,16 +90,6 @@ public function getParameters() {
         }
 
         $this->setParameters($params);
-    }
-
-    public function setConcern($concern)
-    {
-        $this->concern = $concern;
-    }
-
-    public function getConcern()
-    {
-        return $this->concern;
     }
 
     public function setInject($inject)
