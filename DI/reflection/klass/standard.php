@@ -190,16 +190,14 @@ class standard implements \de\any\di\reflection\iKlass  {
         return $this->getReflectionClass()->implementsInterface($interface);
     }
 
-    public function setCache($cache)
-    {
+    public function setCache($cache) {
         self::$cache = $cache;
     }
 
     /**
      * @return \de\any\di\iCache
      */
-    public function getCache()
-    {
+    public function getCache() {
         if(self::$cache === null) {
 
             if(function_exists('apc_cache_info'))
