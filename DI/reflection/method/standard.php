@@ -6,9 +6,12 @@ class standard implements \de\any\di\reflection\iMethod  {
     private $parameters;
     private $methodName;
     private $inject;
-    private $concern;
 
-public function getParameters() {
+    public function __construct($methodname) {
+        $this->setMethodName($methodname);
+    }
+    
+    public function getParameters() {
         return $this->parameters;
     }
 
@@ -44,10 +47,10 @@ public function getParameters() {
             case 6:
                 $instance->$methodName($args[0], $args[1], $args[2], $args[3], $args[4], $args[5]);
                 break;
+            default:
+                call_user_func_array(array($instance, $methodName) , $args);
+                break;
         }
-
-        //TODO:
-        // FIX!!!
 
     }
 

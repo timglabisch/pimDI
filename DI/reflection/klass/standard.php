@@ -74,9 +74,7 @@ class standard implements \de\any\di\reflection\iKlass  {
 
                 foreach($methods as $method) {
 
-                    $dicMethod = new \de\any\di\reflection\method\standard();
-
-                    $dicMethod->setMethodName($method->getName());
+                    $dicMethod = new \de\any\di\reflection\method\standard($method->getName());
                     $dicMethod->setParamsByReflectionMethod($method);
 
                     $annotationStrings = \de\any\di\ReflectionAnnotation::parseMethodAnnotations($method);
@@ -109,9 +107,7 @@ class standard implements \de\any\di\reflection\iKlass  {
                     if(!isset($annotationStrings[$annotation]))
                         continue;
                     
-                    $dicMethod = new \de\any\di\reflection\method\standard();
-
-                    $dicMethod->setMethodName($method->getName());
+                    $dicMethod = new \de\any\di\reflection\method\standard($method->getName());
                     $dicMethod->setParamsByReflectionMethod($method);
 
                     if(isset($annotationStrings['inject']))
