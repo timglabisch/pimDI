@@ -65,16 +65,18 @@ class DITest extends \PHPUnit_Framework_TestCase {
        $this->assertInstanceOf('nested_inestedservice1', $di->get('nested_iobject')->getNestedService1());
     }
 
-     public function testDoubleInjection() {
+    public function testDoubleInjection() {
        $di = new di();
        $di->bind('nested_iobject')->to('nested_objectDouble');
        $di->bind('nested_inestedservice1')->to('nested_nestedservice1');
 
        $this->assertInstanceOf('nested_inestedservice1', $di->get('nested_iobject')->getNestedService1());
        $this->assertInstanceOf('nested_inestedservice1', $di->get('nested_iobject')->getNestedService1_2());
+
+       $this->assertNull($di->get('nested_iobject')->service3);
     }
 
-     public function testDouble2Injection() {
+    public function testDouble2Injection() {
        $di = new di();
        $di->bind('nested_iobject')->to('nested_objectDouble2');
        $di->bind('nested_inestedservice1')->to('nested_nestedservice1');

@@ -80,7 +80,7 @@ class standard implements \de\any\di\reflection\iMethod  {
             $dicParam = new \de\any\di\reflection\param\standard();
             $dicParam->setInterface($param->getClass()->getName());
 
-            if(isset($annotations['inject'])) {
+            if(isset($annotations['inject'][$i])) {
                 $dicParam->setInject(true);
                 $dicParam->setConcern(isset($annotations['inject'][$i])?$annotations['inject'][$i]:'');
             } else {
