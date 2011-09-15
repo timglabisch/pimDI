@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fcd12fa5-c305-4a9b-9d83-be9a31350558" name="Default" comment="">
+    <list default="true" id="fcd12fa5-c305-4a9b-9d83-be9a31350558" name="Default" comment="fehler in der setCache funktion">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/DI/reflection/klass/standard/params.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/DI/reflection/klass/standardTest.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DI/reflection/klass/standard.php" afterPath="$PROJECT_DIR$/DI/reflection/klass/standard.php" />
     </list>
     <ignored path="DI.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,19 +27,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="di.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/di.php">
+      <file leaf-file-name="standardTest.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/DI/reflection/klass/standardTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="98" column="23" selection-start="3300" selection-end="3300" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="iKlass.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DI/reflection/iKlass.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="30" selection-start="359" selection-end="359" vertical-scroll-proportion="0.0">
+            <state line="112" column="45" selection-start="4724" selection-end="4724" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -47,16 +39,7 @@
       <file leaf-file-name="standard.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/DI/reflection/klass/standard.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="151" column="68" selection-start="5587" selection-end="5587" vertical-scroll-proportion="0.75980395">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="iMethod.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DI/reflection/iMethod.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="49" selection-start="192" selection-end="192" vertical-scroll-proportion="0.0">
+            <state line="194" column="30" selection-start="6702" selection-end="6702" vertical-scroll-proportion="0.7385621">
               <folding />
             </state>
           </provider>
@@ -65,16 +48,16 @@
       <file leaf-file-name="diTest.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/diTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="253" column="0" selection-start="9743" selection-end="9743" vertical-scroll-proportion="0.0">
+            <state line="8" column="0" selection-start="109" selection-end="209" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="standard.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DI/reflection/method/standard.php">
+      <file leaf-file-name="params.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/DI/reflection/klass/standard/params.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="89" column="9" selection-start="2435" selection-end="2435" vertical-scroll-proportion="0.0">
+            <state line="13" column="114" selection-start="299" selection-end="299" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -94,21 +77,21 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/DI/reflection/param/standard.php" />
-        <option value="$PROJECT_DIR$/test/diDecorateTest/decorator2.php" />
-        <option value="$PROJECT_DIR$/DI/cache/file.php" />
-        <option value="$PROJECT_DIR$/DI/cache/void.php" />
-        <option value="$PROJECT_DIR$/DI/cache/memory.php" />
-        <option value="$PROJECT_DIR$/DI/cache/apc.php" />
-        <option value="$PROJECT_DIR$/DI/iCache.php" />
-        <option value="$PROJECT_DIR$/DI/cache/mem_apc.php" />
-        <option value="$PROJECT_DIR$/benchmark/benchmark.php" />
-        <option value="$PROJECT_DIR$/test/diTest.php" />
-        <option value="$PROJECT_DIR$/DI/exception.php" />
         <option value="$PROJECT_DIR$/DI/reflection/iKlass.php" />
         <option value="$PROJECT_DIR$/DI/reflection/iMethod.php" />
         <option value="$PROJECT_DIR$/di.php" />
         <option value="$PROJECT_DIR$/DI/reflection/method/standard.php" />
+        <option value="$PROJECT_DIR$/test/DI/reflection/class/standardTest.php" />
+        <option value="$PROJECT_DIR$/test/DI/reflection/klass/standard/_1.php" />
+        <option value="$PROJECT_DIR$/test/DI/reflection/klass/standard/_0.php" />
+        <option value="$PROJECT_DIR$/test/DI/reflection/klass/standard/_2.php" />
+        <option value="$PROJECT_DIR$/test/DI/reflection/klass/standard/_3.php" />
+        <option value="$PROJECT_DIR$/test/DI/reflection/klass/standard/_4.php" />
+        <option value="$PROJECT_DIR$/test/DI/reflection/klass/standard/_5.php" />
+        <option value="$PROJECT_DIR$/test/DI/reflection/klass/standard/_6.php" />
+        <option value="$PROJECT_DIR$/test/DI/reflection/klass/standard/_7.php" />
+        <option value="$PROJECT_DIR$/test/DI/reflection/klass/standard/params.php" />
+        <option value="$PROJECT_DIR$/test/DI/reflection/klass/standardTest.php" />
         <option value="$PROJECT_DIR$/DI/reflection/klass/standard.php" />
       </list>
     </option>
@@ -186,6 +169,10 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="DI" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -200,43 +187,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="DI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="reflection" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pimDI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="reflection" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="method" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pimDI" />
+              <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -262,11 +213,37 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="DI" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="exception" />
+              <option name="myItemId" value="reflection" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="klass" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="standard" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pimDI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DI" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -284,7 +261,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="binder" />
+              <option name="myItemId" value="reflection" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -329,11 +306,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/test/DI/reflection/klass/standard" />
       <recent name="$PROJECT_DIR$/DI/cache" />
       <recent name="$PROJECT_DIR$/DI/reflection/param" />
       <recent name="$PROJECT_DIR$/DI/reflection/method" />
       <recent name="$PROJECT_DIR$/DI/reflection" />
-      <recent name="$PROJECT_DIR$/test/fixtures/parse/xml" />
     </key>
   </component>
   <component name="RunManager" selected="PHPUnit.Unnamed">
@@ -462,7 +439,7 @@
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="wrong class setInject" />
+    <option name="LAST_COMMIT_MESSAGE" value="fehler in der setCache funktion" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -475,8 +452,6 @@
     <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="basic xml parser" />
-    <MESSAGE value="basic xml parser multiple" />
     <MESSAGE value="improved coding standards" />
     <MESSAGE value="xml parser works now" />
     <MESSAGE value="rename test" />
@@ -500,91 +475,16 @@
     <MESSAGE value="nur parameter inizieren die auch injiziert werden müssen" />
     <MESSAGE value="delete unused code" />
     <MESSAGE value="wrong class setInject" />
+    <MESSAGE value="tests runs, property concern was wrong" />
+    <MESSAGE value="fehler in der setCache funktion" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test/diNestedTest/object.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="37" selection-start="162" selection-end="179" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DI/cache/apc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="226" selection-end="226" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DI/cache/memory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="35" selection-start="307" selection-end="334" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DI/iCache.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="36" selection-start="225" selection-end="225" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DI/cache/mem_apc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="12" selection-start="37" selection-end="43" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DI/cache/file.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="30" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/benchmark/benchmark.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="11" selection-start="1539" selection-end="1539" vertical-scroll-proportion="-13.8">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/diConstructor/std1.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="118" selection-end="118" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DI/exception.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="47" selection-start="76" selection-end="76" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DI/binder/repository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DI/reflection/iMethod.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="49" selection-start="192" selection-end="192" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/diTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="253" column="0" selection-start="9743" selection-end="9743" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -610,9 +510,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test/DI/binderTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="54" selection-start="134" selection-end="163" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/DI/reflection/klass/standard/params.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="114" selection-start="299" selection-end="299" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/diTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="0" selection-start="109" selection-end="209" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/DI/reflection/klass/standardTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="112" column="45" selection-start="4724" selection-end="4724" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/DI/reflection/klass/standard.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="151" column="68" selection-start="5587" selection-end="5587" vertical-scroll-proportion="0.75980395">
+        <state line="194" column="30" selection-start="6702" selection-end="6702" vertical-scroll-proportion="0.7385621">
           <folding />
         </state>
       </provider>
