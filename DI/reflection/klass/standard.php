@@ -20,7 +20,7 @@ class standard implements \de\any\di\reflection\iKlass  {
         return new $classname;
     }
 
-    public function newInstanceArgs(array $args) {
+    public function newInstanceArgs(array $args=array()) {
 
         $argsLength = count($args);
 
@@ -28,7 +28,7 @@ class standard implements \de\any\di\reflection\iKlass  {
 
         switch($argsLength) {
             case 0:
-                return new $classname;
+                return $this->newInstance();
                 break;
             case 1:
                 return new $classname($args[0]);
@@ -192,7 +192,7 @@ class standard implements \de\any\di\reflection\iKlass  {
 
     public function setCache($cache)
     {
-        $this->cache = $cache;
+        self::$cache = $cache;
     }
 
     /**
