@@ -163,4 +163,12 @@ class di implements iDi {
         return $runable;
     }
 
+    function justInject($runable) {
+        $reflection = new diReflectionClass(get_class($runable));
+
+        $this->injectSetters($runable, $reflection);
+        $this->injectProperties($runable, $reflection);
+
+        return $runable;
+    }
 }
