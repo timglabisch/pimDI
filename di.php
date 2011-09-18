@@ -17,6 +17,7 @@ require_once __DIR__.'/DI/reflection/param/standard.php';
 require_once __DIR__.'/DI/iRunable.php';
 
 require_once __DIR__.'/DI/iCache.php';
+require_once __DIR__.'/DI/iDecorateable.php';
 
 
 class di implements iDi {
@@ -32,16 +33,22 @@ class di implements iDi {
         return $this->createInstance($reflectionClass);
     }
 
-    private function createInstance(\de\any\di\reflection\iKlass $reflection, $args=array()) {
+    private function createInstance(\de\any\di\reflection\iKlass $reflection, $args=array(), $decorated=false) {
         if(!$reflection->hasMethod('__construct'))
             return $reflection->newInstance();
 
         $reflectionMethod = $reflection->getConstructor();
 
-        if($reflectionMethod->getInject())
-           $args = array_merge($args, $this->getInjectedMethodArgs($reflectionMethod));
+        if(!$decorated) {
+            if($reflectionMethod->getInject())
+               $args = array_merge($args, $this->getInjectedMethodArgs($reflectionMethod));
+        } else {
+            $args = $this->getInjectedMethodArgs($reflectionMethod);
+        }
 
-        return $reflection->newInstanceArgs($args);
+        $instance = $reflection->newInstanceArgs($args);
+
+        return $instance;
     }
 
     private function getByBinding($binding, $args=array(), $decorated=false) {
@@ -75,7 +82,15 @@ class di implements iDi {
             $decorators = $this->getBinderRepository()->getBindingDecorators($binding->getInterfaceName(), $binding->getConcern());
             if(count($decorators)) {
                 foreach($decorators as $decorator) {
-                    $instance = $this->getByBinding($decorator, array($instance), true);
+
+                    $decoratedInstance = $instance;
+
+                    $instance = $this->getByBinding($decorator, array($decoratedInstance), true);
+
+                 #   if(!($instance instanceof de\any\di\iDecorateable))
+                  #      throw new \Exception('class '.get_class($instance).' must implement de\any\di\iDecorateable');
+
+                    $instance->setDecotaredClass($decoratedInstance);
                 }
             }
         }

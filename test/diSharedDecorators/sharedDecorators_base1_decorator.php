@@ -1,11 +1,15 @@
 <?php
 
-class sharedDecorators_base1_decorator implements sharedDecorators_iBase1 {
+class sharedDecorators_base1_decorator implements sharedDecorators_iBase1, \de\any\di\iDecorateable {
 
     private $parent;
 
-    public function __construct(sharedDecorators_iBase1 $parent) {
-        $this->parent = $parent;
+    public function setDecotaredClass($original) {
+        $this->parent = $original;
+    }
+
+    public function getDecotaredClass() {
+
     }
 
     public function getService() {

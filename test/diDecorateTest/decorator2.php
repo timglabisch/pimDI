@@ -1,10 +1,14 @@
 <?php
-class diDecorateDecorator2 implements istd {
+class diDecorateDecorator2 implements istd, \de\any\di\iDecorateable {
 
     private $original;
 
-    public function __construct(istd $original) {
+    public function setDecotaredClass($original) {
         $this->original = $original;
+    }
+
+    public function getDecotaredClass() {
+
     }
 
     public function foo() {
