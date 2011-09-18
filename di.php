@@ -87,8 +87,8 @@ class di implements iDi {
 
                     $instance = $this->getByBinding($decorator, array($decoratedInstance), true);
 
-                 #   if(!($instance instanceof de\any\di\iDecorateable))
-                  #      throw new \Exception('class '.get_class($instance).' must implement de\any\di\iDecorateable');
+                    if(!($instance instanceof \de\any\di\iDecorateable))
+                        throw new \Exception('class '.get_class($instance).' must implement de\any\di\iDecorateable');
 
                     $instance->setDecotaredClass($decoratedInstance);
                 }
