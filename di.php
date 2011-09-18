@@ -33,18 +33,14 @@ class di implements iDi {
         return $this->createInstance($reflectionClass);
     }
 
-    private function createInstance(\de\any\di\reflection\iKlass $reflection, $args=array(), $decorated=false) {
+    private function createInstance(\de\any\di\reflection\iKlass $reflection, $args=array()) {
         if(!$reflection->hasMethod('__construct'))
             return $reflection->newInstance();
 
         $reflectionMethod = $reflection->getConstructor();
 
-        if(!$decorated) {
-            if($reflectionMethod->getInject())
-               $args = array_merge($args, $this->getInjectedMethodArgs($reflectionMethod));
-        } else {
-            $args = $this->getInjectedMethodArgs($reflectionMethod);
-        }
+        if($reflectionMethod->getInject())
+            $args = array_merge($args, $this->getInjectedMethodArgs($reflectionMethod));
 
         $instance = $reflection->newInstanceArgs($args);
 
