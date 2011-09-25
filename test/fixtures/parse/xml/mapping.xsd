@@ -19,7 +19,7 @@
   </xs:element>
 
   <xs:complexType name="bind">
-    <xs:attribute name="to" type="xs:string" use="required" />
+    <xs:attribute name="to" type="xs:string" />
     <xs:attribute name="interface" type="xs:string" use="required" />
     <xs:attribute name="concern" type="xs:string" />
     <xs:attribute name="shared" type="xs:boolean" />
