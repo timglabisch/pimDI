@@ -200,8 +200,6 @@ class standard implements \de\any\di\reflection\iKlass  {
                 self::$cache = new \de\any\di\cache\apc();
             else
                 self::$cache = new \de\any\di\cache\memory();
-
-            self::$cache = new \de\any\di\cache\void();
         }
 
         return self::$cache;
