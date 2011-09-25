@@ -18,7 +18,6 @@ class xml {
         $this->simpleXml = new \SimpleXMLElement($string);
     }
 
-
     public function getBindings() {
         $buffer = array();
 
@@ -51,5 +50,4 @@ class xml {
 
         return $buffer;
     }
-
 }
