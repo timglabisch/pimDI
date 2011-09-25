@@ -54,8 +54,9 @@ class di implements iDi {
 
         $reflection = new diReflectionClass($binding->getInterfaceImpl());
 
-        if(!$reflection->implementsInterface($binding->getInterfaceName()))
-            throw new \Exception($reflection->getName() .' must implement '. $binding->getInterfaceName());
+        if(!$binding->isRepository())
+            if(!$reflection->implementsInterface($binding->getInterfaceName()))
+                throw new \Exception($reflection->getName() .' must implement '. $binding->getInterfaceName());
 
         $hashKey = $binding->getHashKey();
         
@@ -93,10 +94,9 @@ class di implements iDi {
 
         return $instance;
     }
-
+    
     public function get($interface, $concern='', $args=array()) {
         $binding = $this->getBinderRepository()->getBinding($interface, $concern);
-
         return $this->getByBinding($binding, $args);
     }
 

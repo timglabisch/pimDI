@@ -47,6 +47,14 @@ class binderTest extends \PHPUnit_Framework_TestCase {
         $this->assertEquals($binder->getHashKey(), '$|conc');
     }
 
+    function testGetGetHasKeyRepository() {
+        $binder = new binder('$[]');
+        $this->assertEquals($binder->getHashKey(), '$[]|');
+
+        $binder->setConcern('conc');
+        $this->assertEquals($binder->getHashKey(), '$[]|conc');
+    }
+
     function testSetGet() {
         $binder = new binder('$');
         $binder->to('interface')
@@ -107,4 +115,34 @@ class binderTest extends \PHPUnit_Framework_TestCase {
 
         $this->assertEquals(array(1,2,3), $binder->getArguments());
     }
+
+    public function testIsRepositoryTooShort() {
+        $binder = new binder('$');
+        $this->assertFalse($binder->isRepository());
+    }
+
+    public function testIsRepositoryFailed() {
+        $binder = new binder('abcdefg');
+        $this->assertFalse($binder->isRepository());
+    }
+
+    public function testIsRepository() {
+        $binder = new binder('$[]');
+        $this->assertTrue($binder->isRepository());
+    }
+
+    public function testIsRepositoryInterfaceImpl() {
+        $binder = new binder('$[]');
+        $this->assertEquals($binder->getInterfaceName(), '$[]');
+    }
+
+     public function testIsNoRepositoryInterfaceImpl() {
+        $binder = new binder('$');
+        $this->assertEquals($binder->getInterfaceName(), '$');
+
+        $binder = new binder('abcdef');
+        $this->assertEquals($binder->getInterfaceName(), 'abcdef');
+    }
+
+
 }

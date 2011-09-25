@@ -48,8 +48,16 @@ class repository {
     public function getBinding($interface, $concern='') {
         $this->knowBindings();
 
-        if(!isset($this->bindings[$interface.'|'.$concern]))
-            throw new \Exception('Binding for interface "'.$interface.'" with concern "'.$concern.'" doesn\'t exists');
+        if(!isset($this->bindings[$interface.'|'.$concern])) {
+            if(strlen($interface) > 1 && $interface[strlen($interface) -2] == "[" && $interface[strlen($interface) -1] == "]") {
+                $binding = new binder($interface);
+                $binding->concern($concern)->to('ArrayObject');
+                $this->addBinding($binding);
+                $this->knowBindings();
+            }
+            else
+                throw new \Exception('Binding for interface "'.$interface.'" with concern "'.$concern.'" doesn\'t exists');
+        }
 
         return $this->bindings[$interface.'|'.$concern]['impl'];
     }

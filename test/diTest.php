@@ -18,6 +18,8 @@ array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diCircularNested/*.
 array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diPropertyParseException/*.php'));
 array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diTestIgnoreAnnotation/*.php'));
 array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diRunable/*.php'));
+array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diRepositoryConcern/*.php'));
+array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diRepositoryInject/*.php'));
 
 class DITest extends \PHPUnit_Framework_TestCase {
 
@@ -46,6 +48,7 @@ class DITest extends \PHPUnit_Framework_TestCase {
         $this->assertInstanceOf('std2', $di->get('istd', 'abc'));#
         $this->assertInstanceOf('std1', $di->get('istd'));
     }
+    
 
     /**
      * @expectedException Exception
@@ -333,5 +336,55 @@ class DITest extends \PHPUnit_Framework_TestCase {
         $this->assertInstanceOf('ostd2', $runable->getIostd2());
     }
 
+    public function testBasicRepository() {
+        $di = new di();
+        $this->assertTrue($di->get('istd[]') instanceof \ArrayObject);
+     }
 
+     public function testBasicRepository2() {
+        $di = new di();
+        $di->bind('istd')->to('std1');
+        $this->assertEquals(0, count($di->get('istd[]')));
+     }
+
+    public function testBasicRepository3() {
+        $di = new di();
+        $di->bind('istd')->to('std1');
+
+        $repository = $di->get('istd[]');
+        $repository->append($di->get('istd'));
+
+        $this->assertEquals(1, count($repository));
+        $this->assertEquals(0, count($di->get('istd[]')));
+     }
+
+    public function testSharedRepository() {
+        $di = new di();
+        $di->bind('istd[]')->to('\ArrayObject')->shared(true);
+        $di->bind('istd')->to('std1');
+
+        $di->get('istd[]')->append($di->get('istd'));
+
+        $this->assertEquals(1, count($di->get('istd[]')));
+
+        $arr = $di->get('istd[]');
+        $this->assertInstanceOf('std1', $arr[0]);
+     }
+
+     public function testRepositoryConcerns() {
+        $di = new di();
+        $di->bind('istd[]')->to('\ArrayObject');
+        $di->bind('istd[]')->to('\diRepositoryConcern_customArrayObject')->concern('abc');
+
+        $this->assertInstanceOf('\ArrayObject', $di->get('istd[]'));
+        $this->assertInstanceOf('\diRepositoryConcern_customArrayObject', $di->get('istd[]', 'abc'));
+     }
+
+     public function testRepositoryInjectBasic() {
+        $di = new di();
+        $instance = new \diRepositoryInject_basic();
+        $di->justInject($instance);
+
+        $this->assertInstanceOf('\ArrayObject', $instance->repository);
+     }
 }
