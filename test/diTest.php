@@ -60,6 +60,15 @@ class DITest extends \PHPUnit_Framework_TestCase {
         $this->assertInstanceOf('std1', $di->get('UNKNOWN'));
     }
 
+
+    /**
+     * @expectedException Exception
+     */
+    public function testBindingDoesNotExists() {
+        $di = new di();
+        $di->get('UNKNOWN');
+    }
+
     public function testBasicInjection() {
        $di = new di();
        $di->bind('nested_iobject')->to('nested_object');
