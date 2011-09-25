@@ -338,7 +338,7 @@ class DITest extends \PHPUnit_Framework_TestCase {
 
     public function testBasicRepository() {
         $di = new di();
-        $this->assertTrue($di->get('istd[]') instanceof \ArrayObject);
+        $this->assertTrue($di->get('istd[]') instanceof \de\any\di\repository\standard);
      }
 
      public function testBasicRepository2() {
@@ -385,6 +385,6 @@ class DITest extends \PHPUnit_Framework_TestCase {
         $instance = new \diRepositoryInject_basic();
         $di->justInject($instance);
 
-        $this->assertInstanceOf('\ArrayObject', $instance->repository);
+        $this->assertInstanceOf('\de\any\di\repository\standard', $instance->repository);
      }
 }

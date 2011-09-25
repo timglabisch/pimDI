@@ -51,7 +51,7 @@ class repository {
         if(!isset($this->bindings[$interface.'|'.$concern])) {
             if(strlen($interface) > 1 && $interface[strlen($interface) -2] == "[" && $interface[strlen($interface) -1] == "]") {
                 $binding = new binder($interface);
-                $binding->concern($concern)->to('ArrayObject');
+                $binding->concern($concern);
                 $this->addBinding($binding);
                 $this->knowBindings();
             }

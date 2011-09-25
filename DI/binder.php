@@ -147,7 +147,9 @@ class binder {
             return $this->setIsRepository(false);
 
         if($interfaceName[$strlenInterfaceName -2] == '[' && $interfaceName[$strlenInterfaceName -1] == ']') {
-            return $this->setIsRepository(true);
+            $this->setInterfaceImpl('\de\any\di\repository\standard');
+            $this->setIsRepository(true);
+            return;
         }
 
         return $this->setIsRepository(false);

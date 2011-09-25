@@ -6,18 +6,17 @@ require_once __DIR__.'/DI/binder.php';
 require_once __DIR__.'/DI/ReflectionAnnotation.php';
 require_once __DIR__ . '/iDi.php';
 require_once __DIR__.'/DI/exception.php';
-
 require_once __DIR__.'/DI/reflection/iKlass.php';
 require_once __DIR__.'/DI/reflection/klass/standard.php';
 require_once __DIR__.'/DI/reflection/iMethod.php';
 require_once __DIR__.'/DI/reflection/method/standard.php';
 require_once __DIR__.'/DI/reflection/iParam.php';
 require_once __DIR__.'/DI/reflection/param/standard.php';
-
 require_once __DIR__.'/DI/iRunable.php';
-
 require_once __DIR__.'/DI/iCache.php';
 require_once __DIR__.'/DI/iDecorateable.php';
+require_once __DIR__.'/DI/iRepository.php';
+require_once __DIR__.'/DI/repository/standard.php';
 
 
 class di implements iDi {
