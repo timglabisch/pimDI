@@ -8,7 +8,7 @@ class apc implements \de\any\di\iCache {
     }
 
     public function store($key, $val) {
-        apc_store($key, $val);
+        apc_add($key, $val);
     }
 
 }
