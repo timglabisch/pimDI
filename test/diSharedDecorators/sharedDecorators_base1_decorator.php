@@ -8,10 +8,6 @@ class sharedDecorators_base1_decorator implements sharedDecorators_iBase1, \de\a
         $this->parent = $original;
     }
 
-    public function getDecotaredClass() {
-
-    }
-
     public function getService() {
         return $this;
     }

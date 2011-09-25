@@ -7,10 +7,6 @@ class diDecorateDecorator2 implements istd, \de\any\di\iDecorateable {
         $this->original = $original;
     }
 
-    public function getDecotaredClass() {
-
-    }
-
     public function foo() {
         return $this->original->foo().', decorated2!';
     }

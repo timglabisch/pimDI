@@ -6,10 +6,6 @@ class decoratorDecorated_base1_decorator implements decoratorDecorated_iBase1, \
         $this->parent = $original;
     }
 
-    public function getDecotaredClass() {
-
-    }
-
     /**
      * @inject
      */

@@ -6,10 +6,6 @@ class decoratorDecorated_base2_decorator implements decoratorDecorated_iBase2, \
         $this->parent = $original;
     }
 
-    public function getDecotaredClass() {
-
-    }
-
     function getClassname() {
         return $this->parent->getClassname().'|'.__CLASS__;
     }

@@ -7,10 +7,6 @@ class diDecorateDecoratorNested1 implements istd, \de\any\di\iDecorateable  {
         $this->original = $original;
     }
 
-    public function getDecotaredClass() {
-
-    }
-
     /**
      * @inject
      */
