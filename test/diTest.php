@@ -392,4 +392,9 @@ class DITest extends \PHPUnit_Framework_TestCase {
         $di = new di();
         $di->bind('istd[]')->to('\ArrayObject');
     }
+
+    public function testDefaultSelfBinding() {
+        $di = new di();
+        $this->assertTrue($di->get('\de\any\iDi') === $di);
+    }
 }
