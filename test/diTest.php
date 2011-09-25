@@ -387,4 +387,9 @@ class DITest extends \PHPUnit_Framework_TestCase {
 
         $this->assertInstanceOf('\de\any\di\repository\standard', $instance->repository);
      }
+
+    public function testRepositoryBindBasic() {
+        $di = new di();
+        $di->bind('istd[]')->to('\ArrayObject');
+    }
 }

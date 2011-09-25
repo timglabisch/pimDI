@@ -24,6 +24,11 @@ class di implements iDi {
     private $binderRepository = null;
     private $lock = array();
 
+    public function __construct() {
+        // default bindings
+        $this->bind('\de\any\iDi')->to($this);
+    }
+
     public function createInstanceFromClassname($classname) {
         if(!class_exists($classname))
             throw new Exception('class with classname '. $classname.' not found');
@@ -157,7 +162,7 @@ class di implements iDi {
      */
     public function getBinderRepository() {
         if($this->binderRepository === null)
-            $this->binderRepository = new di\binder\repository();
+            $this->binderRepository = new di\binder\repository($this);
         
         return $this->binderRepository;
     }
