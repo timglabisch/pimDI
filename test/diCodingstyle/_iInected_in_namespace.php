@@ -1,5 +1,5 @@
 <?php
-namespace test\diConstruct;
+namespace test\diCodingstyle;
 interface iInjected_in_namespace {
    
 }

@@ -20,6 +20,7 @@ array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diTestIgnoreAnnotat
 array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diRunable/*.php'));
 array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diRepositoryConcern/*.php'));
 array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diRepositoryInject/*.php'));
+array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diCodingstyle/*.php'));
 
 class DITest extends \PHPUnit_Framework_TestCase {
 
@@ -410,50 +411,50 @@ class DITest extends \PHPUnit_Framework_TestCase {
     public function testNamespaceInjectionAnnotationStylesProperties() {
         $di = new di();
         $di->bind('constructor_istd')->to('constructor_namespace');
-        $di->bind('\test\diConstruct\iInjected_in_namespace')->to('test\diConstruct\injected_in_namespace');
+        $di->bind('\test\diCodingstyle\iInjected_in_namespace')->to('test\diCodingstyle\injected_in_namespace');
 
-        $this->assertTrue($di->get('constructor_istd')->i1 instanceof \test\diConstruct\iInjected_in_namespace);
-        $this->assertTrue($di->get('constructor_istd')->i2 instanceof \test\diConstruct\iInjected_in_namespace);
+        $this->assertTrue($di->get('constructor_istd')->i1 instanceof \test\diCodingstyle\iInjected_in_namespace);
+        $this->assertTrue($di->get('constructor_istd')->i2 instanceof \test\diCodingstyle\iInjected_in_namespace);
     }
 
     public function testNamespaceInjectionAnnotationStyles2() {
         $di = new di();
         $di->bind('constructor_istd')->to('constructor_namespace');
-        $di->bind('test\diConstruct\iInjected_in_namespace')->to('test\diConstruct\injected_in_namespace');
+        $di->bind('test\diCodingstyle\iInjected_in_namespace')->to('test\diCodingstyle\injected_in_namespace');
 
-        $this->assertTrue($di->get('constructor_istd')->i1 instanceof \test\diConstruct\iInjected_in_namespace);
-        $this->assertTrue($di->get('constructor_istd')->i2 instanceof \test\diConstruct\iInjected_in_namespace);
+        $this->assertTrue($di->get('constructor_istd')->i1 instanceof \test\diCodingstyle\iInjected_in_namespace);
+        $this->assertTrue($di->get('constructor_istd')->i2 instanceof \test\diCodingstyle\iInjected_in_namespace);
     }
 
     public function testNamespaceInjectionAnnotationStylesConstructor() {
         $di = new di();
         $di->bind('constructor_istd')->to('constructor_namespace');
-        $di->bind('test\diConstruct\iInjected_in_namespace')->to('test\diConstruct\injected_in_namespace');
+        $di->bind('test\diCodingstyle\iInjected_in_namespace')->to('test\diCodingstyle\injected_in_namespace');
 
-        $this->assertTrue($di->get('constructor_istd')->i4 instanceof \test\diConstruct\iInjected_in_namespace);
+        $this->assertTrue($di->get('constructor_istd')->i4 instanceof \test\diCodingstyle\iInjected_in_namespace);
     }
 
     public function testNamespaceInjectionAnnotationStylesConstructor2() {
         $di = new di();
         $di->bind('constructor_istd')->to('constructor_namespace');
-        $di->bind('\test\diConstruct\iInjected_in_namespace')->to('test\diConstruct\injected_in_namespace');
+        $di->bind('\test\diCodingstyle\iInjected_in_namespace')->to('test\diCodingstyle\injected_in_namespace');
 
-        $this->assertTrue($di->get('constructor_istd')->i4 instanceof \test\diConstruct\iInjected_in_namespace);
+        $this->assertTrue($di->get('constructor_istd')->i4 instanceof \test\diCodingstyle\iInjected_in_namespace);
     }
 
     public function testNamespaceInjectionAnnotationStylesMethod() {
         $di = new di();
         $di->bind('constructor_istd')->to('constructor_namespace');
-        $di->bind('test\diConstruct\iInjected_in_namespace')->to('test\diConstruct\injected_in_namespace');
+        $di->bind('test\diCodingstyle\iInjected_in_namespace')->to('test\diCodingstyle\injected_in_namespace');
 
-        $this->assertTrue($di->get('constructor_istd')->i3 instanceof \test\diConstruct\iInjected_in_namespace);
+        $this->assertTrue($di->get('constructor_istd')->i3 instanceof \test\diCodingstyle\iInjected_in_namespace);
     }
 
     public function testNamespaceInjectionAnnotationStylesMethod2() {
         $di = new di();
         $di->bind('constructor_istd')->to('constructor_namespace');
-        $di->bind('\test\diConstruct\iInjected_in_namespace')->to('test\diConstruct\injected_in_namespace');
+        $di->bind('\test\diCodingstyle\iInjected_in_namespace')->to('test\diCodingstyle\injected_in_namespace');
 
-        $this->assertTrue($di->get('constructor_istd')->i3 instanceof \test\diConstruct\iInjected_in_namespace);
+        $this->assertTrue($di->get('constructor_istd')->i3 instanceof \test\diCodingstyle\iInjected_in_namespace);
     }
 }
