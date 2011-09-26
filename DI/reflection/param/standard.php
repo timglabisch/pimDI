@@ -17,6 +17,9 @@ class standard implements \de\any\di\reflection\iParam  {
 
     public function setInterface($interface) {
         $this->interface = $interface;
+
+        if(substr($interface, 0, 1) != '\\')
+            $this->interface = '\\'.$interface;
     }
 
     public function getInterface() {

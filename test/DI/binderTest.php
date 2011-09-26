@@ -10,7 +10,7 @@ class binderTest extends \PHPUnit_Framework_TestCase {
     
     function testConstruct() {
         $binder = new binder('interface');
-        $this->assertEquals($binder->getInterfaceName(), 'interface');
+        $this->assertEquals($binder->getInterfaceName(), '\interface');
     }
 
     function testSetConcern() {
@@ -28,7 +28,7 @@ class binderTest extends \PHPUnit_Framework_TestCase {
     function testSetInterfaceName() {
         $binder = new binder('$');
         $binder->setInterfaceName('impl');
-        $this->assertEquals($binder->getInterfaceName(), 'impl');
+        $this->assertEquals($binder->getInterfaceName(), '\impl');
     }
 
     function testSetIsDecorated() {
@@ -41,18 +41,18 @@ class binderTest extends \PHPUnit_Framework_TestCase {
 
     function testGetGetHasKey() {
         $binder = new binder('$');
-        $this->assertEquals($binder->getHashKey(), '$|');
+        $this->assertEquals($binder->getHashKey(), '\$|');
 
         $binder->setConcern('conc');
-        $this->assertEquals($binder->getHashKey(), '$|conc');
+        $this->assertEquals($binder->getHashKey(), '\$|conc');
     }
 
     function testGetGetHasKeyRepository() {
         $binder = new binder('$[]');
-        $this->assertEquals($binder->getHashKey(), '$[]|');
+        $this->assertEquals($binder->getHashKey(), '\$[]|');
 
         $binder->setConcern('conc');
-        $this->assertEquals($binder->getHashKey(), '$[]|conc');
+        $this->assertEquals($binder->getHashKey(), '\$[]|conc');
     }
 
     function testSetGet() {
@@ -133,15 +133,15 @@ class binderTest extends \PHPUnit_Framework_TestCase {
 
     public function testIsRepositoryInterfaceImpl() {
         $binder = new binder('$[]');
-        $this->assertEquals($binder->getInterfaceName(), '$[]');
+        $this->assertEquals($binder->getInterfaceName(), '\$[]');
     }
 
      public function testIsNoRepositoryInterfaceImpl() {
         $binder = new binder('$');
-        $this->assertEquals($binder->getInterfaceName(), '$');
+        $this->assertEquals($binder->getInterfaceName(), '\$');
 
         $binder = new binder('abcdef');
-        $this->assertEquals($binder->getInterfaceName(), 'abcdef');
+        $this->assertEquals($binder->getInterfaceName(), '\abcdef');
     }
 
 

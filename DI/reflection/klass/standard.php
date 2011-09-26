@@ -129,7 +129,7 @@ class standard implements \de\any\di\reflection\iKlass  {
 
                 if($this->injectProperties === false) {
                      foreach($this->getReflectionClass()->getProperties() as $reflectionProperty) {
-                         
+
                         $annotationStrings = \de\any\di\ReflectionAnnotation::parsePropertyAnnotations($reflectionProperty);
 
                         if(!isset($annotationStrings['var']))
@@ -149,7 +149,6 @@ class standard implements \de\any\di\reflection\iKlass  {
 
                         $this->injectProperties[$reflectionProperty->getName()] = $binding;
                      }
-
 
                 $this->getCache()->store('reflection|'.$this->getClassname().'|injProp', $this->injectProperties);
             }

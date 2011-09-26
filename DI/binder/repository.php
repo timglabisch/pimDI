@@ -48,6 +48,9 @@ class repository {
     public function getBinding($interface, $concern='') {
         $this->knowBindings();
 
+        if(substr($interface, 0, 1) != '\\')
+            $interface = '\\'.$interface;
+
         if(!isset($this->bindings[$interface.'|'.$concern])) {
             if(strlen($interface) > 1 && $interface[strlen($interface) -2] == "[" && $interface[strlen($interface) -1] == "]") {
                 $binding = new binder($interface);
@@ -71,8 +74,11 @@ class repository {
     public function getBindingDecorators($interface, $concern='') {
         $this->knowBindings();
 
+        if(substr($interface, 0, 1) != '\\')
+            $interface = '\\'.$interface;
+
         if(!isset($this->bindings[$interface.'|'.$concern]))
-            throw new Exception('Binding for interface "'.$interface.'" with concern "'.$concern.'" doesn\'t exists');
+            throw new \Exception('Binding for interface "'.$interface.'" with concern "'.$concern.'" doesn\'t exists');
 
         return $this->bindings[$interface.'|'.$concern]['decorator'];
     }

@@ -17,8 +17,7 @@ class binder {
     private $isRepository = null;
 
     function __construct($interfaceName) {
-        $this->interfaceName = $interfaceName;
-
+        $this->setInterfaceName($interfaceName);
         $this->checkRepository();
     }
 
@@ -54,8 +53,7 @@ class binder {
         return $this->hashKey;
     }
 
-    public function setInterfaceImpl($interfaceImpl)
-    {
+    public function setInterfaceImpl($interfaceImpl) {
         $this->interfaceImpl = $interfaceImpl;
         return $this;
     }
@@ -65,6 +63,10 @@ class binder {
     }
 
     public function setInterfaceName($interfaceName) {
+
+        if(substr($interfaceName, 0, 1) != '\\')
+            $interfaceName = '\\'.$interfaceName;
+
         $this->dropHashKey();
         $this->interfaceName = $interfaceName;
         return $this;
