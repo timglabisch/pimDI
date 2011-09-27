@@ -439,4 +439,15 @@ class DITest extends \PHPUnit_Framework_TestCase {
 
         $this->assertTrue($di->get('constructor_istd')->i3 instanceof \test\diCodingstyle\iInjected_in_namespace);
     }
+    
+    public function testCodingstyleAnnotationParams() {
+        $di = new di();
+        $di->bind('constructor_istd')->to('test\codingstyle\annotations');
+        $di->bind('\test\diCodingstyle\iInjected_in_namespace')->to('test\diCodingstyle\injected_in_namespace');
+
+        $this->assertTrue($di->get('constructor_istd')->i1 instanceof \test\diCodingstyle\iInjected_in_namespace);
+        $this->assertEquals($di->get('constructor_istd')->i2, null);
+        $this->assertTrue($di->get('constructor_istd')->i3 instanceof \test\diCodingstyle\iInjected_in_namespace);
+        $this->assertEquals($di->get('constructor_istd')->i4, null);
+    }
 }
