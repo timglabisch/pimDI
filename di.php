@@ -30,9 +30,6 @@ class di implements iDi {
     }
 
     public function createInstanceFromClassname($classname) {
-        if(!class_exists($classname))
-            throw new Exception('class with classname '. $classname.' not found');
-
         $reflectionClass = new diReflectionClass($classname);
         return $this->createInstance($reflectionClass);
     }
