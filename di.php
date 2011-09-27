@@ -55,9 +55,10 @@ class di implements iDi {
 
         $reflection = new diReflectionClass($binding->getInterfaceImpl());
 
-        if(!$binding->isRepository())
+        if(!$binding->isRepository()) {
             if(!$reflection->implementsInterface($binding->getInterfaceName()))
                 throw new \Exception($reflection->getClassname() .' must implement '. $binding->getInterfaceName());
+        }
 
         $hashKey = $binding->getHashKey();
         

@@ -175,8 +175,13 @@ class standard implements \de\any\di\reflection\iKlass  {
      * @return \ReflectionClass
      */
     public function getReflectionClass() {
-        if($this->reflectionClass == null)
-            $this->reflectionClass = new \ReflectionClass($this->getClassname());
+        if($this->reflectionClass == null) {
+            try {
+                $this->reflectionClass = new \ReflectionClass($this->getClassname());
+            } catch(\ReflectionException $e) {
+                throw new \Exception('can\'t find class '.$this->getClassname());
+            }
+        }
 
         return $this->reflectionClass;
     }
