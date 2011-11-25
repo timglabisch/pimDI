@@ -191,18 +191,19 @@ class standard implements \de\any\di\reflection\iKlass  {
     }
 
     public function setCache($cache) {
-        self::$cache = $cache;
+		// disabled for now
+        #self::$cache = $cache;
     }
 
     /**
      * @return \de\any\di\iCache
      */
     public function getCache() {
-        if(self::$cache === null) {
-
-            if(function_exists('apc_cache_info'))
+        if(!self::$cache) {
+			// disabled for now
+           /* if(function_exists('apc_cache_info'))
                 self::$cache = new \de\any\di\cache\apc();
-            else
+            else*/
                 self::$cache = new \de\any\di\cache\memory();
         }
 
