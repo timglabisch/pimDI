@@ -382,7 +382,7 @@ class DITest extends \PHPUnit_Framework_TestCase {
 
      public function testRepositoryInjectBasic() {
         $di = new di();
-        $instance = new \diRepositoryInject_basic();
+        $instance = new \diRepositoryInject\basic();
         $di->justInject($instance);
 
         $this->assertInstanceOf('\de\any\di\repository\standard', $instance->repository);
