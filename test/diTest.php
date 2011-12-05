@@ -34,7 +34,7 @@ class DITest extends \PHPUnit_Framework_TestCase {
     
 
     /**
-     * @expectedException Exception
+     * @expectedException \InvalidArgumentException
      */
     public function testInterfaceDoesNotExists() {
         $di = new di();
@@ -43,9 +43,8 @@ class DITest extends \PHPUnit_Framework_TestCase {
         $this->assertInstanceOf('std1', $di->get('UNKNOWN'));
     }
 
-
     /**
-     * @expectedException Exception
+     * @expectedException \InvalidArgumentException
      */
     public function testBindingDoesNotExists() {
         $di = new di();
@@ -53,7 +52,7 @@ class DITest extends \PHPUnit_Framework_TestCase {
     }
 
     /**
-     * @expectedException Exception
+     * @expectedException \ReflectionException
      */
     public function testImplementationDoesNotExists() {
         $di = new di();

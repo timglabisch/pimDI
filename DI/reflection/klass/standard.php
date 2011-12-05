@@ -179,7 +179,7 @@ class standard implements \de\any\di\reflection\iKlass  {
             try {
                 $this->reflectionClass = new \ReflectionClass($this->getClassname());
             } catch(\ReflectionException $e) {
-                throw new \Exception('can\'t find class '.$this->getClassname());
+                throw new \ReflectionException('can\'t find class '.$this->getClassname());
             }
         }
 
@@ -187,6 +187,10 @@ class standard implements \de\any\di\reflection\iKlass  {
     }
 
     public function implementsInterface($interface) {
+
+        if(!interface_exists($interface))
+            throw new \InvalidArgumentException('interface '.$interface.' does not exists');
+
         return $this->getReflectionClass()->implementsInterface($interface);
     }
 
