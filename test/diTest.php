@@ -324,7 +324,7 @@ class DITest extends \PHPUnit_Framework_TestCase {
         $di->bind('\diTest\istd')->to('std1');
         $di->bind('\diTest\istd')->to('std2')->concern('std2');
         $di->bind('\diTest\iostd')->to('\diTest\ostd1');
-        $di->bind('\diTest\iostd')->to('ostd2')->concern('std2');
+        $di->bind('\diTest\iostd')->to('\diTest\ostd2')->concern('std2');
 
         $runable = new \diRunable_Inject();
 
@@ -333,7 +333,7 @@ class DITest extends \PHPUnit_Framework_TestCase {
         $this->assertInstanceOf('std1', $runable->std);
         $this->assertInstanceOf('std2', $runable->std2);
         $this->assertInstanceOf('\diTest\ostd1', $runable->getIostd());
-        $this->assertInstanceOf('ostd2', $runable->getIostd2());
+        $this->assertInstanceOf('\diTest\ostd2', $runable->getIostd2());
     }
 
     public function testBasicRepository() {
