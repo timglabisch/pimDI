@@ -1,5 +1,8 @@
 <?php
-class diTestIgnoreAnnotation_method implements \diTest\istd {
+
+namespace diTestIgnoreAnnotation;
+
+class method implements \diTest\istd {
     /** @var \stdClass */
     public function basic() {
         return true;

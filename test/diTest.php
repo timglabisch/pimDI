@@ -296,7 +296,7 @@ class DITest extends \PHPUnit_Framework_TestCase {
 
     public function testIgnoreAnnotationProperty() {
         $di = new di();
-        $di->bind('\diTest\istd')->to('diTestIgnoreAnnotation_property');
+        $di->bind('\diTest\istd')->to('diTestIgnoreAnnotation\property');
         $this->assertNull($di->get('\diTest\istd')->basic);
         $this->assertNull($di->get('\diTest\istd')->author);
         $this->assertNull($di->get('\diTest\istd')->doctrine);
@@ -304,7 +304,7 @@ class DITest extends \PHPUnit_Framework_TestCase {
 
     public function testIgnoreAnnotationMethod() {
         $di = new di();
-        $di->bind('\diTest\istd')->to('diTestIgnoreAnnotation_method');
+        $di->bind('\diTest\istd')->to('diTestIgnoreAnnotation\method');
         $this->assertTrue($di->get('\diTest\istd')->basic());
         $this->assertTrue($di->get('\diTest\istd')->author());
         $this->assertTrue($di->get('\diTest\istd')->doctrine());
