@@ -290,7 +290,7 @@ class DITest extends \PHPUnit_Framework_TestCase {
      */
     public function testPropertyParseException() {
         $di= new di();
-        $di->bind('\diTest\istd')->to('diPropertyParseException_std1');
+        $di->bind('\diTest\istd')->to('\diPropertyParseException\std1');
         $di->get('\diTest\istd');
     }
 
