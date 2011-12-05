@@ -252,11 +252,11 @@ class DITest extends \PHPUnit_Framework_TestCase {
         $di = new di();
         $di->bind('\diTest\istd')->to('diParam_concern');
         $di->bind('\diTest\iostd')->to('diParam_standard_injected');
-        $di->bind('\diTest\iostd')->to('ostd1')->concern('abc');
+        $di->bind('\diTest\iostd')->to('\diTest\ostd1')->concern('abc');
 
         $this->assertInstanceOf('diParam_concern', $di->get('\diTest\istd'));
         $this->assertInstanceOf('diParam_standard_injected', $di->get('\diTest\istd')->service);
-        $this->assertInstanceOf('ostd1', $di->get('\diTest\istd')->service_concern);
+        $this->assertInstanceOf('\diTest\ostd1', $di->get('\diTest\istd')->service_concern);
         return $di;
     }
 
@@ -323,7 +323,7 @@ class DITest extends \PHPUnit_Framework_TestCase {
         $di = new di();
         $di->bind('\diTest\istd')->to('std1');
         $di->bind('\diTest\istd')->to('std2')->concern('std2');
-        $di->bind('\diTest\iostd')->to('ostd1');
+        $di->bind('\diTest\iostd')->to('\diTest\ostd1');
         $di->bind('\diTest\iostd')->to('ostd2')->concern('std2');
 
         $runable = new \diRunable_Inject();
@@ -332,7 +332,7 @@ class DITest extends \PHPUnit_Framework_TestCase {
 
         $this->assertInstanceOf('std1', $runable->std);
         $this->assertInstanceOf('std2', $runable->std2);
-        $this->assertInstanceOf('ostd1', $runable->getIostd());
+        $this->assertInstanceOf('\diTest\ostd1', $runable->getIostd());
         $this->assertInstanceOf('ostd2', $runable->getIostd2());
     }
 
