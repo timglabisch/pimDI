@@ -18,17 +18,17 @@ class DITest extends \PHPUnit_Framework_TestCase {
      * @depends testDiSet
      */
     public function testDiOverwrite($di) {
-        $di->bind('\diTest\istd')->to('std2');
+        $di->bind('\diTest\istd')->to('\diTest\std2');
 
-        $this->assertInstanceOf('std2', $di->get('\diTest\istd'));
+        $this->assertInstanceOf('\diTest\std2', $di->get('\diTest\istd'));
     }
 
     public function testDIConcern() {
         $di = new di();
         $di->bind('\diTest\istd')->to('\diTest\std1');
-        $di->bind('\diTest\istd')->to('std2')->concern('abc');
+        $di->bind('\diTest\istd')->to('\diTest\std2')->concern('abc');
 
-        $this->assertInstanceOf('std2', $di->get('\diTest\istd', 'abc'));#
+        $this->assertInstanceOf('\diTest\std2', $di->get('\diTest\istd', 'abc'));#
         $this->assertInstanceOf('\diTest\std1', $di->get('\diTest\istd'));
     }
     
@@ -322,7 +322,7 @@ class DITest extends \PHPUnit_Framework_TestCase {
     public function testRunableInjection() {
         $di = new di();
         $di->bind('\diTest\istd')->to('\diTest\std1');
-        $di->bind('\diTest\istd')->to('std2')->concern('std2');
+        $di->bind('\diTest\istd')->to('\diTest\std2')->concern('std2');
         $di->bind('\diTest\iostd')->to('\diTest\ostd1');
         $di->bind('\diTest\iostd')->to('\diTest\ostd2')->concern('std2');
 
@@ -331,7 +331,7 @@ class DITest extends \PHPUnit_Framework_TestCase {
         $di->run($runable);
 
         $this->assertInstanceOf('\diTest\std1', $runable->std);
-        $this->assertInstanceOf('std2', $runable->std2);
+        $this->assertInstanceOf('\diTest\std2', $runable->std2);
         $this->assertInstanceOf('\diTest\ostd1', $runable->getIostd());
         $this->assertInstanceOf('\diTest\ostd2', $runable->getIostd2());
     }
