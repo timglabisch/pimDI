@@ -170,22 +170,22 @@ class DITest extends \PHPUnit_Framework_TestCase {
 
     function testSharedNotDecorator() {
         $di = new di();
-        $di->bind('sharedDecorators_iBase1')->to('sharedDecorators_base1');
-        $di->bind('sharedDecorators_iBase1')->decoratedWith('sharedDecorators_base1_decorator');
-        $decorator = $di->get('sharedDecorators_iBase1')->getService();
+        $di->bind('\sharedDecorators\iBase1')->to('\sharedDecorators\base1');
+        $di->bind('\sharedDecorators\iBase1')->decoratedWith('\sharedDecorators\base1_decorator');
+        $decorator = $di->get('\sharedDecorators\iBase1')->getService();
 
-        $this->assertInstanceOf('sharedDecorators_base1_decorator', $decorator);
-        $this->assertTrue($di->get('sharedDecorators_iBase1')->getService() !== $decorator);
+        $this->assertInstanceOf('\sharedDecorators\base1_decorator', $decorator);
+        $this->assertTrue($di->get('\sharedDecorators\iBase1')->getService() !== $decorator);
     }
 
     function testSharedDecorator() {
         $di = new di();
-        $di->bind('sharedDecorators_iBase1')->to('sharedDecorators_base1');
-        $di->bind('sharedDecorators_iBase1')->decoratedWith('sharedDecorators_base1_decorator')->shared(true);
-        $decorator = $di->get('sharedDecorators_iBase1')->getService();
+        $di->bind('\sharedDecorators\iBase1')->to('\sharedDecorators\base1');
+        $di->bind('\sharedDecorators\iBase1')->decoratedWith('\sharedDecorators\base1_decorator')->shared(true);
+        $decorator = $di->get('\sharedDecorators\iBase1')->getService();
 
-        $this->assertInstanceOf('sharedDecorators_base1_decorator', $decorator);
-        $this->assertTrue($di->get('sharedDecorators_iBase1')->getService() === $decorator);
+        $this->assertInstanceOf('\sharedDecorators\base1_decorator', $decorator);
+        $this->assertTrue($di->get('\sharedDecorators\iBase1')->getService() === $decorator);
     }
 
     public function testSetBinderRepositoy() {

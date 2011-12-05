@@ -1,6 +1,8 @@
 <?php
 
-class sharedDecorators_base1_decorator implements sharedDecorators_iBase1, \de\any\di\iDecorateable {
+namespace sharedDecorators;
+
+class base1_decorator implements \sharedDecorators\iBase1, \de\any\di\iDecorateable {
 
     private $parent;
 
