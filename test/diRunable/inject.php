@@ -1,10 +1,10 @@
 <?php
 class diRunable_Inject implements \de\any\di\iRunable {
 
-    /** @var istd !inject */
+    /** @var \diTest\istd !inject */
     public $std;
 
-    /** @var istd !inject std2 */
+    /** @var \diTest\istd !inject std2 */
     public $std2;
 
     public $iostd;
@@ -13,14 +13,14 @@ class diRunable_Inject implements \de\any\di\iRunable {
    /**
      * @inject
      */
-    public function injectIostd(\iostd $iostd) {
+    public function injectIostd(\diTest\iostd $iostd) {
         $this->iostd = $iostd;
     }
 
     /**
       * @inject std2
       */
-    public function injectIostd2(\iostd $iostd) {
+    public function injectIostd2(\diTest\iostd $iostd) {
         $this->iostd2 = $iostd;
     }
 

@@ -2,7 +2,7 @@
 class diRepositoryInject_basic {
 
     /**
-     * @var istd[] !inject
+     * @var \diTest\istd[] !inject
      */
     public $repository;
 }

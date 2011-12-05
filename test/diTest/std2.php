@@ -1,5 +1,5 @@
 <?php
-class std2 implements istd {
+class std2 implements \diTest\istd {
 
     
 }

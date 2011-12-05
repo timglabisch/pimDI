@@ -1,5 +1,5 @@
 <?php
-class diTestIgnoreAnnotation_property implements istd {
+class diTestIgnoreAnnotation_property implements \diTest\istd {
     /** @var \stdClass */
     public $basic;
 

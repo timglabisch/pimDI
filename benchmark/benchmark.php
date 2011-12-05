@@ -37,13 +37,13 @@ $di = new \de\any\di();
 $di->bind('nested_iobject')->to('nested_object');
 $di->bind('nested_inestedservice1')->to('nested_nestedservice1');
 
-$di->bind('istd')->to('diDecorateStd1');
-$di->bind('istd')->to('diDecorateDecorator1')->decorated(true);
-$di->bind('istd')->to('diDecorateDecoratorNested1')->decorated(true);
+$di->bind('\diTest\istd')->to('diDecorateStd1');
+$di->bind('\diTest\istd')->to('diDecorateDecorator1')->decorated(true);
+$di->bind('\diTest\istd')->to('diDecorateDecoratorNested1')->decorated(true);
 $di->bind('nested_inestedservice1')->to('nested_nestedservice1');
 for($i=0; $i < $rows; $i++) {
     $di->get('nested_iobject')->getNestedService1();
-    $di->get('istd')->getService();
+    $di->get('\diTest\istd')->getService();
 }
 echo "\nvoid: ".(microtime(true)-$microtime)."\n";
 
@@ -55,13 +55,13 @@ $di = new \de\any\di();
 $di->bind('nested_iobject')->to('nested_object');
 $di->bind('nested_inestedservice1')->to('nested_nestedservice1');
 
-$di->bind('istd')->to('diDecorateStd1');
-$di->bind('istd')->to('diDecorateDecorator1')->decorated(true);
-$di->bind('istd')->to('diDecorateDecoratorNested1')->decorated(true);
+$di->bind('\diTest\istd')->to('diDecorateStd1');
+$di->bind('\diTest\istd')->to('diDecorateDecorator1')->decorated(true);
+$di->bind('\diTest\istd')->to('diDecorateDecoratorNested1')->decorated(true);
 $di->bind('nested_inestedservice1')->to('nested_nestedservice1');
 for($i=0; $i < $rows; $i++) {
     $di->get('nested_iobject')->getNestedService1();
-    $di->get('istd')->getService();
+    $di->get('\diTest\istd')->getService();
 }
 echo "\nmemory: ".(microtime(true)-$microtime)."\n";
 
@@ -87,13 +87,13 @@ $di = new \de\any\di();
 $di->bind('nested_iobject')->to('nested_object');
 $di->bind('nested_inestedservice1')->to('nested_nestedservice1');
 
-$di->bind('istd')->to('diDecorateStd1');
-$di->bind('istd')->to('diDecorateDecorator1')->decorated(true);
-$di->bind('istd')->to('diDecorateDecoratorNested1')->decorated(true);
+$di->bind('\diTest\istd')->to('diDecorateStd1');
+$di->bind('\diTest\istd')->to('diDecorateDecorator1')->decorated(true);
+$di->bind('\diTest\istd')->to('diDecorateDecoratorNested1')->decorated(true);
 $di->bind('nested_inestedservice1')->to('nested_nestedservice1');
 for($i=0; $i < $rows; $i++) {
     $di->get('nested_iobject')->getNestedService1();
-    $di->get('istd')->getService();
+    $di->get('\diTest\istd')->getService();
 }
 echo "\napc: ".(microtime(true)-$microtime)."\n";
 
@@ -104,13 +104,13 @@ $di = new \de\any\di();
 $di->bind('nested_iobject')->to('nested_object');
 $di->bind('nested_inestedservice1')->to('nested_nestedservice1');
 
-$di->bind('istd')->to('diDecorateStd1');
-$di->bind('istd')->to('diDecorateDecorator1')->decorated(true);
-$di->bind('istd')->to('diDecorateDecoratorNested1')->decorated(true);
+$di->bind('\diTest\istd')->to('diDecorateStd1');
+$di->bind('\diTest\istd')->to('diDecorateDecorator1')->decorated(true);
+$di->bind('\diTest\istd')->to('diDecorateDecoratorNested1')->decorated(true);
 $di->bind('nested_inestedservice1')->to('nested_nestedservice1');
 
 for($i=0; $i < $rows; $i++) {
     $di->get('nested_iobject')->getNestedService1();
-    $di->get('istd')->getService();
+    $di->get('\diTest\istd')->getService();
 }
 echo "\nmemApc: ".(microtime(true)-$microtime)."\n";

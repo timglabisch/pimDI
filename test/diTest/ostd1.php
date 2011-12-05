@@ -1,4 +1,4 @@
 <?php
-class ostd1 implements iostd {
+class ostd1 implements \diTest\iostd {
 
 }

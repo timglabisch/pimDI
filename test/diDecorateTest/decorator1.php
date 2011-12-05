@@ -1,5 +1,5 @@
 <?php
-class diDecorateDecorator1 implements istd, \de\any\di\iDecorateable {
+class diDecorateDecorator1 implements \diTest\istd, \de\any\di\iDecorateable {
 
     private $original;
 

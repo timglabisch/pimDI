@@ -1,9 +1,9 @@
 <?php
-class diParam_concern implements istd {
+class diParam_concern implements \diTest\istd {
 
-    /** @var iostd !inject abc */
+    /** @var \diTest\iostd !inject abc */
     public $service_concern;
 
-    /** @var iostd !inject */
+    /** @var \diTest\iostd !inject */
     public $service;
 }
