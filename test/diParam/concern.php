@@ -1,5 +1,8 @@
 <?php
-class diParam_concern implements \diTest\istd {
+
+namespace diParam;
+
+class concern implements \diTest\istd {
 
     /** @var \diTest\iostd !inject abc */
     public $service_concern;

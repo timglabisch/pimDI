@@ -231,11 +231,11 @@ class DITest extends \PHPUnit_Framework_TestCase {
 
     public function testParam() {
         $di = new di();
-        $di->bind('\diTest\istd')->to('diParam_standard');
-        $di->bind('\diTest\iostd')->to('diParam_standard_injected');
+        $di->bind('\diTest\istd')->to('\diParam\standard');
+        $di->bind('\diTest\iostd')->to('\diParam\standard_injected');
 
-        $this->assertInstanceOf('diParam_standard', $di->get('\diTest\istd'));
-        $this->assertInstanceOf('diParam_standard_injected', $di->get('\diTest\istd')->service);
+        $this->assertInstanceOf('\diParam\standard', $di->get('\diTest\istd'));
+        $this->assertInstanceOf('\diParam\standard_injected', $di->get('\diTest\istd')->service);
         return $di;
     }
 
@@ -250,12 +250,12 @@ class DITest extends \PHPUnit_Framework_TestCase {
 
     public function testParamConcern() {
         $di = new di();
-        $di->bind('\diTest\istd')->to('diParam_concern');
-        $di->bind('\diTest\iostd')->to('diParam_standard_injected');
+        $di->bind('\diTest\istd')->to('\diParam\concern');
+        $di->bind('\diTest\iostd')->to('\diParam\standard_injected');
         $di->bind('\diTest\iostd')->to('\diTest\ostd1')->concern('abc');
 
-        $this->assertInstanceOf('diParam_concern', $di->get('\diTest\istd'));
-        $this->assertInstanceOf('diParam_standard_injected', $di->get('\diTest\istd')->service);
+        $this->assertInstanceOf('\diParam\concern', $di->get('\diTest\istd'));
+        $this->assertInstanceOf('\diParam\standard_injected', $di->get('\diTest\istd')->service);
         $this->assertInstanceOf('\diTest\ostd1', $di->get('\diTest\istd')->service_concern);
         return $di;
     }

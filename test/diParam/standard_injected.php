@@ -1,4 +1,7 @@
 <?php
-class diParam_standard_injected implements \diTest\iostd {
+
+namespace diParam;
+
+class standard_injected implements \diTest\iostd {
     
 }
