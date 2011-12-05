@@ -313,7 +313,7 @@ class DITest extends \PHPUnit_Framework_TestCase {
     public function testRunable() {
         ob_start();
         $di = new di();
-        $di->run(new \diRunable_Basic());
+        $di->run(new \diRunable\Basic());
 
         $this->assertEquals(ob_get_contents(), 'ok!');
         ob_end_clean();
@@ -326,7 +326,7 @@ class DITest extends \PHPUnit_Framework_TestCase {
         $di->bind('\diTest\iostd')->to('\diTest\ostd1');
         $di->bind('\diTest\iostd')->to('\diTest\ostd2')->concern('std2');
 
-        $runable = new \diRunable_Inject();
+        $runable = new \diRunable\Inject();
 
         $di->run($runable);
 

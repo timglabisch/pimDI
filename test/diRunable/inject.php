@@ -1,5 +1,8 @@
 <?php
-class diRunable_Inject implements \de\any\di\iRunable {
+
+namespace diRunable;
+
+class Inject implements \de\any\di\iRunable {
 
     /** @var \diTest\istd !inject */
     public $std;
