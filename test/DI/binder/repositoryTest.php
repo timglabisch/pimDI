@@ -14,7 +14,7 @@ class binderRepositoryTest extends \PHPUnit_Framework_TestCase {
         $repository = new repository();
 
         $binder1 = new binder('\diTest\istd');
-        $binder1->to('std1');
+        $binder1->to('\diTest\std1');
         $repository->addBinding($binder1);
 
         $binder2 = new binder('\diTest\istd');
@@ -39,7 +39,7 @@ class binderRepositoryTest extends \PHPUnit_Framework_TestCase {
     function testMultipleDecorators(repository $repository) {
 
         $binder1 = new binder('\diTest\istd');
-        $binder1->to('std1')->decorated(true);
+        $binder1->to('\diTest\std1')->decorated(true);
         $repository->addBinding($binder1);
 
         $binder2 = new binder('\diTest\istd');
@@ -56,10 +56,10 @@ class binderRepositoryTest extends \PHPUnit_Framework_TestCase {
         $repository = new repository();
 
         $binder1 = new binder('\diTest\istd');
-        $binder1->to('std1');
+        $binder1->to('\diTest\std1');
 
         $binder2 = new binder('\diTest\istd2');
-        $binder2->to('std1');
+        $binder2->to('\diTest\std1');
 
         $repository->addBindings(array($binder1, $binder2));
 
