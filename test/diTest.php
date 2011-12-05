@@ -374,10 +374,10 @@ class DITest extends \PHPUnit_Framework_TestCase {
      public function testRepositoryConcerns() {
         $di = new di();
         $di->bind('\diTest\istd[]')->to('\ArrayObject');
-        $di->bind('\diTest\istd[]')->to('\diRepositoryConcern_customArrayObject')->concern('abc');
+        $di->bind('\diTest\istd[]')->to('\diRepositoryConcern\customArrayObject')->concern('abc');
 
         $this->assertInstanceOf('\ArrayObject', $di->get('\diTest\istd[]'));
-        $this->assertInstanceOf('\diRepositoryConcern_customArrayObject', $di->get('\diTest\istd[]', 'abc'));
+        $this->assertInstanceOf('\diRepositoryConcern\customArrayObject', $di->get('\diTest\istd[]', 'abc'));
      }
 
      public function testRepositoryInjectBasic() {

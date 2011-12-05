@@ -1,5 +1,8 @@
 <?php
-class diRepositoryConcern_customArrayObject extends \ArrayObject {
+
+namespace diRepositoryConcern;
+
+class customArrayObject extends \ArrayObject {
     
 }
  
