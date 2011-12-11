@@ -458,4 +458,23 @@ class DITest extends \PHPUnit_Framework_TestCase {
         $this->assertTrue($di->get('constructor_istd')->i3 instanceof \test\diCodingstyle\iInjected_in_namespace);
         $this->assertEquals($di->get('constructor_istd')->i4, null);
     }
+
+    public function testImplementationBindingGetInstance() {
+        $di = new di();
+        $this->assertInstanceOf('\diImmplementationBinding\impl', $di->get('\diImmplementationBinding\impl'));
+    }
+
+    public function testImplementationBindingPropertyInjection() {
+        $di = new di();
+        $this->assertInstanceOf('\diImmplementationBinding\impl', $di->get('\diImmplementationBinding\property')->service);
+    }
+
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testImplementationBindingPropertyBadExtend() {
+        $di = new di();
+        $di->bind('\diImmplementationBinding\impl')->to('\diImmplementationBinding\impl2')->setIsClass(true);
+        $this->assertInstanceOf('\diImmplementationBinding\impl2', $di->get('\diImmplementationBinding\property')->service);
+    }
 }

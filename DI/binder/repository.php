@@ -39,6 +39,14 @@ class repository {
         $this->unknownBindingsCount = 0;
     }
 
+    private function interfaceIsARepository($interface) {
+        return strlen($interface) > 1 && $interface[strlen($interface) -2] == "[" && $interface[strlen($interface) -1] == "]";
+    }
+
+    private function interfaceIsAClassBinding($interface) {
+        return class_exists($interface);
+    }
+
     /**
      * @throws Exception
      * @param  $interface
@@ -52,14 +60,24 @@ class repository {
             $interface = '\\'.$interface;
 
         if(!isset($this->bindings[$interface.'|'.$concern])) {
-            if(strlen($interface) > 1 && $interface[strlen($interface) -2] == "[" && $interface[strlen($interface) -1] == "]") {
+
+            if($this->interfaceIsARepository($interface)) {
                 $binding = new binder($interface);
                 $binding->concern($concern);
                 $this->addBinding($binding);
                 $this->knowBindings();
             }
+            else if($this->interfaceIsAClassBinding($interface)) {
+                $binding = new binder($interface);
+                $binding->concern($concern);
+                $binding->setInterfaceImpl($interface);
+                $binding->setIsClass(true);
+                $this->addBinding($binding);
+                $this->knowBindings();
+            }
             else
                 throw new \InvalidArgumentException('Binding for interface "'.$interface.'" with concern "'.$concern.'" doesn\'t exists');
+
         }
 
         return $this->bindings[$interface.'|'.$concern]['impl'];

@@ -17,3 +17,4 @@ array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diRunable/*.php'));
 array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diRepositoryConcern/*.php'));
 array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diRepositoryInject/*.php'));
 array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diCodingstyle/*.php'));
+array_map(function($v) { include_once  $v; }, glob(__DIR__.'/diImplementationBinding/*.php'));

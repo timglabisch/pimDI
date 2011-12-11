@@ -14,11 +14,12 @@ class binder {
     private $decorated = false;
     private $instance;
     private $hashKey;
-    private $isRepository = null;
+    private $isRepository = false;
+    private $isClass = false;
 
     function __construct($interfaceName) {
         $this->setInterfaceName($interfaceName);
-        $this->checkRepository();
+        $this->checkIsRepository();
     }
 
     private function toObject($obj) {
@@ -137,7 +138,7 @@ class binder {
         return $this->instance;
     }
 
-    public function checkRepository() {
+    public function checkIsRepository() {
 
         if($this->isRepository != null)
             return;
@@ -150,8 +151,7 @@ class binder {
 
         if($interfaceName[$strlenInterfaceName -2] == '[' && $interfaceName[$strlenInterfaceName -1] == ']') {
             $this->setInterfaceImpl('\de\any\di\repository\standard');
-            $this->setIsRepository(true);
-            return;
+            return $this->setIsRepository(true);
         }
 
         return $this->setIsRepository(false);
@@ -159,10 +159,20 @@ class binder {
 
     public function setIsRepository($isRepository) {
         $this->isRepository = (bool)$isRepository;
+        return $this;
     }
 
     public function isRepository() {
         return $this->isRepository;
+    }
+
+    public function setIsClass($isClass) {
+        $this->isClass = (bool)$isClass;
+        return $this;
+    }
+
+    public function isClass() {
+        return $this->isClass;
     }
 
 }
