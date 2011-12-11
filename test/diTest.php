@@ -464,9 +464,39 @@ class DITest extends \PHPUnit_Framework_TestCase {
         $this->assertInstanceOf('\diImmplementationBinding\impl', $di->get('\diImmplementationBinding\impl'));
     }
 
+    public function testImplementationBindingOverwritePropertyBinding() {
+        $di = new di();
+        $di->bind('\diImmplementationBinding\impl')->to('\diImmplementationBinding\extends_impl')->setIsClass(true);
+        $this->assertInstanceOf('\diImmplementationBinding\impl', $di->get('\diImmplementationBinding\extends_impl'));
+    }
+
     public function testImplementationBindingPropertyInjection() {
         $di = new di();
         $this->assertInstanceOf('\diImmplementationBinding\impl', $di->get('\diImmplementationBinding\property')->service);
+    }
+
+    public function testImplementationBindingConstructorInjection() {
+        $di = new di();
+        $this->assertInstanceOf('\diImmplementationBinding\impl', $di->get('\diImmplementationBinding\constructor')->service);
+    }
+
+    public function testImplementationBindingOverwriteConstructorBinding() {
+        $di = new di();
+        $di->bind('\diImmplementationBinding\impl')->to('\diImmplementationBinding\extends_impl')->setIsClass(true);
+        $this->assertInstanceOf('\diImmplementationBinding\extends_impl', $di->get('\diImmplementationBinding\constructor')->service);
+    }
+
+    public function testImplementationBindingSetterBinding() {
+        $di = new di();
+        $this->assertInstanceOf('\diImmplementationBinding\impl', $di->get('\diImmplementationBinding\setter')->service);
+    }
+
+    public function testImplementationBindingImplicitShared() {
+        $c = new \diImmplementationBinding\extends_stdClass();
+
+        $di = new di();
+        $di->bind('\stdClass')->to($c)->isClass(true);
+        $this->assertTrue($c === $di->get('\stdClass'));
     }
 
     /**
@@ -477,4 +507,5 @@ class DITest extends \PHPUnit_Framework_TestCase {
         $di->bind('\diImmplementationBinding\impl')->to('\diImmplementationBinding\impl2')->setIsClass(true);
         $this->assertInstanceOf('\diImmplementationBinding\impl2', $di->get('\diImmplementationBinding\property')->service);
     }
+
 }
