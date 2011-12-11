@@ -194,6 +194,14 @@ class standard implements \de\any\di\reflection\iKlass  {
         return $this->getReflectionClass()->implementsInterface($interface);
     }
 
+    public function extendsFromClass($class) {
+
+        if(!class_exists($class))
+            throw new \InvalidArgumentException('class '.$class.' does not exists');
+
+        return $this->getReflectionClass()->isSubclassOf($class);
+    }
+
     public function setCache($cache) {
 		// disabled for now
         #self::$cache = $cache;
